@@ -1,0 +1,1764 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 995438498, guid: 65ad34d65dbee064d822143e7dd3bd2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 5
+  lastUpdatedAtString: 2018-04-08T19:35:52.2717957+02:00
+  initializedAtString: 2018-04-08T19:32:50.2666586+02:00
+  entries:
+  - path: .collabignore
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\.collabignore
+    projectPath: .collabignore
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101.exe
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101.exe
+    projectPath: 2ControlerTestBuild\Miami101.exe
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\Assembly-CSharp.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\Assembly-CSharp.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\Assembly-CSharp.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\Mono.Security.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\Mono.Security.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\Mono.Security.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\System.Core.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\System.Core.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\System.Core.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\System.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\System.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\System.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AIModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AIModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AIModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AIModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AIModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AIModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ARModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ARModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ARModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ARModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ARModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ARModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AccessibilityModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AccessibilityModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AccessibilityModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AccessibilityModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AccessibilityModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AccessibilityModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AnimationModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AnimationModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AnimationModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AnimationModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AnimationModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AnimationModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AssetBundleModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AssetBundleModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AssetBundleModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AssetBundleModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AssetBundleModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AssetBundleModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AudioModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AudioModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AudioModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AudioModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AudioModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.AudioModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClothModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClothModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClothModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClothModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClothModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClothModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterInputModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterInputModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterInputModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterInputModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterInputModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterInputModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterRendererModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterRendererModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterRendererModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterRendererModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterRendererModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ClusterRendererModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CoreModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CoreModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CoreModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CoreModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CoreModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CoreModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CrashReportingModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CrashReportingModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CrashReportingModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CrashReportingModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CrashReportingModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.CrashReportingModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.DirectorModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.DirectorModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.DirectorModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.DirectorModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.DirectorModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.DirectorModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GameCenterModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GameCenterModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GameCenterModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GameCenterModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GameCenterModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GameCenterModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GridModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GridModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GridModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GridModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GridModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.GridModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.IMGUIModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.IMGUIModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.IMGUIModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.IMGUIModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.IMGUIModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.IMGUIModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ImageConversionModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ImageConversionModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ImageConversionModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ImageConversionModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ImageConversionModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ImageConversionModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.InputModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.InputModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.InputModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.InputModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.InputModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.InputModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.JSONSerializeModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.JSONSerializeModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.JSONSerializeModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.JSONSerializeModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.JSONSerializeModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.JSONSerializeModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Networking.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Networking.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Networking.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticleSystemModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticleSystemModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticleSystemModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticleSystemModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticleSystemModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticleSystemModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticlesLegacyModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticlesLegacyModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticlesLegacyModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticlesLegacyModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticlesLegacyModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ParticlesLegacyModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PerformanceReportingModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PerformanceReportingModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PerformanceReportingModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PerformanceReportingModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PerformanceReportingModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PerformanceReportingModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Physics2DModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Physics2DModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Physics2DModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Physics2DModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Physics2DModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Physics2DModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PhysicsModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PhysicsModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PhysicsModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PhysicsModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PhysicsModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.PhysicsModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ScreenCaptureModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ScreenCaptureModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ScreenCaptureModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ScreenCaptureModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ScreenCaptureModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.ScreenCaptureModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SharedInternalsModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SharedInternalsModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SharedInternalsModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SharedInternalsModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SharedInternalsModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SharedInternalsModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpatialTracking.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpatialTracking.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpatialTracking.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteMaskModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteMaskModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteMaskModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteMaskModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteMaskModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteMaskModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteShapeModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteShapeModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteShapeModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteShapeModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteShapeModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.SpriteShapeModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StandardEvents.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StandardEvents.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StandardEvents.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StyleSheetsModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StyleSheetsModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StyleSheetsModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StyleSheetsModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StyleSheetsModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.StyleSheetsModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainPhysicsModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainPhysicsModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainPhysicsModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainPhysicsModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainPhysicsModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TerrainPhysicsModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TextRenderingModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TextRenderingModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TextRenderingModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TextRenderingModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TextRenderingModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TextRenderingModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TilemapModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TilemapModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TilemapModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TilemapModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TilemapModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.TilemapModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Timeline.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Timeline.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.Timeline.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UI.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UI.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UI.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIElementsModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIElementsModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIElementsModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIElementsModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIElementsModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIElementsModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UIModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UNETModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UNETModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UNETModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UNETModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UNETModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UNETModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityAnalyticsModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityAnalyticsModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityAnalyticsModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityAnalyticsModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityAnalyticsModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityAnalyticsModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityConnectModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityConnectModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityConnectModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityConnectModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityConnectModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityConnectModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestAudioModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestAudioModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestAudioModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestTextureModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestTextureModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestTextureModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestWWWModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestWWWModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.UnityWebRequestWWWModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VRModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VRModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VRModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VRModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VRModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VRModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VehiclesModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VehiclesModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VehiclesModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VehiclesModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VehiclesModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VehiclesModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VideoModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VideoModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VideoModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VideoModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VideoModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.VideoModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WebModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WebModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WebModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WebModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WebModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WebModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WindModule.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WindModule.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WindModule.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WindModule.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WindModule.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.WindModule.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\UnityEngine.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Managed\mscorlib.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Managed\mscorlib.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Managed\mscorlib.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\EmbedRuntime\MonoPosixHelper.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\EmbedRuntime\MonoPosixHelper.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\EmbedRuntime\MonoPosixHelper.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\EmbedRuntime\mono.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\EmbedRuntime\mono.dll
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\EmbedRuntime\mono.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\1.0\DefaultWsdlHelpGenerator.aspx
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\1.0\DefaultWsdlHelpGenerator.aspx
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\1.0\DefaultWsdlHelpGenerator.aspx
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\1.0\machine.config
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\1.0\machine.config
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\1.0\machine.config
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\Browsers\Compat.browser
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\Browsers\Compat.browser
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\Browsers\Compat.browser
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\DefaultWsdlHelpGenerator.aspx
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\DefaultWsdlHelpGenerator.aspx
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\DefaultWsdlHelpGenerator.aspx
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\machine.config
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\machine.config
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\machine.config
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\settings.map
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\settings.map
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\settings.map
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\web.config
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\web.config
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\2.0\web.config
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\browscap.ini
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\browscap.ini
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\browscap.ini
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\config
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\config
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\config
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\mconfig\config.xml
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Mono\etc\mono\mconfig\config.xml
+    projectPath: 2ControlerTestBuild\Miami101_Data\Mono\etc\mono\mconfig\config.xml
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Resources\unity default resources
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Resources\unity
+      default resources
+    projectPath: 2ControlerTestBuild\Miami101_Data\Resources\unity default resources
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\Resources\unity_builtin_extra
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\Resources\unity_builtin_extra
+    projectPath: 2ControlerTestBuild\Miami101_Data\Resources\unity_builtin_extra
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\app.info
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\app.info
+    projectPath: 2ControlerTestBuild\Miami101_Data\app.info
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\boot.config
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\boot.config
+    projectPath: 2ControlerTestBuild\Miami101_Data\boot.config
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\globalgamemanagers
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\globalgamemanagers
+    projectPath: 2ControlerTestBuild\Miami101_Data\globalgamemanagers
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\globalgamemanagers.assets
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\globalgamemanagers.assets
+    projectPath: 2ControlerTestBuild\Miami101_Data\globalgamemanagers.assets
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\level0
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\level0
+    projectPath: 2ControlerTestBuild\Miami101_Data\level0
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\level1
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\level1
+    projectPath: 2ControlerTestBuild\Miami101_Data\level1
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\level2
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\level2
+    projectPath: 2ControlerTestBuild\Miami101_Data\level2
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\level3
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\level3
+    projectPath: 2ControlerTestBuild\Miami101_Data\level3
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets0.assets
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets0.assets
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets0.assets
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets0.assets.resS
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets0.assets.resS
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets0.assets.resS
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets1.assets
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets1.assets
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets1.assets
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets1.assets.resS
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets1.assets.resS
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets1.assets.resS
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets1.resource
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets1.resource
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets1.resource
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets2.assets
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets2.assets
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets2.assets
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets2.assets.resS
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets2.assets.resS
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets2.assets.resS
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Miami101_Data\sharedassets3.assets
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Miami101_Data\sharedassets3.assets
+    projectPath: 2ControlerTestBuild\Miami101_Data\sharedassets3.assets
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\Readme.txt
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\Readme.txt
+    projectPath: 2ControlerTestBuild\Readme.txt
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: 2ControlerTestBuild\UnityPlayer.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\2ControlerTestBuild\UnityPlayer.dll
+    projectPath: 2ControlerTestBuild\UnityPlayer.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation.meta
+    projectPath: Assets\Animation.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\P1GetReadyText.controller
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\P1GetReadyText.controller
+    projectPath: Assets\Animation\P1GetReadyText.controller
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\P1GetReadyText.controller.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\P1GetReadyText.controller.meta
+    projectPath: Assets\Animation\P1GetReadyText.controller.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\Press Start Text.controller
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\Press
+      Start Text.controller
+    projectPath: Assets\Animation\Press Start Text.controller
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\Press Start Text.controller.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\Press
+      Start Text.controller.meta
+    projectPath: Assets\Animation\Press Start Text.controller.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\PressStart.anim
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\PressStart.anim
+    projectPath: Assets\Animation\PressStart.anim
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\PressStart.anim.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\PressStart.anim.meta
+    projectPath: Assets\Animation\PressStart.anim.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\PressStartToGetReady.anim
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\PressStartToGetReady.anim
+    projectPath: Assets\Animation\PressStartToGetReady.anim
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\PressStartToGetReady.anim.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\PressStartToGetReady.anim.meta
+    projectPath: Assets\Animation\PressStartToGetReady.anim.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\SuckerPunchAnim.anim
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\SuckerPunchAnim.anim
+    projectPath: Assets\Animation\SuckerPunchAnim.anim
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\SuckerPunchAnim.anim.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\SuckerPunchAnim.anim.meta
+    projectPath: Assets\Animation\SuckerPunchAnim.anim.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\SuckerPunch_0.controller
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\SuckerPunch_0.controller
+    projectPath: Assets\Animation\SuckerPunch_0.controller
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\SuckerPunch_0.controller.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\SuckerPunch_0.controller.meta
+    projectPath: Assets\Animation\SuckerPunch_0.controller.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\Text.controller
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\Text.controller
+    projectPath: Assets\Animation\Text.controller
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\Text.controller.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\Text.controller.meta
+    projectPath: Assets\Animation\Text.controller.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\TitleText.anim
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\TitleText.anim
+    projectPath: Assets\Animation\TitleText.anim
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\TitleText.anim.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\TitleText.anim.meta
+    projectPath: Assets\Animation\TitleText.anim.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\TitleTextTransform.anim
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\TitleTextTransform.anim
+    projectPath: Assets\Animation\TitleTextTransform.anim
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Animation\TitleTextTransform.anim.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Animation\TitleTextTransform.anim.meta
+    projectPath: Assets\Animation\TitleTextTransform.anim.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Audio.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Audio.meta
+    projectPath: Assets\Audio.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Audio\Cancel1.ogg
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Audio\Cancel1.ogg
+    projectPath: Assets\Audio\Cancel1.ogg
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Audio\Cancel1.ogg.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Audio\Cancel1.ogg.meta
+    projectPath: Assets\Audio\Cancel1.ogg.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Audio\Cursor2.ogg
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Audio\Cursor2.ogg
+    projectPath: Assets\Audio\Cursor2.ogg
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Audio\Cursor2.ogg.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Audio\Cursor2.ogg.meta
+    projectPath: Assets\Audio\Cursor2.ogg.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Fonts.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Fonts.meta
+    projectPath: Assets\Fonts.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Fonts\CaviarDreams.ttf
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Fonts\CaviarDreams.ttf
+    projectPath: Assets\Fonts\CaviarDreams.ttf
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Fonts\CaviarDreams.ttf.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Fonts\CaviarDreams.ttf.meta
+    projectPath: Assets\Fonts\CaviarDreams.ttf.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Fonts\Knight Brush Demo.otf
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Fonts\Knight Brush
+      Demo.otf
+    projectPath: Assets\Fonts\Knight Brush Demo.otf
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Fonts\Knight Brush Demo.otf.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Fonts\Knight Brush
+      Demo.otf.meta
+    projectPath: Assets\Fonts\Knight Brush Demo.otf.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Fonts\PressStart2P-Regular.ttf
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Fonts\PressStart2P-Regular.ttf
+    projectPath: Assets\Fonts\PressStart2P-Regular.ttf
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Fonts\PressStart2P-Regular.ttf.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Fonts\PressStart2P-Regular.ttf.meta
+    projectPath: Assets\Fonts\PressStart2P-Regular.ttf.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image.meta
+    projectPath: Assets\Image.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\5mmbullet.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\5mmbullet.png
+    projectPath: Assets\Image\5mmbullet.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\5mmbullet.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\5mmbullet.png.meta
+    projectPath: Assets\Image\5mmbullet.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char1.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char1.png
+    projectPath: Assets\Image\Char1.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char1.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char1.png.meta
+    projectPath: Assets\Image\Char1.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char2.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char2.png
+    projectPath: Assets\Image\Char2.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char2.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char2.png.meta
+    projectPath: Assets\Image\Char2.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char3.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char3.png
+    projectPath: Assets\Image\Char3.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char3.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char3.png.meta
+    projectPath: Assets\Image\Char3.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char4.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char4.png
+    projectPath: Assets\Image\Char4.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Char4.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Char4.png.meta
+    projectPath: Assets\Image\Char4.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\CharPsd.psd
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\CharPsd.psd
+    projectPath: Assets\Image\CharPsd.psd
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\CharPsd.psd.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\CharPsd.psd.meta
+    projectPath: Assets\Image\CharPsd.psd.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Controller Mapping.jpg
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Controller
+      Mapping.jpg
+    projectPath: Assets\Image\Controller Mapping.jpg
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\Controller Mapping.jpg.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\Controller
+      Mapping.jpg.meta
+    projectPath: Assets\Image\Controller Mapping.jpg.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\SuckerPunch.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\SuckerPunch.png
+    projectPath: Assets\Image\SuckerPunch.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\SuckerPunch.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\SuckerPunch.png.meta
+    projectPath: Assets\Image\SuckerPunch.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\round_bullet.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\round_bullet.png
+    projectPath: Assets\Image\round_bullet.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\round_bullet.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\round_bullet.png.meta
+    projectPath: Assets\Image\round_bullet.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\weapons.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\weapons.png
+    projectPath: Assets\Image\weapons.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Image\weapons.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Image\weapons.png.meta
+    projectPath: Assets\Image\weapons.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level.meta
+    projectPath: Assets\Level.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\GameScenes.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\GameScenes.meta
+    projectPath: Assets\Level\GameScenes.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\GameScenes\Main.unity
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\GameScenes\Main.unity
+    projectPath: Assets\Level\GameScenes\Main.unity
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\GameScenes\Main.unity.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\GameScenes\Main.unity.meta
+    projectPath: Assets\Level\GameScenes\Main.unity.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes.meta
+    projectPath: Assets\Level\Testscenes.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\8PlayerScene.unity
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\8PlayerScene.unity
+    projectPath: Assets\Level\Testscenes\8PlayerScene.unity
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\8PlayerScene.unity.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\8PlayerScene.unity.meta
+    projectPath: Assets\Level\Testscenes\8PlayerScene.unity.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\Level1Scene.unity
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\Level1Scene.unity
+    projectPath: Assets\Level\Testscenes\Level1Scene.unity
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\Level1Scene.unity.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\Level1Scene.unity.meta
+    projectPath: Assets\Level\Testscenes\Level1Scene.unity.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\Level2Scene.unity
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\Level2Scene.unity
+    projectPath: Assets\Level\Testscenes\Level2Scene.unity
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\Level2Scene.unity.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\Level2Scene.unity.meta
+    projectPath: Assets\Level\Testscenes\Level2Scene.unity.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\TitleScene.unity
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\TitleScene.unity
+    projectPath: Assets\Level\Testscenes\TitleScene.unity
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Level\Testscenes\TitleScene.unity.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Level\Testscenes\TitleScene.unity.meta
+    projectPath: Assets\Level\Testscenes\TitleScene.unity.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub.meta
+    projectPath: Assets\Plugins\GitHub.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor.meta
+    projectPath: Assets\Plugins\GitHub\Editor.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x64.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x64.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+    projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x86.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x86.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+    projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+    projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab.meta
+    projectPath: Assets\Prefab.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\GameData.prefab
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\GameData.prefab
+    projectPath: Assets\Prefab\GameData.prefab
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\GameData.prefab.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\GameData.prefab.meta
+    projectPath: Assets\Prefab\GameData.prefab.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Level.prefab
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Level.prefab
+    projectPath: Assets\Prefab\Level.prefab
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Level.prefab.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Level.prefab.meta
+    projectPath: Assets\Prefab\Level.prefab.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\P1Camera.prefab
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\P1Camera.prefab
+    projectPath: Assets\Prefab\P1Camera.prefab
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\P1Camera.prefab.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\P1Camera.prefab.meta
+    projectPath: Assets\Prefab\P1Camera.prefab.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Player1.prefab
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Player1.prefab
+    projectPath: Assets\Prefab\Player1.prefab
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Player1.prefab.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Player1.prefab.meta
+    projectPath: Assets\Prefab\Player1.prefab.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Weapons.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Weapons.meta
+    projectPath: Assets\Prefab\Weapons.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Weapons\5mmbullet.prefab
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Weapons\5mmbullet.prefab
+    projectPath: Assets\Prefab\Weapons\5mmbullet.prefab
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Weapons\5mmbullet.prefab.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Weapons\5mmbullet.prefab.meta
+    projectPath: Assets\Prefab\Weapons\5mmbullet.prefab.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Weapons\SuckerPunch.prefab
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Weapons\SuckerPunch.prefab
+    projectPath: Assets\Prefab\Weapons\SuckerPunch.prefab
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Prefab\Weapons\SuckerPunch.prefab.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Prefab\Weapons\SuckerPunch.prefab.meta
+    projectPath: Assets\Prefab\Weapons\SuckerPunch.prefab.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts.meta
+    projectPath: Assets\Scripts.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\CameraFollow.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\CameraFollow.cs
+    projectPath: Assets\Scripts\CameraFollow.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\CameraFollow.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\CameraFollow.cs.meta
+    projectPath: Assets\Scripts\CameraFollow.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\GameData.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\GameData.meta
+    projectPath: Assets\Scripts\GameData.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\GameData\DebugMethods.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\GameData\DebugMethods.cs
+    projectPath: Assets\Scripts\GameData\DebugMethods.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\GameData\DebugMethods.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\GameData\DebugMethods.cs.meta
+    projectPath: Assets\Scripts\GameData\DebugMethods.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\GameData\GameData.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\GameData\GameData.cs
+    projectPath: Assets\Scripts\GameData\GameData.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\GameData\GameData.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\GameData\GameData.cs.meta
+    projectPath: Assets\Scripts\GameData\GameData.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\GameData\InitiazionGameData.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\GameData\InitiazionGameData.cs
+    projectPath: Assets\Scripts\GameData\InitiazionGameData.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\GameData\InitiazionGameData.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\GameData\InitiazionGameData.cs.meta
+    projectPath: Assets\Scripts\GameData\InitiazionGameData.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\InGameMenuBeaviour.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\InGameMenuBeaviour.cs
+    projectPath: Assets\Scripts\InGameMenuBeaviour.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\InGameMenuBeaviour.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\InGameMenuBeaviour.cs.meta
+    projectPath: Assets\Scripts\InGameMenuBeaviour.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Player.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Player.meta
+    projectPath: Assets\Scripts\Player.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Player\PlayerController.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Player\PlayerController.cs
+    projectPath: Assets\Scripts\Player\PlayerController.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Player\PlayerController.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Player\PlayerController.cs.meta
+    projectPath: Assets\Scripts\Player\PlayerController.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Player\PlayerSprite.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Player\PlayerSprite.cs
+    projectPath: Assets\Scripts\Player\PlayerSprite.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Player\PlayerSprite.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Player\PlayerSprite.cs.meta
+    projectPath: Assets\Scripts\Player\PlayerSprite.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Player\PlayerStatus.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Player\PlayerStatus.cs
+    projectPath: Assets\Scripts\Player\PlayerStatus.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Player\PlayerStatus.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Player\PlayerStatus.cs.meta
+    projectPath: Assets\Scripts\Player\PlayerStatus.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow.meta
+    projectPath: Assets\Scripts\TitleWindow.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\ChangeChar.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\ChangeChar.cs
+    projectPath: Assets\Scripts\TitleWindow\ChangeChar.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\ChangeChar.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\ChangeChar.cs.meta
+    projectPath: Assets\Scripts\TitleWindow\ChangeChar.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\ChangeMap.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\ChangeMap.cs
+    projectPath: Assets\Scripts\TitleWindow\ChangeMap.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\ChangeMap.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\ChangeMap.cs.meta
+    projectPath: Assets\Scripts\TitleWindow\ChangeMap.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\MapPanelBehaviour.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\MapPanelBehaviour.cs
+    projectPath: Assets\Scripts\TitleWindow\MapPanelBehaviour.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\MapPanelBehaviour.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\MapPanelBehaviour.cs.meta
+    projectPath: Assets\Scripts\TitleWindow\MapPanelBehaviour.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\PressStart.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\PressStart.cs
+    projectPath: Assets\Scripts\TitleWindow\PressStart.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\PressStart.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\PressStart.cs.meta
+    projectPath: Assets\Scripts\TitleWindow\PressStart.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\PressStartGetReady.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\PressStartGetReady.cs
+    projectPath: Assets\Scripts\TitleWindow\PressStartGetReady.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\PressStartGetReady.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\PressStartGetReady.cs.meta
+    projectPath: Assets\Scripts\TitleWindow\PressStartGetReady.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\PressStartLoadScene.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\PressStartLoadScene.cs
+    projectPath: Assets\Scripts\TitleWindow\PressStartLoadScene.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\PressStartLoadScene.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\PressStartLoadScene.cs.meta
+    projectPath: Assets\Scripts\TitleWindow\PressStartLoadScene.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\ReadyText.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\ReadyText.cs
+    projectPath: Assets\Scripts\TitleWindow\ReadyText.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\TitleWindow\ReadyText.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\TitleWindow\ReadyText.cs.meta
+    projectPath: Assets\Scripts\TitleWindow\ReadyText.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon.meta
+    projectPath: Assets\Scripts\Weapon.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\Bullet.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\Bullet.cs
+    projectPath: Assets\Scripts\Weapon\Bullet.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\Bullet.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\Bullet.cs.meta
+    projectPath: Assets\Scripts\Weapon\Bullet.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\PickUp.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\PickUp.cs
+    projectPath: Assets\Scripts\Weapon\PickUp.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\PickUp.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\PickUp.cs.meta
+    projectPath: Assets\Scripts\Weapon\PickUp.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\Projectile.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\Projectile.cs
+    projectPath: Assets\Scripts\Weapon\Projectile.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\Projectile.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\Projectile.cs.meta
+    projectPath: Assets\Scripts\Weapon\Projectile.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\Weapon.cs
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\Weapon.cs
+    projectPath: Assets\Scripts\Weapon\Weapon.cs
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Scripts\Weapon\Weapon.cs.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Scripts\Weapon\Weapon.cs.meta
+    projectPath: Assets\Scripts\Weapon\Weapon.cs.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Sprites.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Sprites.meta
+    projectPath: Assets\Sprites.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Sprites\Scavengers_SpriteSheet.png
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Sprites\Scavengers_SpriteSheet.png
+    projectPath: Assets\Sprites\Scavengers_SpriteSheet.png
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: Assets\Sprites\Scavengers_SpriteSheet.png.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\Assets\Sprites\Scavengers_SpriteSheet.png.meta
+    projectPath: Assets\Sprites\Scavengers_SpriteSheet.png.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\AudioManager.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\AudioManager.asset
+    projectPath: ProjectSettings\AudioManager.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\ClusterInputManager.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\ClusterInputManager.asset
+    projectPath: ProjectSettings\ClusterInputManager.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\DynamicsManager.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\DynamicsManager.asset
+    projectPath: ProjectSettings\DynamicsManager.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\EditorBuildSettings.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\EditorBuildSettings.asset
+    projectPath: ProjectSettings\EditorBuildSettings.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\EditorSettings.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\EditorSettings.asset
+    projectPath: ProjectSettings\EditorSettings.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\GraphicsSettings.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\GraphicsSettings.asset
+    projectPath: ProjectSettings\GraphicsSettings.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\InputManager.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\InputManager.asset
+    projectPath: ProjectSettings\InputManager.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\NavMeshAreas.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\NavMeshAreas.asset
+    projectPath: ProjectSettings\NavMeshAreas.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\NetworkManager.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\NetworkManager.asset
+    projectPath: ProjectSettings\NetworkManager.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\Physics2DSettings.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\Physics2DSettings.asset
+    projectPath: ProjectSettings\Physics2DSettings.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\ProjectSettings.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\ProjectSettings.asset
+    projectPath: ProjectSettings\ProjectSettings.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\ProjectVersion.txt
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\ProjectVersion.txt
+    projectPath: ProjectSettings\ProjectVersion.txt
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\QualitySettings.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\QualitySettings.asset
+    projectPath: ProjectSettings\QualitySettings.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\TagManager.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\TagManager.asset
+    projectPath: ProjectSettings\TagManager.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\TimeManager.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\TimeManager.asset
+    projectPath: ProjectSettings\TimeManager.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\UnityAdsSettings.asset.meta
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\UnityAdsSettings.asset.meta
+    projectPath: ProjectSettings\UnityAdsSettings.asset.meta
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: ProjectSettings\UnityConnectSettings.asset
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\ProjectSettings\UnityConnectSettings.asset
+    projectPath: ProjectSettings\UnityConnectSettings.asset
+    originalPath: 
+    status: 1
+    staged: 0
+  - path: UnityPackageManager\manifest.json
+    fullPath: C:\Users\Public\Documents\Unity Projects\Miami\UnityPackageManager\manifest.json
+    projectPath: UnityPackageManager\manifest.json
+    originalPath: 
+    status: 1
+    staged: 0
