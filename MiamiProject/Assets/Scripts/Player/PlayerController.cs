@@ -72,9 +72,12 @@ public class PlayerController : MonoBehaviour {
     {
         var x = Input.GetAxis(inputHorizontal);
         var y = Input.GetAxis(inputVertical);
+        if(x < 0.3 && x > -0.3 ){ x = 0;}
+        if(y < 0.3 && y > -0.3){y = 0;}
         Vector3 movement = new Vector3(x, y, 0);
         rb2d.velocity = movement * speed;
     }
+
 
     private void RotatePlayer()
     {
