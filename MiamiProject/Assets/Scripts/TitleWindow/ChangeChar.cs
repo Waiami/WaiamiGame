@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeChar : MonoBehaviour {
+
+    //this is a test change to see if this is picked up by github!
     [SerializeField]
     private Sprite[] charSprites;
     [SerializeField]
@@ -29,6 +31,8 @@ public class ChangeChar : MonoBehaviour {
         audioSource = InitiazionGameData.Instance.audioSource;
         spriteArrayLast = charSprites.Length - 1;
         changeSprite();
+
+
     }
 	
 	// Update is called once per frame
@@ -61,6 +65,9 @@ public class ChangeChar : MonoBehaviour {
                 {
                     selectedSprite = 0;
                 }
+
+
+
                 audioSource.PlayOneShot(submitSound);
                 timer = inputDelay;
                 changeSprite();
@@ -73,6 +80,11 @@ public class ChangeChar : MonoBehaviour {
         }
         
     }
+
+
+
+
+
 
     private void changeSprite()
     {
