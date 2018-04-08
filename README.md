@@ -1,2 +1,0 @@
-# WaiamiGame
-Waldo meets Miami
