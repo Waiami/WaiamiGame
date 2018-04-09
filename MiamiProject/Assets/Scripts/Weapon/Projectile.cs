@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour {
     {
         if(lifetime < 0)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
         else
         {
@@ -46,12 +46,10 @@ public class Projectile : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name + " " + collision.tag);
         if (collision.tag == "Wall")
         {
             noDamage = true;
-            Destroy(this.gameObject);
-            Debug.Log("Wall");
+            this.gameObject.SetActive(false);
         }
         if (collision.tag == "Weapon")
         {

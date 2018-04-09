@@ -10,6 +10,10 @@ TagManager:
   - Soda
   - Weapon
   - Wall
+  - Bullet_P1
+  - Bullet_P2
+  - Bullet_P3
+  - Bullet_P4
   layers:
   - Default
   - TransparentFX

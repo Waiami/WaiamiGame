@@ -153,8 +153,8 @@ public class PlayerController : MonoBehaviour {
     {
         if (attackCooldown < 0)
         {
-            
-            GameObject projectile = Instantiate(pistolBullet, pistolPoint);
+
+            GameObject projectile = ProjectilePool.Instance.SpawnFromPool("pistolBullet", pistolPoint.position, pistolPoint.rotation);
             PrepareProjectile(projectile);
             attackCooldown = attackDelay;
         }
@@ -166,7 +166,8 @@ public class PlayerController : MonoBehaviour {
 
     private void PrepareProjectile(GameObject projectile)
     {
-        projectile.GetComponent<Projectile>().SetPlayerCode(playerCode);
+        projectile.tag = "Bullet_" + playerCode;
+        //projectile.GetComponent<Projectile>().SetPlayerCode(playerCode);
         projectile.transform.SetParent(null);
     }
 
