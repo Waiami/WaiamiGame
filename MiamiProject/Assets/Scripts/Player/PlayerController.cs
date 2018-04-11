@@ -5,11 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     [SerializeField]
-    private float speed = 5;
+    private float walkspeed = 5;
+    [SerializeField]
+    private float runspeed = 7;
+    [SerializeField]
+    private float speedgab = 0.7f;
     [SerializeField]
     private string playerCode = "P1";
     [SerializeField]
     private GameObject PlayerSpriteObject;
+    private SpriteRenderer playerSpriteRenderer;
     [SerializeField]
     private PlayerStatus playerStatus;
     private string inputHorizontal = "Horizontal_";
@@ -37,10 +42,24 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float attackDelay = 0.3f;
     private float attackCooldown = -1f;
+    [SerializeField]
+    private float weaponradius = 0.3f;
 
     [Header("Pistol")]
     [SerializeField]
     private Transform pistolPoint;
+    [SerializeField]
+    private GameObject pistolObject;
+
+    [Header("Sprites")]
+    [SerializeField]
+    private Sprite CharUp;
+    [SerializeField]
+    private Sprite CharDown;
+    [SerializeField]
+    private Sprite CharLeft;
+    [SerializeField]
+    private Sprite CharRight;
 
     // Use this for initialization
     void Start () {
@@ -57,6 +76,7 @@ public class PlayerController : MonoBehaviour {
         fireButton = fireButton + playerCode;
         boolSuckerPunsh = false;
         rb2d = PlayerSpriteObject.GetComponent<Rigidbody2D>();
+        playerSpriteRenderer = PlayerSpriteObject.GetComponent<SpriteRenderer>();
         suckerPunsh = GameData.Instance.SuckerPunsh;
         pistolBullet = GameData.Instance.FivemmBullet;
     }
@@ -75,19 +95,38 @@ public class PlayerController : MonoBehaviour {
         if(x < 0.3 && x > -0.3 ){ x = 0;}
         if(y < 0.3 && y > -0.3){y = 0;}
         Vector3 movement = new Vector3(x, y, 0);
-        rb2d.velocity = movement * speed;
+        rb2d.velocity = movement * walkspeed;
     }
 
 
     private void RotatePlayer()
     {
-        float rotateHorizontal = Input.GetAxis(inputRotateHorizontal);
-        float rotateVertical = Input.GetAxis(inputRotateVertical);
-        if (rotateHorizontal != 0 && rotateVertical != 0)
+        float x = Input.GetAxis(inputRotateHorizontal);
+        float y = Input.GetAxis(inputRotateVertical);
+        float thresholded = 0.2f;
+        if (x != 0 && y != 0)
         {
-            float heading = Mathf.Atan2(rotateHorizontal, rotateVertical);
+            if (y > thresholded &&  y > (Mathf.Abs(x)))
+            {
+                playerSpriteRenderer.sprite = CharUp;
 
-            PlayerSpriteObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
+            }
+            else if (y < -thresholded && Mathf.Abs(y) > Mathf.Abs(x))
+            {
+                playerSpriteRenderer.sprite = CharDown;
+            }
+            else if (x > thresholded && x > Mathf.Abs(y))
+            {
+                playerSpriteRenderer.sprite = CharLeft;
+            }
+            else if (x < -thresholded && Mathf.Abs(x) > Mathf.Abs(y))
+            {
+                playerSpriteRenderer.sprite = CharRight;
+            }
+
+            float heading = Mathf.Atan2(x, y);
+
+            pistolObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
         }
     }
 
@@ -167,7 +206,6 @@ public class PlayerController : MonoBehaviour {
     private void PrepareProjectile(GameObject projectile)
     {
         projectile.tag = "Bullet_" + playerCode;
-        //projectile.GetComponent<Projectile>().SetPlayerCode(playerCode);
         projectile.transform.SetParent(null);
     }
 
