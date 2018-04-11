@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    [SerializeField]
-    private float walkspeed = 5;
-    [SerializeField]
-    private float runspeed = 7;
-    [SerializeField]
-    private float speedgab = 0.7f;
-    [SerializeField]
-    private string playerCode = "P1";
-    [SerializeField]
-    private GameObject PlayerSpriteObject;
+    [SerializeField]   private float walkspeed = 5;
+    [SerializeField]   private float runspeed = 7;
+    [SerializeField]   private float speedgab = 0.7f;
+    [SerializeField]   private string playerCode = "P1";
+    public string PlayerCode { get { return playerCode; } }
+    [SerializeField]   private GameObject PlayerSpriteObject;
     private SpriteRenderer playerSpriteRenderer;
-    [SerializeField]
-    private PlayerStatus playerStatus;
+    [SerializeField] private PlayerStatus playerStatus;
     private string inputHorizontal = "Horizontal_";
     private string inputVertical = "Vertical_";
     private string inputRotateHorizontal = "RotateHorizontal_";
     private string inputRotateVertical = "RotateVertical_";
     private string aButton = "AButton_";
     private string fireButton = "Fire_";
+    private bool isDead;
 
     private Rigidbody2D rb2d;
 
@@ -30,36 +26,32 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float punshDelay = 1f;
     private float punshCooldown = -1f;
-    [SerializeField]
-    private GameObject leftHand;
-    [SerializeField]
-    private GameObject rightHand;
+    [SerializeField]private GameObject leftHand;
+    [SerializeField]private GameObject rightHand;
     private bool boolSuckerPunsh;
     private GameObject suckerPunsh;
     private GameObject pistolBullet;
 
     [Header("GeneralWeapons")]
-    [SerializeField]
-    private float attackDelay = 0.3f;
+    [SerializeField]private float attackDelay = 0.3f;
     private float attackCooldown = -1f;
-    [SerializeField]
-    private float weaponradius = 0.3f;
+    [SerializeField]private float weaponradius = 0.3f;
 
     [Header("Pistol")]
-    [SerializeField]
-    private Transform pistolPoint;
-    [SerializeField]
-    private GameObject pistolObject;
+    [SerializeField]private Transform pistolPoint;
+    [SerializeField]private GameObject weaponObject;
 
     [Header("Sprites")]
+    [SerializeField]private Sprite CharUp;
+    [SerializeField]private Sprite CharDown;
+    [SerializeField]private Sprite CharLeft;
+    [SerializeField]private Sprite CharRight;
+    [SerializeField] private Sprite CharDead;
+
+    [Header("Animator")]
     [SerializeField]
-    private Sprite CharUp;
-    [SerializeField]
-    private Sprite CharDown;
-    [SerializeField]
-    private Sprite CharLeft;
-    [SerializeField]
-    private Sprite CharRight;
+    private Animator charAnimator;
+    private string charDirection = "up"; 
 
     // Use this for initialization
     void Start () {
@@ -79,13 +71,26 @@ public class PlayerController : MonoBehaviour {
         playerSpriteRenderer = PlayerSpriteObject.GetComponent<SpriteRenderer>();
         suckerPunsh = GameData.Instance.SuckerPunsh;
         pistolBullet = GameData.Instance.FivemmBullet;
-    }
+        isDead = false;
+}
 
     void FixedUpdate()
     {
-        MovePlayer();
-        RotatePlayer();
-        PressFire();
+        if (!isDead)
+        {
+            MovePlayer();
+            RotatePlayer();
+        }
+           
+    }
+
+    private void Update()
+    {
+        if (!isDead)
+        {
+            CheckIfFireButtonPressed();
+        }
+        
     }
 
     private void MovePlayer()
@@ -95,7 +100,38 @@ public class PlayerController : MonoBehaviour {
         if(x < 0.3 && x > -0.3 ){ x = 0;}
         if(y < 0.3 && y > -0.3){y = 0;}
         Vector3 movement = new Vector3(x, y, 0);
-        rb2d.velocity = movement * walkspeed;
+        if(Mathf.Abs(x) > speedgab || Mathf.Abs(y) > speedgab)
+        {
+            rb2d.velocity = movement * runspeed;
+        }
+        else
+        {
+            rb2d.velocity = movement * walkspeed;
+        }
+        if(x == 0 && y == 0){
+            charAnimator.SetTrigger("Stop");
+        }
+        else
+        {
+            if(charDirection == "up")
+            {
+                charAnimator.SetTrigger("MoveUp");
+            }
+            if (charDirection == "down")
+            {
+                charAnimator.SetTrigger("MoveDown");
+            }
+            if (charDirection == "left")
+            {
+                charAnimator.SetTrigger("MoveLeft");
+            }
+            if (charDirection == "right")
+            {
+                charAnimator.SetTrigger("MoveRight");
+            }
+        }
+        
+
     }
 
 
@@ -109,29 +145,35 @@ public class PlayerController : MonoBehaviour {
             if (y > thresholded &&  y > (Mathf.Abs(x)))
             {
                 playerSpriteRenderer.sprite = CharUp;
-
+                charDirection = "up";
             }
             else if (y < -thresholded && Mathf.Abs(y) > Mathf.Abs(x))
             {
                 playerSpriteRenderer.sprite = CharDown;
+                charDirection = "down";
             }
             else if (x > thresholded && x > Mathf.Abs(y))
             {
                 playerSpriteRenderer.sprite = CharLeft;
+                charDirection = "left";
             }
             else if (x < -thresholded && Mathf.Abs(x) > Mathf.Abs(y))
             {
                 playerSpriteRenderer.sprite = CharRight;
+                charDirection = "right";
             }
 
-            float heading = Mathf.Atan2(x, y);
-
-            pistolObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
+            if(Mathf.Abs(x) > thresholded || Mathf.Abs(y) > thresholded)
+            {
+                float heading = Mathf.Atan2(x, y);
+                weaponObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
+            }
+            
         }
     }
 
 
-    private void PressInteration()
+    private void PressInteraktionButton()
     {
         if (Input.GetButton(aButton))
         {
@@ -139,17 +181,17 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void PressFire()
+    private void CheckIfFireButtonPressed()
     {
         var x = Input.GetAxis(fireButton);
 
         if(x > 0.7f)
         {
-            Fire();
+            FireWeapon();
         }
     }
 
-    private void Fire()
+    private void FireWeapon()
     {
         string weapon = playerStatus.GetWeapon();
         if(weapon == "suckerPunsh")
@@ -192,8 +234,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (attackCooldown < 0)
         {
-
-            GameObject projectile = ProjectilePool.Instance.SpawnFromPool("pistolBullet", pistolPoint.position, pistolPoint.rotation);
+            GameObject projectile = GameObject.Instantiate(GameData.Instance.FivemmBullet, pistolPoint);
             PrepareProjectile(projectile);
             attackCooldown = attackDelay;
         }
@@ -209,5 +250,11 @@ public class PlayerController : MonoBehaviour {
         projectile.transform.SetParent(null);
     }
 
-   
+    public void KillPlayer()
+    {
+        isDead = true;
+        playerSpriteRenderer.sprite = CharDead;
+    }
+
+
 }

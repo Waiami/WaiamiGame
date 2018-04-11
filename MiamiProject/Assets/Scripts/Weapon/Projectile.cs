@@ -12,17 +12,21 @@ public class Projectile : MonoBehaviour {
     private string playercode;
 
     private bool noDamage;
+    private Rigidbody2D rb2d;
 
 	// Use this for initialization
 	void Start () {
         noDamage = false;
-	}
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
+
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         CheckLiveTime();
         var z = moveSpeed * Time.deltaTime;
-        transform.Translate(0, z, 0);
+        Vector2 movement = new Vector2(z, 0);
+        rb2d.velocity = transform.up * moveSpeed;
     }
 
     void CheckLiveTime()
@@ -49,11 +53,19 @@ public class Projectile : MonoBehaviour {
         if (collision.tag == "Wall")
         {
             noDamage = true;
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
         if (collision.tag == "Weapon")
         {
             noDamage = true;
+        }
+        if(collision.tag == "Player")
+        {
+            if(this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerController>().PlayerCode)
+            {
+                collision.gameObject.GetComponentInParent<PlayerController>().KillPlayer();
+                Destroy(this.gameObject);
+            }
         }
     }
 

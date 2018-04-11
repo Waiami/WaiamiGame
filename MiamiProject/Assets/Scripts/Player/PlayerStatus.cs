@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour {
 
     private List<string> weaponList;
-    private int lives;
     private bool equipped;
     private string equippedWeapon;
+    private bool dead;
 
-	// Use this for initialization
-	void Start () {
+    public bool Dead { get { return dead; } set { dead = value; } }
+
+    // Use this for initialization
+    void Start () {
+        dead = false; 
         equipped = false;
-        lives = 4;
         weaponList = new List<string> { "suckerPunsh", "pistol","uzi", "knife","shotgun","sword" };
         equippedWeapon = weaponList[1];
 	}
@@ -21,13 +23,7 @@ public class PlayerStatus : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public void decreaseLives()
-    {
-        lives--;
-    }
-
-
+    
     public string GetWeapon()
     {
         return equippedWeapon;
