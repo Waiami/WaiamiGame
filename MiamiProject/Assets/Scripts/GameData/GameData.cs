@@ -4,17 +4,42 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour {
 
-    public static GameData Instance;
 
-    [SerializeField]
-    private GameObject _suckerPunsh;
-    [SerializeField]
-    private GameObject _fivemmBullet;
+    #region GameData
+    [Header("Player")]
+    [SerializeField] private float _walkSpeed;
+    [SerializeField] private float _runSpeed;
+    [SerializeField] private float _speedgab;
+    [Space(20)]
+    [Header("Weapons")]
+
+    [Header("GeneralWeapons")]
+    [SerializeField] private float _attackDelay = 0.3f;
 
 
+    [Header("Suckerpunsh")]
+    [SerializeField] private GameObject _suckerPunsh;
+
+    [Header("Pistol")]
+    [SerializeField] private GameObject _fivemmBullet;
+
+    #endregion
+
+
+#region Setter
     public GameObject SuckerPunsh { get { return _suckerPunsh; } }
     public GameObject FivemmBullet { get {return _fivemmBullet; }}
-    
+    public float WalkSpeed { get { return _walkSpeed; } }
+    public float RunSpeed { get { return _runSpeed; } }
+    public float Speedgab { get { return _speedgab; } }
+    public float AttackDelay { get { return _attackDelay; } }
+
+
+    #endregion
+
+
+    #region Instance
+    public static GameData Instance;
 
     void Awake()
     {
@@ -31,13 +56,5 @@ public class GameData : MonoBehaviour {
             DontDestroyOnLoad(this.gameObject);
         }
     }
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+#endregion
 }

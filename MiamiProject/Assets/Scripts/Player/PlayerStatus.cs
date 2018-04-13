@@ -29,5 +29,10 @@ public class PlayerStatus : MonoBehaviour {
         return equippedWeapon;
     }
 
+    public void KillPlayer()
+    {
+
+    }
+
 
 }

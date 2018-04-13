@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+#region variables
     [SerializeField]   private float walkspeed = 5;
     [SerializeField]   private float runspeed = 7;
     [SerializeField]   private float speedgab = 0.7f;
@@ -35,7 +36,6 @@ public class PlayerController : MonoBehaviour {
     [Header("GeneralWeapons")]
     [SerializeField]private float attackDelay = 0.3f;
     private float attackCooldown = -1f;
-    [SerializeField]private float weaponradius = 0.3f;
 
     [Header("Pistol")]
     [SerializeField]private Transform pistolPoint;
@@ -51,13 +51,15 @@ public class PlayerController : MonoBehaviour {
     [Header("Animator")]
     [SerializeField]
     private Animator charAnimator;
-    private string charDirection = "up"; 
+    private string charDirection = "up";
+#endregion
 
     // Use this for initialization
     void Start () {
         Initialize();
 	}
 
+#region initialize
     void Initialize()
     {
         inputHorizontal = inputHorizontal + playerCode;
@@ -72,7 +74,12 @@ public class PlayerController : MonoBehaviour {
         suckerPunsh = GameData.Instance.SuckerPunsh;
         pistolBullet = GameData.Instance.FivemmBullet;
         isDead = false;
-}
+
+        walkspeed = GameData.Instance.WalkSpeed;
+        runspeed = GameData.Instance.RunSpeed;
+        attackDelay = GameData.Instance.AttackDelay;
+    }
+#endregion
 
     void FixedUpdate()
     {
@@ -203,7 +210,8 @@ public class PlayerController : MonoBehaviour {
             PistolShot();
         }
     }
-    
+
+#region weapons
 
     private void SuckerPunsh()
     {
@@ -250,6 +258,7 @@ public class PlayerController : MonoBehaviour {
         projectile.transform.SetParent(null);
     }
 
+#endregion
     public void KillPlayer()
     {
         isDead = true;

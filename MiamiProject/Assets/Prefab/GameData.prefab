@@ -51,6 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968a9a3fb4930f241822458d2be15509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _walkSpeed: 4
+  _runSpeed: 8
+  _speedgab: 0.8
+  _attackDelay: 0.3
   _suckerPunsh: {fileID: 1790897809408352, guid: 70056e19b4db74341b5cd6484d8473d6,
     type: 2}
   _fivemmBullet: {fileID: 1040122772135590, guid: 66aec79e166af7f49b5f99d0237a8a67,
