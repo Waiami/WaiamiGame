@@ -1,25 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
 #region variables
-    [SerializeField]   private float walkspeed = 5;
-    [SerializeField]   private float runspeed = 7;
-    [SerializeField]   private float speedgab = 0.7f;
-    [SerializeField]   private string playerCode = "P1";
+    [SerializeField] private float walkspeed = 5;
+    [SerializeField] private float runspeed = 7;
+    [SerializeField] private float speedgab = 0.7f;
+    [SerializeField] private float threshhold = 0.3f;
+    [SerializeField] private string playerCode = "P1";
     public string PlayerCode { get { return playerCode; } }
-    [SerializeField]   private GameObject PlayerSpriteObject;
+    [SerializeField] private GameObject PlayerSpriteObject;
     private SpriteRenderer playerSpriteRenderer;
     [SerializeField] private PlayerStatus playerStatus;
     private string inputHorizontal = "Horizontal_";
     private string inputVertical = "Vertical_";
     private string inputRotateHorizontal = "RotateHorizontal_";
     private string inputRotateVertical = "RotateVertical_";
-    private string aButton = "AButton_";
+    private string aButton = "A_";
     private string fireButton = "Fire_";
-    private bool isDead;
 
     private Rigidbody2D rb2d;
 
@@ -27,19 +25,22 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float punshDelay = 1f;
     private float punshCooldown = -1f;
-    [SerializeField]private GameObject leftHand;
-    [SerializeField]private GameObject rightHand;
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
     private bool boolSuckerPunsh;
     private GameObject suckerPunsh;
     private GameObject pistolBullet;
 
     [Header("GeneralWeapons")]
     [SerializeField]private float attackDelay = 0.3f;
+    [SerializeField] private GameObject weaponRotationObject;
     private float attackCooldown = -1f;
+    private GameObject ActiveWeaponObject;
 
     [Header("Pistol")]
     [SerializeField]private Transform pistolPoint;
-    [SerializeField]private GameObject weaponObject;
+    [SerializeField] private GameObject pistolObject;
+    
 
     [Header("Sprites")]
     [SerializeField]private Sprite CharUp;
@@ -52,7 +53,11 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private Animator charAnimator;
     private string charDirection = "up";
-#endregion
+
+
+    private bool hasPickUp = false;
+    private GameObject pickUpObject;
+    #endregion
 
     // Use this for initialization
     void Start () {
@@ -73,7 +78,6 @@ public class PlayerController : MonoBehaviour {
         playerSpriteRenderer = PlayerSpriteObject.GetComponent<SpriteRenderer>();
         suckerPunsh = GameData.Instance.SuckerPunsh;
         pistolBullet = GameData.Instance.FivemmBullet;
-        isDead = false;
 
         walkspeed = GameData.Instance.WalkSpeed;
         runspeed = GameData.Instance.RunSpeed;
@@ -83,7 +87,7 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (!isDead)
+        if (!playerStatus.IsDead)
         {
             MovePlayer();
             RotatePlayer();
@@ -93,9 +97,10 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
-        if (!isDead)
+        if (!playerStatus.IsDead)
         {
             CheckIfFireButtonPressed();
+            CheckIfInteraktionButtonPressed();
         }
         
     }
@@ -104,8 +109,8 @@ public class PlayerController : MonoBehaviour {
     {
         var x = Input.GetAxis(inputHorizontal);
         var y = Input.GetAxis(inputVertical);
-        if(x < 0.3 && x > -0.3 ){ x = 0;}
-        if(y < 0.3 && y > -0.3){y = 0;}
+        if(Mathf.Abs(x) < threshhold ){ x = 0;}
+        if (Mathf.Abs(y) < threshhold){y = 0;}
         Vector3 movement = new Vector3(x, y, 0);
         if(Mathf.Abs(x) > speedgab || Mathf.Abs(y) > speedgab)
         {
@@ -114,33 +119,19 @@ public class PlayerController : MonoBehaviour {
         else
         {
             rb2d.velocity = movement * walkspeed;
+            
         }
-        if(x == 0 && y == 0){
-            charAnimator.SetTrigger("Stop");
+        if(x == 0 && y == 0)
+        {
+            charAnimator.SetFloat("Blend", 0);
         }
         else
         {
-            if(charDirection == "up")
-            {
-                charAnimator.SetTrigger("MoveUp");
-            }
-            if (charDirection == "down")
-            {
-                charAnimator.SetTrigger("MoveDown");
-            }
-            if (charDirection == "left")
-            {
-                charAnimator.SetTrigger("MoveLeft");
-            }
-            if (charDirection == "right")
-            {
-                charAnimator.SetTrigger("MoveRight");
-            }
+            charAnimator.SetFloat("Blend", Mathf.Max(Mathf.Abs(x),Mathf.Abs(y)));
+            
         }
         
-
     }
-
 
     private void RotatePlayer()
     {
@@ -152,39 +143,45 @@ public class PlayerController : MonoBehaviour {
             if (y > thresholded &&  y > (Mathf.Abs(x)))
             {
                 playerSpriteRenderer.sprite = CharUp;
-                charDirection = "up";
+                charAnimator.SetTrigger("MoveUp");
             }
             else if (y < -thresholded && Mathf.Abs(y) > Mathf.Abs(x))
             {
                 playerSpriteRenderer.sprite = CharDown;
-                charDirection = "down";
+                charAnimator.SetTrigger("MoveDown");
             }
             else if (x > thresholded && x > Mathf.Abs(y))
             {
                 playerSpriteRenderer.sprite = CharLeft;
-                charDirection = "left";
+                charAnimator.SetTrigger("MoveLeft");
             }
             else if (x < -thresholded && Mathf.Abs(x) > Mathf.Abs(y))
             {
                 playerSpriteRenderer.sprite = CharRight;
-                charDirection = "right";
+                charAnimator.SetTrigger("MoveRight");
             }
 
             if(Mathf.Abs(x) > thresholded || Mathf.Abs(y) > thresholded)
             {
                 float heading = Mathf.Atan2(x, y);
-                weaponObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
+                weaponRotationObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
             }
             
         }
     }
 
 
-    private void PressInteraktionButton()
+    private void CheckIfInteraktionButtonPressed()
     {
         if (Input.GetButton(aButton))
         {
-
+            if (hasPickUp)
+            {
+                playerStatus.AddNewWeapon(pickUpObject.GetComponent<PickUp>().GetRandomWeapon());
+                Destroy(pickUpObject);
+                pickUpObject = null;
+                SetWeaponSprite();
+            }
         }
     }
 
@@ -200,18 +197,43 @@ public class PlayerController : MonoBehaviour {
 
     private void FireWeapon()
     {
-        string weapon = playerStatus.GetWeapon();
+        string weapon = playerStatus.GetEquippedWeapon();
         if(weapon == "suckerPunsh")
         {
             SuckerPunsh();
         }
-        if(weapon == "pistol")
+        if(weapon == "pistol" || weapon == "knife" || weapon == "shotgun")
         {
             PistolShot();
+            
         }
     }
 
-#region weapons
+    private void SetWeaponSprite()
+    {
+        if(ActiveWeaponObject!= null)
+        {
+            ActiveWeaponObject.SetActive(false);
+        }
+        
+        string weapon = playerStatus.GetEquippedWeapon();
+        if(weapon != "")
+        {
+            if (weapon == "pistol" || weapon == "knife" || weapon == "shotgun")
+            {
+                pistolObject.SetActive(true);
+                ActiveWeaponObject = pistolObject;
+            }
+        }
+        
+    }
+
+    public void SetSpriteToDead()
+    {
+        playerSpriteRenderer.sprite = CharDead;
+    }
+
+    #region weapons
 
     private void SuckerPunsh()
     {
@@ -244,6 +266,8 @@ public class PlayerController : MonoBehaviour {
         {
             GameObject projectile = GameObject.Instantiate(GameData.Instance.FivemmBullet, pistolPoint);
             PrepareProjectile(projectile);
+            playerStatus.DeleteWeaponFifo();
+            SetWeaponSprite();
             attackCooldown = attackDelay;
         }
         else
@@ -258,12 +282,26 @@ public class PlayerController : MonoBehaviour {
         projectile.transform.SetParent(null);
     }
 
-#endregion
-    public void KillPlayer()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        isDead = true;
-        playerSpriteRenderer.sprite = CharDead;
+        if(collision.tag == "PickUp")
+        {
+            hasPickUp = true;
+            pickUpObject = collision.gameObject;
+        }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "PickUp")
+        {
+            hasPickUp = false;
+            pickUpObject = null;
+        }
+    }
+
+    #endregion
+
 
 
 }

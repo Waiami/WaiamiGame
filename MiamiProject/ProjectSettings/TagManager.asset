@@ -14,6 +14,8 @@ TagManager:
   - Bullet_P2
   - Bullet_P3
   - Bullet_P4
+  - PickUp
+  - GameData
   layers:
   - Default
   - TransparentFX

@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour {
 
-    private List<string> weaponList;
-    private bool equipped;
+    [SerializeField]
+    private PlayerController playerController;
+    [SerializeField]
+    private GameData gameData;
+    private Queue<string> playerWeaponList;
     private string equippedWeapon;
-    private bool dead;
+    private bool isDead;
 
-    public bool Dead { get { return dead; } set { dead = value; } }
+    public bool IsDead { get { return isDead; } }
 
     // Use this for initialization
     void Start () {
-        dead = false; 
-        equipped = false;
-        weaponList = new List<string> { "suckerPunsh", "pistol","uzi", "knife","shotgun","sword" };
-        equippedWeapon = weaponList[1];
+        isDead = false; 
+        playerWeaponList = new Queue<string>();
+        if(playerWeaponList.Count > 0)
+        {
+            equippedWeapon = playerWeaponList.Peek();
+        }
+        
 	}
 	
 	// Update is called once per frame
@@ -24,14 +30,55 @@ public class PlayerStatus : MonoBehaviour {
 		
 	}
     
-    public string GetWeapon()
+    public string GetEquippedWeapon()
     {
         return equippedWeapon;
     }
 
     public void KillPlayer()
     {
+        playerController.SetSpriteToDead();
+        isDead = true;
+    }
 
+    public void AddNewWeapon(string weapon)
+    {
+        playerWeaponList.Enqueue(weapon);
+        equippedWeapon = weapon;
+        DebugLogWeaponList();
+    }
+
+    public void DeleteWeaponFifo()
+    {
+        equippedWeapon = "";
+        if(playerWeaponList.Count > 0)
+        {
+            equippedWeapon = playerWeaponList.Dequeue();
+            if(playerWeaponList.Count < 1)
+            {
+                equippedWeapon = "";
+            }
+            DebugLogWeaponList();
+        }
+        
+    }
+
+    private void DebugLogWeaponList()
+    {
+        if(playerWeaponList.Count > 0)
+        {
+            string returnstring = "";
+            foreach (string s in playerWeaponList)
+            {
+                returnstring += s + ", ";
+            }
+            Debug.Log(returnstring);
+        }
+        else
+        {
+            Debug.Log("No Weapons left");
+        }
+        
     }
 
 

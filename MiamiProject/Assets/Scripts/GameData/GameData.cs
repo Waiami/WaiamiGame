@@ -14,6 +14,7 @@ public class GameData : MonoBehaviour {
     [Header("Weapons")]
 
     [Header("GeneralWeapons")]
+    [SerializeField] private List<string>_weaponList = new List<string> {"pistol"};
     [SerializeField] private float _attackDelay = 0.3f;
 
 
@@ -22,6 +23,7 @@ public class GameData : MonoBehaviour {
 
     [Header("Pistol")]
     [SerializeField] private GameObject _fivemmBullet;
+
 
     #endregion
 
@@ -33,7 +35,7 @@ public class GameData : MonoBehaviour {
     public float RunSpeed { get { return _runSpeed; } }
     public float Speedgab { get { return _speedgab; } }
     public float AttackDelay { get { return _attackDelay; } }
-
+    public List<string> WeaponList { get { return _weaponList; } }
 
     #endregion
 
@@ -55,6 +57,8 @@ public class GameData : MonoBehaviour {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+
+        
     }
 #endregion
 }

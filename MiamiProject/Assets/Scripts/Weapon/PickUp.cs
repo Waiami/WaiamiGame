@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private GameData gameData;
+    private List<string> weaponList;
+
+    private void Start()
+    {
+        if(gameData == null)
+        {
+            gameData = GameObject.FindGameObjectWithTag("GameData").GetComponent<GameData>();
+        }
+        weaponList = gameData.WeaponList;
+    }
+
+    public string GetRandomWeapon()
+    {
+        return weaponList[Random.Range(0, weaponList.Count)]; 
+    }
 }
