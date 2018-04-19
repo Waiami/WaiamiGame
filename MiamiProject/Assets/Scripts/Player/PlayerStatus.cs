@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour {
 
-    [SerializeField]
-    private PlayerController playerController;
+
+    [SerializeField] private float walkspeed = 5;
+    [SerializeField] private float runspeed = 7;
+    [SerializeField] private float speedgab = 0.7f;
+    [SerializeField] private float threshhold = 0.3f;
+
+    [SerializeField] private PlayerController playerController;
     [SerializeField]
     private GameData gameData;
     private Queue<string> playerWeaponList;
@@ -13,6 +18,10 @@ public class PlayerStatus : MonoBehaviour {
     private bool isDead;
 
     public bool IsDead { get { return isDead; } }
+    public float WalkSpeed { get { return walkspeed; } }
+    public float RunSpeed { get { return runspeed; } }
+    public float Speedgab { get { return speedgab; } }
+    public float Threshhold { get { return threshhold; } }
 
     // Use this for initialization
     void Start () {
@@ -22,8 +31,17 @@ public class PlayerStatus : MonoBehaviour {
         {
             equippedWeapon = playerWeaponList.Peek();
         }
-        
-	}
+        Inisialize();
+
+    }
+
+    void Inisialize()
+    {
+        walkspeed = GameData.Instance.WalkSpeed;
+        runspeed = GameData.Instance.RunSpeed;
+        speedgab = GameData.Instance.Speedgab;
+        threshhold = GameData.Instance.Threshhold;
+    }
 	
 	// Update is called once per frame
 	void Update () {

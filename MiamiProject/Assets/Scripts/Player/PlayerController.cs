@@ -3,10 +3,7 @@
 public class PlayerController : MonoBehaviour {
 
 #region variables
-    [SerializeField] private float walkspeed = 5;
-    [SerializeField] private float runspeed = 7;
-    [SerializeField] private float speedgab = 0.7f;
-    [SerializeField] private float threshhold = 0.3f;
+    
     [SerializeField] private string playerCode = "P1";
     public string PlayerCode { get { return playerCode; } }
     [SerializeField] private GameObject PlayerSpriteObject;
@@ -78,9 +75,6 @@ public class PlayerController : MonoBehaviour {
         playerSpriteRenderer = PlayerSpriteObject.GetComponent<SpriteRenderer>();
         suckerPunsh = GameData.Instance.SuckerPunsh;
         pistolBullet = GameData.Instance.FivemmBullet;
-
-        walkspeed = GameData.Instance.WalkSpeed;
-        runspeed = GameData.Instance.RunSpeed;
         attackDelay = GameData.Instance.AttackDelay;
     }
 #endregion
@@ -109,16 +103,16 @@ public class PlayerController : MonoBehaviour {
     {
         var x = Input.GetAxis(inputHorizontal);
         var y = Input.GetAxis(inputVertical);
-        if(Mathf.Abs(x) < threshhold ){ x = 0;}
-        if (Mathf.Abs(y) < threshhold){y = 0;}
+        if(Mathf.Abs(x) < playerStatus.Threshhold ){ x = 0;}
+        if (Mathf.Abs(y) < playerStatus.Threshhold) {y = 0;}
         Vector3 movement = new Vector3(x, y, 0);
-        if(Mathf.Abs(x) > speedgab || Mathf.Abs(y) > speedgab)
+        if(Mathf.Abs(x) > playerStatus.Speedgab || Mathf.Abs(y) > playerStatus.Speedgab)
         {
-            rb2d.velocity = movement * runspeed;
+            rb2d.velocity = movement * playerStatus.RunSpeed;
         }
         else
         {
-            rb2d.velocity = movement * walkspeed;
+            rb2d.velocity = movement * playerStatus.WalkSpeed;
             
         }
         if(x == 0 && y == 0)

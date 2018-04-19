@@ -10,6 +10,7 @@ public class GameData : MonoBehaviour {
     [SerializeField] private float _walkSpeed;
     [SerializeField] private float _runSpeed;
     [SerializeField] private float _speedgab;
+    [SerializeField] private float _threshhold;
     [Space(20)]
     [Header("Weapons")]
 
@@ -34,6 +35,7 @@ public class GameData : MonoBehaviour {
     public float WalkSpeed { get { return _walkSpeed; } }
     public float RunSpeed { get { return _runSpeed; } }
     public float Speedgab { get { return _speedgab; } }
+    public float Threshhold { get { return _threshhold; } }
     public float AttackDelay { get { return _attackDelay; } }
     public List<string> WeaponList { get { return _weaponList; } }
 
