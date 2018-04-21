@@ -2,40 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerSprite : MonoBehaviour {
-    [SerializeField]
-    private SpriteRenderer playerSpriteRenderer;
-    [SerializeField]
-    private string playerCode = "P1";
 
-	// Use this for initialization
-	void Start () {
-        SetSprite();
+    [Header("Sprites")]
+    [SerializeField] private SpriteRenderer playerSpriteRenderer;
+    [SerializeField] private Sprite CharUp;
+    [SerializeField] private Sprite CharDown;
+    [SerializeField] private Sprite CharLeft;
+    [SerializeField] private Sprite CharRight;
+    [SerializeField] private Sprite CharDead;
 
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    private void SetSprite()
+    public void SetBodySpriteToRotation(float x, float y)
     {
-        if (InitiazionGameData.Instance != null)
+        float thresholded = 0.2f;
+        if (x != 0 && y != 0)
         {
-            if (playerCode == "P1")
+            if (y > thresholded && y > (Mathf.Abs(x)))
             {
-
-                playerSpriteRenderer.sprite = InitiazionGameData.Instance.GetPlayerSprite(1);
+                playerSpriteRenderer.sprite = CharUp;
             }
-            else
+            else if (y < -thresholded && Mathf.Abs(y) > Mathf.Abs(x))
             {
-                playerSpriteRenderer.sprite = InitiazionGameData.Instance.GetPlayerSprite(2);
+                playerSpriteRenderer.sprite = CharDown;
             }
-
+            else if (x > thresholded && x > Mathf.Abs(y))
+            {
+                playerSpriteRenderer.sprite = CharLeft;
+            }
+            else if (x < -thresholded && Mathf.Abs(x) > Mathf.Abs(y))
+            {
+                playerSpriteRenderer.sprite = CharRight;
+            }
         }
+    }
 
+    public void SetBodySpriteToDead()
+    {
+        playerSpriteRenderer.sprite = CharDead;
     }
 
 }

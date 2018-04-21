@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour {
+public class PlayerModel : MonoBehaviour {
 
-
+    [SerializeField] private string playerCode = "P1";
     [SerializeField] private float walkspeed = 5;
     [SerializeField] private float runspeed = 7;
     [SerializeField] private float speedgab = 0.7f;
-    [SerializeField] private float threshhold = 0.3f;
+    [SerializeField] private float controllerthreshhold = 0.3f;
 
     [SerializeField] private PlayerController playerController;
-    [SerializeField]
-    private GameData gameData;
     private Queue<string> playerWeaponList;
     private string equippedWeapon;
     private bool isDead;
@@ -21,7 +19,8 @@ public class PlayerStatus : MonoBehaviour {
     public float WalkSpeed { get { return walkspeed; } }
     public float RunSpeed { get { return runspeed; } }
     public float Speedgab { get { return speedgab; } }
-    public float Threshhold { get { return threshhold; } }
+    public float ControllerThreshhold { get { return controllerthreshhold; } }
+    public string PlayerCode { get { return playerCode; } }
 
     // Use this for initialization
     void Start () {
@@ -37,10 +36,10 @@ public class PlayerStatus : MonoBehaviour {
 
     void Inisialize()
     {
-        walkspeed = GameData.Instance.WalkSpeed;
-        runspeed = GameData.Instance.RunSpeed;
-        speedgab = GameData.Instance.Speedgab;
-        threshhold = GameData.Instance.Threshhold;
+        walkspeed = GameStats.Instance.WalkSpeed;
+        runspeed = GameStats.Instance.RunSpeed;
+        speedgab = GameStats.Instance.Speedgab;
+        controllerthreshhold = GameStats.Instance.Threshhold;
     }
 	
 	// Update is called once per frame

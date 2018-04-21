@@ -61,9 +61,9 @@ public class Projectile : MonoBehaviour {
         }
         if(collision.tag == "Player")
         {
-            if(this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerController>().PlayerCode)
+            if(this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerModel>().PlayerCode)
             {
-                collision.gameObject.GetComponent<PlayerStatus>().KillPlayer();
+                collision.gameObject.GetComponent<PlayerModel>().KillPlayer();
                 Destroy(this.gameObject);
             }
         }

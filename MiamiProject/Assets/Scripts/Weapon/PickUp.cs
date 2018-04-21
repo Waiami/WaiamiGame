@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour {
 
-    [SerializeField] private GameData gameData;
+    [SerializeField] private GameStats gameData;
     private List<string> weaponList;
 
     private void Start()
     {
         if(gameData == null)
         {
-            gameData = GameObject.FindGameObjectWithTag("GameData").GetComponent<GameData>();
+            gameData = GameObject.FindGameObjectWithTag("GameData").GetComponent<GameStats>();
         }
         weaponList = gameData.WeaponList;
     }

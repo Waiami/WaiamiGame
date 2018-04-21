@@ -4,19 +4,14 @@ public class PlayerController : MonoBehaviour {
 
 #region variables
     
-    [SerializeField] private string playerCode = "P1";
-    public string PlayerCode { get { return playerCode; } }
-    [SerializeField] private GameObject PlayerSpriteObject;
-    private SpriteRenderer playerSpriteRenderer;
-    [SerializeField] private PlayerStatus playerStatus;
-    private string inputHorizontal = "Horizontal_";
-    private string inputVertical = "Vertical_";
-    private string inputRotateHorizontal = "RotateHorizontal_";
-    private string inputRotateVertical = "RotateVertical_";
-    private string aButton = "A_";
-    private string fireButton = "Fire_";
+    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private PlayerModel playerModel;
+    [SerializeField] private PlayerSprite playerSprite;
+    [SerializeField] private PlayerAnimator playerAnimator;
 
-    private Rigidbody2D rb2d;
+    public PlayerModel PlayerModelScript { get { return playerModel; } }
+
+    
 
     [Header("SuckerPunsh")]
     [SerializeField]
@@ -31,25 +26,11 @@ public class PlayerController : MonoBehaviour {
     [Header("GeneralWeapons")]
     [SerializeField]private float attackDelay = 0.3f;
     [SerializeField] private GameObject weaponRotationObject;
-    private float attackCooldown = -1f;
     private GameObject ActiveWeaponObject;
 
     [Header("Pistol")]
     [SerializeField]private Transform pistolPoint;
     [SerializeField] private GameObject pistolObject;
-    
-
-    [Header("Sprites")]
-    [SerializeField]private Sprite CharUp;
-    [SerializeField]private Sprite CharDown;
-    [SerializeField]private Sprite CharLeft;
-    [SerializeField]private Sprite CharRight;
-    [SerializeField] private Sprite CharDead;
-
-    [Header("Animator")]
-    [SerializeField]
-    private Animator charAnimator;
-    private string charDirection = "up";
 
 
     private bool hasPickUp = false;
@@ -64,134 +45,82 @@ public class PlayerController : MonoBehaviour {
 #region initialize
     void Initialize()
     {
-        inputHorizontal = inputHorizontal + playerCode;
-        inputVertical = inputVertical + playerCode;
-        inputRotateHorizontal = inputRotateHorizontal + playerCode;
-        inputRotateVertical = inputRotateVertical + playerCode;
-        aButton = aButton + playerCode;
-        fireButton = fireButton + playerCode;
         boolSuckerPunsh = false;
-        rb2d = PlayerSpriteObject.GetComponent<Rigidbody2D>();
-        playerSpriteRenderer = PlayerSpriteObject.GetComponent<SpriteRenderer>();
-        suckerPunsh = GameData.Instance.SuckerPunsh;
-        pistolBullet = GameData.Instance.FivemmBullet;
-        attackDelay = GameData.Instance.AttackDelay;
+        suckerPunsh = GameStats.Instance.SuckerPunsh;
+        pistolBullet = GameStats.Instance.FivemmBullet;
+        attackDelay = GameStats.Instance.AttackDelay;
+        if(playerSprite == null)
+        {
+            playerSprite = gameObject.GetComponent<PlayerSprite>();
+        }
+        if(playerModel == null)
+        {
+            playerModel = gameObject.GetComponent<PlayerModel>();
+        }
+        if(playerAnimator == null)
+        {
+            playerAnimator = gameObject.GetComponent<PlayerAnimator>();
+        }
+        if(rb2d == null)
+        {
+            rb2d = gameObject.GetComponent<Rigidbody2D>();
+        }
     }
 #endregion
 
-    void FixedUpdate()
+    public void MovePlayer(float x, float y)
     {
-        if (!playerStatus.IsDead)
-        {
-            MovePlayer();
-            RotatePlayer();
-        }
-           
-    }
-
-    private void Update()
-    {
-        if (!playerStatus.IsDead)
-        {
-            CheckIfFireButtonPressed();
-            CheckIfInteraktionButtonPressed();
-        }
-        
-    }
-
-    private void MovePlayer()
-    {
-        var x = Input.GetAxis(inputHorizontal);
-        var y = Input.GetAxis(inputVertical);
-        if(Mathf.Abs(x) < playerStatus.Threshhold ){ x = 0;}
-        if (Mathf.Abs(y) < playerStatus.Threshhold) {y = 0;}
+        if(Mathf.Abs(x) < playerModel.ControllerThreshhold ) {x = 0;}
+        if (Mathf.Abs(y) < playerModel.ControllerThreshhold) {y = 0;}
         Vector3 movement = new Vector3(x, y, 0);
-        if(Mathf.Abs(x) > playerStatus.Speedgab || Mathf.Abs(y) > playerStatus.Speedgab)
+        if (Mathf.Abs(x) > playerModel.Speedgab || Mathf.Abs(y) > playerModel.Speedgab)
         {
-            rb2d.velocity = movement * playerStatus.RunSpeed;
+            rb2d.velocity = movement * playerModel.RunSpeed;
         }
         else
         {
-            rb2d.velocity = movement * playerStatus.WalkSpeed;
-            
+            rb2d.velocity = movement * playerModel.WalkSpeed;
+
         }
-        if(x == 0 && y == 0)
-        {
-            charAnimator.SetFloat("Blend", 0);
-        }
-        else
-        {
-            charAnimator.SetFloat("Blend", Mathf.Max(Mathf.Abs(x),Mathf.Abs(y)));
-            
-        }
-        
+        playerAnimator.SetBlendFloat(Mathf.Max(Mathf.Abs(x), Mathf.Abs(y)));
     }
 
-    private void RotatePlayer()
+    public void RotatePlayer(float x, float y)
     {
-        float x = Input.GetAxis(inputRotateHorizontal);
-        float y = Input.GetAxis(inputRotateVertical);
         float thresholded = 0.2f;
         if (x != 0 && y != 0)
         {
-            if (y > thresholded &&  y > (Mathf.Abs(x)))
+            if (playerAnimator.isActiveAndEnabled)
             {
-                playerSpriteRenderer.sprite = CharUp;
-                charAnimator.SetTrigger("MoveUp");
+                playerAnimator.SetAnimationDirection(x, y);
             }
-            else if (y < -thresholded && Mathf.Abs(y) > Mathf.Abs(x))
+            else
             {
-                playerSpriteRenderer.sprite = CharDown;
-                charAnimator.SetTrigger("MoveDown");
+                playerSprite.SetBodySpriteToRotation(x, y);
             }
-            else if (x > thresholded && x > Mathf.Abs(y))
-            {
-                playerSpriteRenderer.sprite = CharLeft;
-                charAnimator.SetTrigger("MoveLeft");
-            }
-            else if (x < -thresholded && Mathf.Abs(x) > Mathf.Abs(y))
-            {
-                playerSpriteRenderer.sprite = CharRight;
-                charAnimator.SetTrigger("MoveRight");
-            }
-
-            if(Mathf.Abs(x) > thresholded || Mathf.Abs(y) > thresholded)
+            if (Mathf.Abs(x) > thresholded || Mathf.Abs(y) > thresholded)
             {
                 float heading = Mathf.Atan2(x, y);
                 weaponRotationObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
             }
-            
         }
     }
 
 
-    private void CheckIfInteraktionButtonPressed()
+    public void ExecuteInteractionButton()
     {
-        if (Input.GetButton(aButton))
+        if (hasPickUp)
         {
-            if (hasPickUp)
-            {
-                playerStatus.AddNewWeapon(pickUpObject.GetComponent<PickUp>().GetRandomWeapon());
-                Destroy(pickUpObject);
-                pickUpObject = null;
-                SetWeaponSprite();
-            }
+            playerModel.AddNewWeapon(pickUpObject.GetComponent<PickUp>().GetRandomWeapon());
+            Destroy(pickUpObject);
+            pickUpObject = null;
+            SetWeaponSprite();
         }
     }
 
-    private void CheckIfFireButtonPressed()
+    public void FireWeapon()
     {
-        var x = Input.GetAxis(fireButton);
-
-        if(x > 0.7f)
-        {
-            FireWeapon();
-        }
-    }
-
-    private void FireWeapon()
-    {
-        string weapon = playerStatus.GetEquippedWeapon();
+        string weapon = playerModel.GetEquippedWeapon();
         if(weapon == "suckerPunsh")
         {
             SuckerPunsh();
@@ -203,6 +132,11 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public float GetNewAttackCooldown()
+    {
+        return attackDelay;
+    }
+
     private void SetWeaponSprite()
     {
         if(ActiveWeaponObject!= null)
@@ -210,7 +144,7 @@ public class PlayerController : MonoBehaviour {
             ActiveWeaponObject.SetActive(false);
         }
         
-        string weapon = playerStatus.GetEquippedWeapon();
+        string weapon = playerModel.GetEquippedWeapon();
         if(weapon != "")
         {
             if (weapon == "pistol" || weapon == "knife" || weapon == "shotgun")
@@ -224,7 +158,7 @@ public class PlayerController : MonoBehaviour {
 
     public void SetSpriteToDead()
     {
-        playerSpriteRenderer.sprite = CharDead;
+        playerSprite.SetBodySpriteToDead();
     }
 
     #region weapons
@@ -256,29 +190,25 @@ public class PlayerController : MonoBehaviour {
 
     public void PistolShot()
     {
-        if (attackCooldown < 0)
-        {
-            GameObject projectile = GameObject.Instantiate(GameData.Instance.FivemmBullet, pistolPoint);
-            PrepareProjectile(projectile);
-            playerStatus.DeleteWeaponFifo();
-            SetWeaponSprite();
-            attackCooldown = attackDelay;
-        }
-        else
-        {
-            attackCooldown -= Time.deltaTime;
-        }
+        GameObject projectile = GameObject.Instantiate(GameStats.Instance.FivemmBullet, pistolPoint);
+        PrepareProjectile(projectile);
+        playerModel.DeleteWeaponFifo();
+        SetWeaponSprite();
     }
 
     private void PrepareProjectile(GameObject projectile)
     {
-        projectile.tag = "Bullet_" + playerCode;
+        projectile.tag = "Bullet_" + playerModel.PlayerCode;
         projectile.transform.SetParent(null);
     }
 
+
+
+    #endregion
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "PickUp")
+        if (collision.tag == "PickUp")
         {
             hasPickUp = true;
             pickUpObject = collision.gameObject;
@@ -293,9 +223,5 @@ public class PlayerController : MonoBehaviour {
             pickUpObject = null;
         }
     }
-
-    #endregion
-
-
 
 }

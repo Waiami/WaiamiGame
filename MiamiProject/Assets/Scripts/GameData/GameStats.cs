@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour {
+public class GameStats : MonoBehaviour {
 
 
-    #region GameData
+    #region GameStats
     [Header("Player")]
     [SerializeField] private float _walkSpeed;
     [SerializeField] private float _runSpeed;
@@ -29,7 +29,7 @@ public class GameData : MonoBehaviour {
     #endregion
 
 
-#region Setter
+    #region Setter
     public GameObject SuckerPunsh { get { return _suckerPunsh; } }
     public GameObject FivemmBullet { get {return _fivemmBullet; }}
     public float WalkSpeed { get { return _walkSpeed; } }
@@ -43,7 +43,7 @@ public class GameData : MonoBehaviour {
 
 
     #region Instance
-    public static GameData Instance;
+    public static GameStats Instance;
 
     void Awake()
     {

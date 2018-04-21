@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DebugMethods : MonoBehaviour {
 
@@ -8,31 +9,47 @@ public class DebugMethods : MonoBehaviour {
     GameObject[] perosnalCameras;
     [SerializeField]
     GameObject globalCamera;
+    [SerializeField] DebugSpawner debugSpawner;
+    [SerializeField] GameObject DebugInfoPanel;
 
-    private bool cameraToggle = false;
-	// Use this for initialization
-	void Start () {
-		
-	}
 
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            if (!cameraToggle)
+            if (globalCamera.activeInHierarchy)
             {
-                cameraToggle = true;
                 ActivatePersonalCamera();
             }
             else
             {
-                cameraToggle = false;
                 ActivateGlobalCamera();
             }
-            
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            debugSpawner.SpawnNewPickUps();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            if (DebugInfoPanel.activeInHierarchy)
+            {
+                DebugInfoPanel.SetActive(false);
+            }
+            else
+            {
+                DebugInfoPanel.SetActive(true);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            SceneManager.LoadSceneAsync(0);
+        }
+    }
 
     private void ActivatePersonalCamera()
     {
