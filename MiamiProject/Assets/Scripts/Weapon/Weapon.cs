@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private string weaponname;
+    [SerializeField] private float equiptime;
+    [SerializeField] private float throwawayTime;
+    [SerializeField] private float recoil;
+
+    public string WeaponName { get { return weaponname; } }
+    public float EqiupTime { get { return equiptime; } }
+    public float ThrowAwayTime { get { return throwawayTime; } }
+    public float Recoil { get { return recoil; } }
 }

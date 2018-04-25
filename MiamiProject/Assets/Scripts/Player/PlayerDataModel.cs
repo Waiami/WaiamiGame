@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerModel : MonoBehaviour {
+public class PlayerDataModel : MonoBehaviour {
 
     [SerializeField] private string playerCode = "P1";
     [SerializeField] private float walkspeed = 5;
@@ -11,8 +11,8 @@ public class PlayerModel : MonoBehaviour {
     [SerializeField] private float controllerthreshhold = 0.3f;
 
     [SerializeField] private PlayerController playerController;
-    private Queue<string> playerWeaponList;
-    private string equippedWeapon;
+    private Queue<Weapon> playerWeaponList;
+    private Weapon equippedWeapon;
     private bool isDead;
 
     public bool IsDead { get { return isDead; } }
@@ -25,10 +25,10 @@ public class PlayerModel : MonoBehaviour {
     // Use this for initialization
     void Start () {
         isDead = false; 
-        playerWeaponList = new Queue<string>();
+        playerWeaponList = new Queue<Weapon>();
         if(playerWeaponList.Count > 0)
         {
-            equippedWeapon = playerWeaponList.Peek();
+            Weapon w = playerWeaponList.Peek();
         }
         Inisialize();
 
@@ -49,16 +49,20 @@ public class PlayerModel : MonoBehaviour {
     
     public string GetEquippedWeapon()
     {
-        return equippedWeapon;
+        if(equippedWeapon== null)
+        {
+            return "";
+        }
+        return equippedWeapon.name.ToLower();
     }
 
     public void KillPlayer()
     {
-        playerController.SetSpriteToDead();
+        playerController.SetPlayerToDead();
         isDead = true;
     }
 
-    public void AddNewWeapon(string weapon)
+    public void AddNewWeapon(Weapon weapon)
     {
         playerWeaponList.Enqueue(weapon);
         equippedWeapon = weapon;
@@ -67,13 +71,13 @@ public class PlayerModel : MonoBehaviour {
 
     public void DeleteWeaponFifo()
     {
-        equippedWeapon = "";
+        equippedWeapon = null;
         if(playerWeaponList.Count > 0)
         {
             equippedWeapon = playerWeaponList.Dequeue();
             if(playerWeaponList.Count < 1)
             {
-                equippedWeapon = "";
+                equippedWeapon = null;
             }
             DebugLogWeaponList();
         }
@@ -85,9 +89,9 @@ public class PlayerModel : MonoBehaviour {
         if(playerWeaponList.Count > 0)
         {
             string returnstring = "";
-            foreach (string s in playerWeaponList)
+            foreach (Weapon s in playerWeaponList)
             {
-                returnstring += s + ", ";
+                returnstring += s.name + ", ";
             }
             Debug.Log(returnstring);
         }

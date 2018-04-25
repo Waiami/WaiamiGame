@@ -5,11 +5,11 @@ public class PlayerController : MonoBehaviour {
 #region variables
     
     [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private PlayerModel playerModel;
+    [SerializeField] private PlayerDataModel playerModel;
     [SerializeField] private PlayerSprite playerSprite;
     [SerializeField] private PlayerAnimator playerAnimator;
 
-    public PlayerModel PlayerModelScript { get { return playerModel; } }
+    public PlayerDataModel PlayerModelScript { get { return playerModel; } }
 
     
 
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
         }
         if(playerModel == null)
         {
-            playerModel = gameObject.GetComponent<PlayerModel>();
+            playerModel = gameObject.GetComponent<PlayerDataModel>();
         }
         if(playerAnimator == null)
         {
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (hasPickUp)
         {
-            playerModel.AddNewWeapon(pickUpObject.GetComponent<PickUp>().GetRandomWeapon());
+            playerModel.AddNewWeapon(WeaponCollection.Instance.GetRandomWeapon());
             Destroy(pickUpObject);
             pickUpObject = null;
             SetWeaponSprite();
@@ -156,9 +156,17 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-    public void SetSpriteToDead()
+    public void SetPlayerToDead()
     {
-        playerSprite.SetBodySpriteToDead();
+        if (playerAnimator.isActiveAndEnabled)
+        {
+            playerAnimator.SetAnimationToDead();
+        }
+        else
+        {
+            playerSprite.SetBodySpriteToDead();
+        }
+        
     }
 
     #region weapons

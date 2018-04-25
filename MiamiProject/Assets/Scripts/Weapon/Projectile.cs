@@ -18,15 +18,16 @@ public class Projectile : MonoBehaviour {
 	void Start () {
         noDamage = false;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
+        var z = moveSpeed * Time.deltaTime;
+        Vector2 movement = new Vector2(z, 0);
+        rb2d.velocity = transform.up * moveSpeed;
 
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         CheckLiveTime();
-        var z = moveSpeed * Time.deltaTime;
-        Vector2 movement = new Vector2(z, 0);
-        rb2d.velocity = transform.up * moveSpeed;
+        
     }
 
     void CheckLiveTime()
@@ -61,9 +62,9 @@ public class Projectile : MonoBehaviour {
         }
         if(collision.tag == "Player")
         {
-            if(this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerModel>().PlayerCode)
+            if(this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerDataModel>().PlayerCode)
             {
-                collision.gameObject.GetComponent<PlayerModel>().KillPlayer();
+                collision.gameObject.GetComponent<PlayerDataModel>().KillPlayer();
                 Destroy(this.gameObject);
             }
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponFactory : MonoBehaviour {
+public class BulletFactory : MonoBehaviour {
 
 
     #region Prefabs
@@ -10,7 +10,7 @@ public class WeaponFactory : MonoBehaviour {
     #endregion
 
     #region public Methods
-    public void CreatePullet(Transform spawnTransform, string weaponname, string playerCode)
+    public void CreateBullet(Transform spawnTransform, string weaponname, string playerCode)
     {
         switch (weaponname)
         {
@@ -35,7 +35,7 @@ public class WeaponFactory : MonoBehaviour {
 
 
     #region Instance
-    public static WeaponFactory Instance;
+    public static BulletFactory Instance;
 
     void Awake()
     {

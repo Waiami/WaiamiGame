@@ -16,8 +16,8 @@ public class PickUp : MonoBehaviour {
         weaponList = gameData.WeaponList;
     }
 
-    public string GetRandomWeapon()
+    public Weapon GetRandomWeapon()
     {
-        return weaponList[Random.Range(0, weaponList.Count)]; 
+        return new Weapon(); 
     }
 }

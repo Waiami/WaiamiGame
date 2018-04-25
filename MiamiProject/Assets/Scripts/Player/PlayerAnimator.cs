@@ -35,6 +35,11 @@ public class PlayerAnimator : MonoBehaviour {
         }
     }
 
+    public void SetAnimationToDead()
+    {
+        charAnimator.SetTrigger("Dead");
+    }
+
     public void SetBlendFloat(float value)
     {
         charAnimator.SetFloat("Blend", value);
