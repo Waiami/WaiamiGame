@@ -5,13 +5,13 @@ public class PlayerController : MonoBehaviour {
 #region variables
     
     [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private PlayerDataModel playerModel;
+    [SerializeField] private PlayerDataModel playerDataModel;
     [SerializeField] private PlayerSprite playerSprite;
     [SerializeField] private PlayerAnimator playerAnimator;
 
-    public PlayerDataModel PlayerModelScript { get { return playerModel; } }
+    public PlayerDataModel PlayerModelScript { get { return playerDataModel; } }
 
-    
+    private float attackCooldown = -1;
 
     [Header("SuckerPunsh")]
     [SerializeField]
@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private GameObject rightHand;
     private bool boolSuckerPunsh;
     private GameObject suckerPunsh;
-    private GameObject pistolBullet;
 
     [Header("GeneralWeapons")]
     [SerializeField]private float attackDelay = 0.3f;
@@ -42,20 +41,24 @@ public class PlayerController : MonoBehaviour {
         Initialize();
 	}
 
-#region initialize
+    private void FixedUpdate()
+    {
+        UpdateAttackCooldown();
+    }
+
+    #region initialize
     void Initialize()
     {
         boolSuckerPunsh = false;
         suckerPunsh = GameStats.Instance.SuckerPunsh;
-        pistolBullet = GameStats.Instance.FivemmBullet;
-        attackDelay = GameStats.Instance.AttackDelay;
+        attackDelay = 0;
         if(playerSprite == null)
         {
             playerSprite = gameObject.GetComponent<PlayerSprite>();
         }
-        if(playerModel == null)
+        if(playerDataModel == null)
         {
-            playerModel = gameObject.GetComponent<PlayerDataModel>();
+            playerDataModel = gameObject.GetComponent<PlayerDataModel>();
         }
         if(playerAnimator == null)
         {
@@ -66,20 +69,20 @@ public class PlayerController : MonoBehaviour {
             rb2d = gameObject.GetComponent<Rigidbody2D>();
         }
     }
-#endregion
+    #endregion
 
     public void MovePlayer(float x, float y)
     {
-        if(Mathf.Abs(x) < playerModel.ControllerThreshhold ) {x = 0;}
-        if (Mathf.Abs(y) < playerModel.ControllerThreshhold) {y = 0;}
+        if(Mathf.Abs(x) < playerDataModel.ControllerThreshhold ) {x = 0;}
+        if (Mathf.Abs(y) < playerDataModel.ControllerThreshhold) {y = 0;}
         Vector3 movement = new Vector3(x, y, 0);
-        if (Mathf.Abs(x) > playerModel.Speedgab || Mathf.Abs(y) > playerModel.Speedgab)
+        if (Mathf.Abs(x) + Mathf.Abs(y) > playerDataModel.Speedgab )
         {
-            rb2d.velocity = movement * playerModel.RunSpeed;
+            rb2d.velocity = movement * playerDataModel.RunSpeed * Time.deltaTime * 50;
         }
         else
         {
-            rb2d.velocity = movement * playerModel.WalkSpeed;
+            rb2d.velocity = movement * playerDataModel.WalkSpeed * Time.deltaTime * 50;
 
         }
         playerAnimator.SetBlendFloat(Mathf.Max(Mathf.Abs(x), Mathf.Abs(y)));
@@ -106,12 +109,23 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void UpdateAttackCooldown()
+    {
+        if (attackCooldown >= 0)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
+    }
 
     public void ExecuteInteractionButton()
     {
         if (hasPickUp)
         {
-            playerModel.AddNewWeapon(WeaponCollection.Instance.GetRandomWeapon());
+            playerDataModel.AddNewWeapon(WeaponCollection.Instance.GetRandomWeapon());
+            if(playerDataModel.GetWeaponListCount() == 1)
+            {
+                attackCooldown = playerDataModel.GetCooldownTime();
+            }
             Destroy(pickUpObject);
             pickUpObject = null;
             SetWeaponSprite();
@@ -120,21 +134,15 @@ public class PlayerController : MonoBehaviour {
 
     public void FireWeapon()
     {
-        string weapon = playerModel.GetEquippedWeapon();
-        if(weapon == "suckerPunsh")
+        if(attackCooldown <= 0)
         {
-            SuckerPunsh();
+            WeaponCollection.WeaponNames weapon = playerDataModel.GetEquippedWeapon();
+            if (weapon == WeaponCollection.WeaponNames.knife || weapon == WeaponCollection.WeaponNames.pistol || weapon == WeaponCollection.WeaponNames.shotgun)
+            {
+                PistolShot();
+                attackCooldown =  playerDataModel.GetCooldownTime();
+            }
         }
-        if(weapon == "pistol" || weapon == "knife" || weapon == "shotgun")
-        {
-            PistolShot();
-            
-        }
-    }
-
-    public float GetNewAttackCooldown()
-    {
-        return attackDelay;
     }
 
     private void SetWeaponSprite()
@@ -143,11 +151,11 @@ public class PlayerController : MonoBehaviour {
         {
             ActiveWeaponObject.SetActive(false);
         }
-        
-        string weapon = playerModel.GetEquippedWeapon();
-        if(weapon != "")
+
+        WeaponCollection.WeaponNames weapon = playerDataModel.GetEquippedWeapon();
+        if(weapon != WeaponCollection.WeaponNames.empty)
         {
-            if (weapon == "pistol" || weapon == "knife" || weapon == "shotgun")
+            if (weapon == WeaponCollection.WeaponNames.knife || weapon == WeaponCollection.WeaponNames.pistol || weapon == WeaponCollection.WeaponNames.shotgun)
             {
                 pistolObject.SetActive(true);
                 ActiveWeaponObject = pistolObject;
@@ -167,6 +175,14 @@ public class PlayerController : MonoBehaviour {
             playerSprite.SetBodySpriteToDead();
         }
         
+    }
+
+    public void ResetPlayer()
+    {
+        playerSprite.ResetPlayerSprite(); 
+        playerAnimator.ResetPlayerAnimation();
+        playerDataModel.ResetPlayer();
+        SetWeaponSprite();
     }
 
     #region weapons
@@ -198,19 +214,10 @@ public class PlayerController : MonoBehaviour {
 
     public void PistolShot()
     {
-        GameObject projectile = GameObject.Instantiate(GameStats.Instance.FivemmBullet, pistolPoint);
-        PrepareProjectile(projectile);
-        playerModel.DeleteWeaponFifo();
+        BulletFactory.Instance.CreateBullet(pistolPoint,playerDataModel.GetEquippedWeapon(), playerDataModel.PlayerCode);
+        playerDataModel.DeleteWeaponFifo();
         SetWeaponSprite();
     }
-
-    private void PrepareProjectile(GameObject projectile)
-    {
-        projectile.tag = "Bullet_" + playerModel.PlayerCode;
-        projectile.transform.SetParent(null);
-    }
-
-
 
     #endregion
 

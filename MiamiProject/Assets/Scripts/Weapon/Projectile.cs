@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour {
             noDamage = true;
             Destroy(this.gameObject);
         }
-        if (collision.tag == "Weapon")
+        if (collision.tag == "Weapon" || collision.tag == "Bullet_P1" || collision.tag == "Bullet_P2" || collision.tag == "Bullet_P3" || collision.tag == "Bullet_P4")
         {
             noDamage = true;
         }

@@ -62,3 +62,6 @@ TagManager:
   - name: Units
     uniqueID: 3393972251
     locked: 0
+  - name: Cameras
+    uniqueID: 2069311591
+    locked: 0

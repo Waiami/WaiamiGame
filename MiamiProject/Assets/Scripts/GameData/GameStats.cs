@@ -10,37 +10,39 @@ public class GameStats : MonoBehaviour {
     [SerializeField] private float _walkSpeed;
     [SerializeField] private float _runSpeed;
     [SerializeField] private float _speedgab;
-    [SerializeField] private float _threshhold;
-    [Space(20)]
-    [Header("Weapons")]
+    [SerializeField] private float _ControllerThreshhold;
 
-    [Header("GeneralWeapons")]
-    [SerializeField] private List<string>_weaponList = new List<string> {"pistol"};
-    [SerializeField] private float _attackDelay = 0.3f;
+    [Header("GameMode - Last Men Stand")]
+    [SerializeField] private int rounds_lms;
+    [SerializeField] private float resetDelay_lms;
 
+    [Header("PickUp")]
+    [SerializeField] private GameObject _pickUp;
+    [SerializeField] private int _maxPickUps;
+    [SerializeField] private float _pickUpSpawnDelay;
 
     [Header("Suckerpunsh")]
     [SerializeField] private GameObject _suckerPunsh;
 
-    [Header("Pistol")]
-    [SerializeField] private GameObject _fivemmBullet;
-
 
     #endregion
-
 
     #region Setter
     public GameObject SuckerPunsh { get { return _suckerPunsh; } }
-    public GameObject FivemmBullet { get {return _fivemmBullet; }}
     public float WalkSpeed { get { return _walkSpeed; } }
     public float RunSpeed { get { return _runSpeed; } }
     public float Speedgab { get { return _speedgab; } }
-    public float Threshhold { get { return _threshhold; } }
-    public float AttackDelay { get { return _attackDelay; } }
-    public List<string> WeaponList { get { return _weaponList; } }
+    public float ControllerThreshhold { get { return _ControllerThreshhold; } }
+
+    public int Rounds_lms { get { return rounds_lms; } }
+    public float RestetDelay_lms { get { return resetDelay_lms; } }
+
+    public GameObject PickUp { get { return _pickUp; } }
+    public float PickUpSpawnDelay { get { return _pickUpSpawnDelay; } }
+    public int MaxPickUps { get { return _maxPickUps; } }
+
 
     #endregion
-
 
     #region Instance
     public static GameStats Instance;

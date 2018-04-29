@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerDataModel : MonoBehaviour {
 
+#region variables
     [SerializeField] private string playerCode = "P1";
     [SerializeField] private float walkspeed = 5;
     [SerializeField] private float runspeed = 7;
@@ -14,6 +15,7 @@ public class PlayerDataModel : MonoBehaviour {
     private Queue<Weapon> playerWeaponList;
     private Weapon equippedWeapon;
     private bool isDead;
+    private float throwAwayTime = 0;
 
     public bool IsDead { get { return isDead; } }
     public float WalkSpeed { get { return walkspeed; } }
@@ -21,6 +23,7 @@ public class PlayerDataModel : MonoBehaviour {
     public float Speedgab { get { return speedgab; } }
     public float ControllerThreshhold { get { return controllerthreshhold; } }
     public string PlayerCode { get { return playerCode; } }
+#endregion
 
     // Use this for initialization
     void Start () {
@@ -31,7 +34,6 @@ public class PlayerDataModel : MonoBehaviour {
             Weapon w = playerWeaponList.Peek();
         }
         Inisialize();
-
     }
 
     void Inisialize()
@@ -39,26 +41,30 @@ public class PlayerDataModel : MonoBehaviour {
         walkspeed = GameStats.Instance.WalkSpeed;
         runspeed = GameStats.Instance.RunSpeed;
         speedgab = GameStats.Instance.Speedgab;
-        controllerthreshhold = GameStats.Instance.Threshhold;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    
-    public string GetEquippedWeapon()
-    {
-        if(equippedWeapon== null)
+        controllerthreshhold = GameStats.Instance.ControllerThreshhold;
+        if(playerController == null)
         {
-            return "";
+            playerController = gameObject.GetComponent<PlayerController>();
         }
-        return equippedWeapon.name.ToLower();
+    }
+    
+    public WeaponCollection.WeaponNames GetEquippedWeapon()
+    {
+        if(equippedWeapon == null)
+        {
+            return WeaponCollection.WeaponNames.empty;
+        }
+        return equippedWeapon.WeaponName;
     }
 
     public void KillPlayer()
     {
+        if (isDead)
+        {
+            return;
+        }
         playerController.SetPlayerToDead();
+        GameController.Instance.PlayerKilled(playerCode);
         isDead = true;
     }
 
@@ -67,6 +73,11 @@ public class PlayerDataModel : MonoBehaviour {
         playerWeaponList.Enqueue(weapon);
         equippedWeapon = weapon;
         DebugLogWeaponList();
+    }
+
+    public int GetWeaponListCount()
+    {
+        return playerWeaponList.Count;
     }
 
     public void DeleteWeaponFifo()
@@ -81,7 +92,27 @@ public class PlayerDataModel : MonoBehaviour {
             }
             DebugLogWeaponList();
         }
-        
+    }
+
+    public float GetCooldownTime()
+    {
+        float returnValue = 0.3f;
+        if(playerWeaponList.Count == 0)
+        {
+            return 0;
+        }
+        Weapon weapon = playerWeaponList.Peek();
+        returnValue = weapon.EqiupTime + throwAwayTime;
+        return returnValue;
+    }
+
+    public void SetTrowAwayTime()
+    {
+        if(playerWeaponList.Count != 0)
+        {
+            Weapon weapon = playerWeaponList.Peek();
+            throwAwayTime = weapon.ThrowAwayTime;
+        }
     }
 
     private void DebugLogWeaponList()
@@ -102,5 +133,10 @@ public class PlayerDataModel : MonoBehaviour {
         
     }
 
-
+    public void ResetPlayer()
+    {
+        isDead = false;
+        playerWeaponList.Clear();
+        equippedWeapon = null;
+    }
 }

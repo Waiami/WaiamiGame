@@ -10,12 +10,20 @@ public class BulletFactory : MonoBehaviour {
     #endregion
 
     #region public Methods
-    public void CreateBullet(Transform spawnTransform, string weaponname, string playerCode)
+    public void CreateBullet(Transform spawnTransform, WeaponCollection.WeaponNames weaponname, string playerCode)
     {
+        
         switch (weaponname)
         {
-            case "pistol":
-
+            case WeaponCollection.WeaponNames.knife:
+                SpawnFiveMMBullet(spawnTransform, playerCode);
+                break;
+            case WeaponCollection.WeaponNames.shotgun:
+                SpawnFiveMMBullet(spawnTransform, playerCode);
+                break;
+            case WeaponCollection.WeaponNames.pistol:
+                SpawnFiveMMBullet(spawnTransform, playerCode);
+                break;
             default:
                 break;
         }

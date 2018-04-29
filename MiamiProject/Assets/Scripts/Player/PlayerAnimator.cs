@@ -44,4 +44,9 @@ public class PlayerAnimator : MonoBehaviour {
     {
         charAnimator.SetFloat("Blend", value);
     }
+
+    public void ResetPlayerAnimation()
+    {
+        charAnimator.SetTrigger("Reset");
+    }
 }

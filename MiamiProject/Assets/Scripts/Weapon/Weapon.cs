@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    [SerializeField] private string weaponname;
+    #region variables
+    [SerializeField] private WeaponCollection.WeaponNames weaponname;
     [SerializeField] private float equiptime;
     [SerializeField] private float throwawayTime;
     [SerializeField] private float recoil;
+    #endregion
 
-    public string WeaponName { get { return weaponname; } }
+    #region setter
+    public WeaponCollection.WeaponNames WeaponName { get { return weaponname; }}
     public float EqiupTime { get { return equiptime; } }
     public float ThrowAwayTime { get { return throwawayTime; } }
     public float Recoil { get { return recoil; } }
+#endregion
 }

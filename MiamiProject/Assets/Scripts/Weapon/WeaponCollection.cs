@@ -6,6 +6,7 @@ public class WeaponCollection : MonoBehaviour {
 
     [SerializeField] private List<Weapon> Weapons;
     
+    public enum WeaponNames {empty, pistol, knife, shotgun};
 
     public Weapon GetRandomWeapon()
     {

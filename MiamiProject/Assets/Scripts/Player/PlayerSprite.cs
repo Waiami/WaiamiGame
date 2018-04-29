@@ -42,4 +42,9 @@ public class PlayerSprite : MonoBehaviour {
         playerSpriteRenderer.sprite = CharDead;
     }
 
+    public void ResetPlayerSprite()
+    {
+        playerSpriteRenderer.sprite = CharUp;
+    }
+
 }

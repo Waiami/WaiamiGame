@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour {
 
+    #region variables
     private PlayerController playerController;
     private string inputHorizontal = "Horizontal_";
     private string inputVertical = "Vertical_";
@@ -11,9 +12,7 @@ public class InputController : MonoBehaviour {
     private string inputRotateVertical = "RotateVertical_";
     private string aButton = "A_";
     private string fireButton = "Fire_";
-
-    private float attackCooldown = -1;
-
+#endregion
 
     void Start()
     {
@@ -34,13 +33,12 @@ public class InputController : MonoBehaviour {
     }
     #endregion
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (!playerController.PlayerModelScript.IsDead)
         {
             MovePlayer();
             RotatePlayer();
-            UpdateAttackCooldown();
         }
 
     }
@@ -53,14 +51,6 @@ public class InputController : MonoBehaviour {
             CheckIfInteraktionButtonPressed();
         }
 
-    }
-
-    private void UpdateAttackCooldown()
-    {
-        if(attackCooldown >= 0)
-        {
-            attackCooldown -= Time.deltaTime;
-        }
     }
 
     private void MovePlayer()
@@ -91,10 +81,9 @@ public class InputController : MonoBehaviour {
     private void CheckIfFireButtonPressed()
     {
         var x = Input.GetAxis(fireButton);
-        if (x > 0.7f && attackCooldown < 0)
+        if (x > 0.7f)
         {
             playerController.FireWeapon();
-            attackCooldown = playerController.GetNewAttackCooldown();
         }
     }
 }
