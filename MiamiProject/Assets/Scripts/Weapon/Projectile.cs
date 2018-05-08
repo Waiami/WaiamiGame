@@ -62,10 +62,12 @@ public class Projectile : MonoBehaviour {
         }
         if(collision.tag == "Player")
         {
-            if(this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerDataModel>().PlayerCode)
+            if (this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerDataModel>().PlayerCode)
             {
+                GameController.Instance.SetPointsToPlayer(this.tag, "player");
                 collision.gameObject.GetComponent<PlayerDataModel>().KillPlayer();
                 Destroy(this.gameObject);
+
             }
         }
     }

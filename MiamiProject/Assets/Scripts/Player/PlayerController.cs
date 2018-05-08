@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private PlayerDataModel playerDataModel;
     [SerializeField] private PlayerSprite playerSprite;
     [SerializeField] private PlayerAnimator playerAnimator;
+    [SerializeField] private PlayerUI playerUI;
 
     public PlayerDataModel PlayerModelScript { get { return playerDataModel; } }
 
@@ -39,6 +40,8 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Initialize();
+        playerDataModel.AddPoints(GameStats.Instance.PlayerStartScore);
+        playerUI.SetPointText(playerDataModel.PlayerScore);
 	}
 
     private void FixedUpdate()
@@ -67,6 +70,10 @@ public class PlayerController : MonoBehaviour {
         if(rb2d == null)
         {
             rb2d = gameObject.GetComponent<Rigidbody2D>();
+        }
+        if(playerUI == null)
+        {
+            playerUI = gameObject.GetComponent<PlayerUI>();
         }
     }
     #endregion
@@ -183,6 +190,12 @@ public class PlayerController : MonoBehaviour {
         playerAnimator.ResetPlayerAnimation();
         playerDataModel.ResetPlayer();
         SetWeaponSprite();
+    }
+
+    public void AddPoints(int points)
+    {
+        playerDataModel.AddPoints(points);
+        playerUI.SetPointText(playerDataModel.PlayerScore);
     }
 
     #region weapons

@@ -17,17 +17,20 @@ public class PlayerDataModel : MonoBehaviour {
     private bool isDead;
     private float throwAwayTime = 0;
 
+    private int playerScore;
+
     public bool IsDead { get { return isDead; } }
     public float WalkSpeed { get { return walkspeed; } }
     public float RunSpeed { get { return runspeed; } }
     public float Speedgab { get { return speedgab; } }
     public float ControllerThreshhold { get { return controllerthreshhold; } }
     public string PlayerCode { get { return playerCode; } }
+    public int PlayerScore { get { return playerScore; } }
 #endregion
 
     // Use this for initialization
     void Start () {
-        isDead = false; 
+        isDead = false;
         playerWeaponList = new Queue<Weapon>();
         if(playerWeaponList.Count > 0)
         {
@@ -131,6 +134,13 @@ public class PlayerDataModel : MonoBehaviour {
             Debug.Log("No Weapons left");
         }
         
+    }
+
+    public void AddPoints(int points)
+    {
+        playerScore += points;
+        if (playerScore < 0) playerScore = 0;
+
     }
 
     public void ResetPlayer()

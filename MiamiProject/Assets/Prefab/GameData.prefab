@@ -1651,7 +1651,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466004188683806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.27, y: -17.25, z: -10.654531}
+  m_LocalPosition: {x: -30.79, y: -17.57, z: -10.654531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4382256406471996}
@@ -1888,7 +1888,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1858227556073228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.63, y: 8.94, z: -10.654531}
+  m_LocalPosition: {x: 12.35, y: 10.3, z: -10.654531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4382256406471996}
@@ -1927,7 +1927,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702134928860372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.47, y: 7.4, z: -10.654531}
+  m_LocalPosition: {x: 12.87, y: 1.16, z: -10.654531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4382256406471996}
@@ -1940,7 +1940,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1774424118257314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.48, y: -5.44, z: -10.654531}
+  m_LocalPosition: {x: 18.65, y: -3.44, z: -10.654531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4382256406471996}
@@ -2081,6 +2081,7 @@ MonoBehaviour:
   Player4: {fileID: 0}
   PlayerSpawns: {fileID: 0}
   gameUIView: {fileID: 114680642209882310}
+  pickUpSpawnSystem: {fileID: 114525877611324338}
 --- !u!114 &114149588072063960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2227,6 +2228,11 @@ MonoBehaviour:
   _pickUpSpawnDelay: 3
   _suckerPunsh: {fileID: 1790897809408352, guid: 70056e19b4db74341b5cd6484d8473d6,
     type: 2}
+  _playerStartScore: 400
+  _pointsForPlayer: 100
+  _pointsForNPCS: -10
+  _pointsForWaldo: 300
+  _pointsForWinning: 150
 --- !u!114 &114764986747269764
 MonoBehaviour:
   m_ObjectHideFlags: 1

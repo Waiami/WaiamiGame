@@ -24,6 +24,13 @@ public class GameStats : MonoBehaviour {
     [Header("Suckerpunsh")]
     [SerializeField] private GameObject _suckerPunsh;
 
+    [Header("Points")]
+    [SerializeField] private int _playerStartScore;
+    [SerializeField] private int _pointsForPlayer;
+    [SerializeField] private int _pointsForNPCS;
+    [SerializeField] private int _pointsForWaldo;
+    [SerializeField] private int _pointsForWinning;
+
 
     #endregion
 
@@ -41,7 +48,11 @@ public class GameStats : MonoBehaviour {
     public float PickUpSpawnDelay { get { return _pickUpSpawnDelay; } }
     public int MaxPickUps { get { return _maxPickUps; } }
 
-
+    public int PointsForPlayer { get { return _pointsForPlayer; } }
+    public int PointsForNPCS { get { return _pointsForNPCS; } }
+    public int PointsForWaldo { get { return _pointsForWaldo; } }
+    public int PointsForWinning { get { return _pointsForWinning; } }
+    public int PlayerStartScore { get { return _playerStartScore; } }
     #endregion
 
     #region Instance
