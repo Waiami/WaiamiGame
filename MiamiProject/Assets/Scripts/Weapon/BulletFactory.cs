@@ -7,37 +7,55 @@ public class BulletFactory : MonoBehaviour {
 
     #region Prefabs
     [SerializeField] public GameObject FiveMMBullet;
+    [SerializeField] public GameObject CannonBall;
+    [SerializeField] public GameObject KnifeSlash;
     #endregion
 
     #region public Methods
-    public void CreateBullet(Transform spawnTransform, WeaponCollection.WeaponNames weaponname, string playerCode)
+    public void CreateBullet(Transform spawnTransform, WeaponCollection.WeaponNames weaponname, PlayerDataModel playerDataModel)
     {
         
         switch (weaponname)
         {
             case WeaponCollection.WeaponNames.knife:
-                SpawnFiveMMBullet(spawnTransform, playerCode);
+                SpawnKnifeSlash(spawnTransform, playerDataModel);
                 break;
-            case WeaponCollection.WeaponNames.shotgun:
-                SpawnFiveMMBullet(spawnTransform, playerCode);
+            case WeaponCollection.WeaponNames.cannon:
+                SpawnCannonBall(spawnTransform, playerDataModel);
                 break;
             case WeaponCollection.WeaponNames.pistol:
-                SpawnFiveMMBullet(spawnTransform, playerCode);
+                SpawnFiveMMBullet(spawnTransform, playerDataModel);
                 break;
             default:
                 break;
         }
+
+        
     }
     #endregion
 
     #region private Methods
 
-    private void SpawnFiveMMBullet(Transform spawnTransform, string PlayerCode)
+    private void SpawnFiveMMBullet(Transform spawnTransform, PlayerDataModel playerDataModel)
     {
         GameObject obj = Instantiate(FiveMMBullet, spawnTransform);
-        obj.transform.tag = "Bullet_" + PlayerCode;
+        obj.GetComponent<Projectile>().SetPlayerDataModel(playerDataModel);
         obj.transform.SetParent(null); 
     }
+
+    private void SpawnCannonBall(Transform spawnTransform, PlayerDataModel playerDataModel)
+    {
+        GameObject obj = Instantiate(CannonBall, spawnTransform);
+        obj.GetComponent<ExplosiveProjectile>().SetPlayerDataModel(playerDataModel);
+        obj.transform.SetParent(null);
+    }
+
+    public void SpawnKnifeSlash(Transform spawnTransform, PlayerDataModel playerDataModel)
+    {
+        GameObject obj = Instantiate(KnifeSlash, spawnTransform);
+        obj.GetComponent<KnifeSlash>().SetPlayerDataModel(playerDataModel);
+    }
+
 
     #endregion
 

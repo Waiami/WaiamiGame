@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private float equiptime;
     [SerializeField] private float throwawayTime;
     [SerializeField] private float recoil;
+    [SerializeField] private float fireDelay;
     #endregion
 
     #region setter
@@ -16,5 +17,6 @@ public class Weapon : MonoBehaviour {
     public float EqiupTime { get { return equiptime; } }
     public float ThrowAwayTime { get { return throwawayTime; } }
     public float Recoil { get { return recoil; } }
+    public float FireDelay { get { return fireDelay; } }
 #endregion
 }

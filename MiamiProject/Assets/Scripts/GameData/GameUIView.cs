@@ -8,20 +8,11 @@ public class GameUIView : MonoBehaviour {
     [SerializeField] Text text1;
     [SerializeField] Text text1shadow;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void EnableText()
     {
         TextPanel.SetActive(true);
     }
+
     public void DisableText()
     {
         TextPanel.SetActive(false);

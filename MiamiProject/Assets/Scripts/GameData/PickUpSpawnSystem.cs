@@ -75,7 +75,11 @@ public class PickUpSpawnSystem : MonoBehaviour {
         for (int i = 0; i < max; i++)
         {
             Transform child = spawnObject.transform.GetChild(randomNumbers[i]);
-            Instantiate(GameStats.Instance.PickUp, child);
+            if(child != null && GameStats.Instance.PickUp != null)
+            {
+                Instantiate(GameStats.Instance.PickUp, child);
+            }
+            
         }
     }
 }

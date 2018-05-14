@@ -8,14 +8,10 @@ TagManager:
   - Exit
   - Enemy
   - Soda
-  - Weapon
   - Wall
-  - Bullet_P1
-  - Bullet_P2
-  - Bullet_P3
-  - Bullet_P4
   - PickUp
   - GameData
+  - Bullet
   layers:
   - Default
   - TransparentFX

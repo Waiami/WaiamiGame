@@ -6,31 +6,34 @@ public class PlayerDataModel : MonoBehaviour {
 
 #region variables
     [SerializeField] private string playerCode = "P1";
+    [SerializeField] private string playerName;
     [SerializeField] private float walkspeed = 5;
     [SerializeField] private float runspeed = 7;
     [SerializeField] private float speedgab = 0.7f;
     [SerializeField] private float controllerthreshhold = 0.3f;
 
-    [SerializeField] private PlayerController playerController;
     private Queue<Weapon> playerWeaponList;
     private Weapon equippedWeapon;
-    private bool isDead;
+    private bool dead;
     private float throwAwayTime = 0;
 
     private int playerScore;
+    private int pointsWorth;
 
-    public bool IsDead { get { return isDead; } }
+    public bool IsDead { get { return dead; } }
     public float WalkSpeed { get { return walkspeed; } }
     public float RunSpeed { get { return runspeed; } }
     public float Speedgab { get { return speedgab; } }
     public float ControllerThreshhold { get { return controllerthreshhold; } }
     public string PlayerCode { get { return playerCode; } }
+    public string PlayerName { get { return playerName; } }
     public int PlayerScore { get { return playerScore; } }
-#endregion
+    public int PointsWorth { get { return pointsWorth; } }
+    #endregion
 
     // Use this for initialization
     void Start () {
-        isDead = false;
+        dead = false;
         playerWeaponList = new Queue<Weapon>();
         if(playerWeaponList.Count > 0)
         {
@@ -44,37 +47,32 @@ public class PlayerDataModel : MonoBehaviour {
         walkspeed = GameStats.Instance.WalkSpeed;
         runspeed = GameStats.Instance.RunSpeed;
         speedgab = GameStats.Instance.Speedgab;
+        pointsWorth = GameStats.Instance.PointsForPlayer;
         controllerthreshhold = GameStats.Instance.ControllerThreshhold;
-        if(playerController == null)
-        {
-            playerController = gameObject.GetComponent<PlayerController>();
-        }
     }
     
-    public WeaponCollection.WeaponNames GetEquippedWeapon()
+    public Weapon GetEquippedWeapon()
     {
         if(equippedWeapon == null)
         {
-            return WeaponCollection.WeaponNames.empty;
+            return null;
         }
-        return equippedWeapon.WeaponName;
+        return equippedWeapon;
     }
 
     public void KillPlayer()
     {
-        if (isDead)
-        {
-            return;
-        }
-        playerController.SetPlayerToDead();
-        GameController.Instance.PlayerKilled(playerCode);
-        isDead = true;
+        dead = true;
     }
 
     public void AddNewWeapon(Weapon weapon)
     {
         playerWeaponList.Enqueue(weapon);
-        equippedWeapon = weapon;
+        if(playerWeaponList.Count == 1)
+        {
+            equippedWeapon = weapon;
+        }
+        
         DebugLogWeaponList();
     }
 
@@ -88,10 +86,14 @@ public class PlayerDataModel : MonoBehaviour {
         equippedWeapon = null;
         if(playerWeaponList.Count > 0)
         {
-            equippedWeapon = playerWeaponList.Dequeue();
-            if(playerWeaponList.Count < 1)
+            playerWeaponList.Dequeue();
+            if (playerWeaponList.Count < 1)
             {
                 equippedWeapon = null;
+            }
+            else
+            {
+                equippedWeapon = playerWeaponList.Peek();
             }
             DebugLogWeaponList();
         }
@@ -145,7 +147,7 @@ public class PlayerDataModel : MonoBehaviour {
 
     public void ResetPlayer()
     {
-        isDead = false;
+        dead = false;
         playerWeaponList.Clear();
         equippedWeapon = null;
     }

@@ -31,6 +31,20 @@ public class GameStats : MonoBehaviour {
     [SerializeField] private int _pointsForWaldo;
     [SerializeField] private int _pointsForWinning;
 
+    [Header("SpezialWeaponObjects")]
+    [SerializeField] private GameObject _explosion;
+
+    [Header("Music")]
+    [SerializeField] private AudioSource _musicSource;
+    [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioClip _song01;
+    [SerializeField] private AudioClip _pistolSound;
+    [SerializeField] private AudioClip _canonSound;
+    [SerializeField] private AudioClip _slowmatchSound;
+
+    [Header("SpezialDebug")]
+    [SerializeField]private WeaponCollection.WeaponNames _onlySpawnWeapon;
+
 
     #endregion
 
@@ -53,6 +67,18 @@ public class GameStats : MonoBehaviour {
     public int PointsForWaldo { get { return _pointsForWaldo; } }
     public int PointsForWinning { get { return _pointsForWinning; } }
     public int PlayerStartScore { get { return _playerStartScore; } }
+
+    public GameObject Explosion { get { return _explosion; } }
+
+    public AudioSource MusicSource { get { return _musicSource; } }
+    public AudioSource SFXSource { get { return _sfxSource; } }
+    public AudioClip Song01 { get { return _song01; } }
+    public AudioClip PistolSound { get { return _pistolSound; } }
+    public AudioClip CanonSound { get { return _canonSound; } }
+    public AudioClip SlowmatchSound { get { return _slowmatchSound; } }
+
+    public WeaponCollection.WeaponNames OnlySpawnWeapons { get { return _onlySpawnWeapon; } }
+
     #endregion
 
     #region Instance

@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212034542568740534}
   - component: {fileID: 61802902385062324}
   - component: {fileID: 50030415014899384}
-  - component: {fileID: 114576741691077742}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: PickUp
@@ -88,18 +87,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35175592, y: 0.32175565}
   m_EdgeRadius: 0
---- !u!114 &114576741691077742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1586620486130336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 139914d7323d22844b46f2668fd90813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameData: {fileID: 0}
 --- !u!212 &212034542568740534
 SpriteRenderer:
   m_ObjectHideFlags: 1

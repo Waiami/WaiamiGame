@@ -6,32 +6,33 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
     #region variables
-    [SerializeField] private GameObject Player1;
-    [SerializeField] private GameObject Player2;
-    [SerializeField] private GameObject Player3;
-    [SerializeField] private GameObject Player4;
+    [SerializeField] private PlayerController[] players;
     [SerializeField] private GameObject PlayerSpawns;
     [SerializeField] private GameUIView gameUIView;
     [SerializeField] private PickUpSpawnSystem pickUpSpawnSystem;
 
-    private bool player1dead = false, player2dead = false, player3dead = false, player4dead = false;
     private int deadplayers = 0;
     private float resetDelay = 1f;
     private float resetTimer;
     private bool gameFinished = false;
+    private AudioSource musikSource;
     #endregion
 
     
     void Start () {
         Initialize();
+        PlayChoosenSong();
     }
 	
+    private void PlayChoosenSong()
+    {
+        musikSource.clip = GameStats.Instance.Song01;
+        musikSource.Play();
+    }
+
     private void Initialize()
     {
-        player1dead = false;
-        player2dead = false;
-        player3dead = false;
-        player4dead = false;
+        musikSource = GameStats.Instance.MusicSource;
         deadplayers = 0;
         resetDelay = GameStats.Instance.RestetDelay_lms;
         gameFinished = false;
@@ -57,16 +58,12 @@ public class GameController : MonoBehaviour {
         }
 	}
 
-    public void PlayerKilled(string playerCode)
+    public void PlayerKilled()
     {
         if (gameFinished)
         {
             return;
         }
-        if(playerCode == "P1") { player1dead = true; }
-        if (playerCode == "P2") { player2dead = true; }
-        if (playerCode == "P3") { player3dead = true; }
-        if (playerCode == "P4") { player4dead = true; }
         deadplayers++;
         CheckFinishGame();
 
@@ -76,46 +73,35 @@ public class GameController : MonoBehaviour {
     {
         if(deadplayers == 3)
         {
+            PlayerController winningPlayer = GetWinningPlayer();
             gameUIView.EnableText();
-            string winnigPlayer = GetWinningPlayer();
-            gameUIView.SetWinnerText(winnigPlayer);
-            SetPointsToPlayer(winnigPlayer, "winning");
+            gameUIView.SetWinnerText(winningPlayer.GetComponent<PlayerDataModel>().PlayerName);
+            winningPlayer.AddPoints(GameStats.Instance.PointsForWinning);
             resetTimer = resetDelay;
             gameFinished = true;
         }
     }
 
-    private string GetWinningPlayer()
+    private PlayerController GetWinningPlayer()
     {
-        if (!player1dead)
+        foreach(PlayerController pc in players)
         {
-            return "Player 1";
-        }else if (!player2dead)
-        {
-            return "Player 2";
+            if (!pc.GetComponent<PlayerDataModel>().IsDead)
+            {
+                return pc;
+            }
         }
-        else if (!player3dead)
-        {
-            return "Player 3";
-        }
-        else if (!player4dead)
-        {
-            return "Player 4";
-        }
-        else
-        {
-            return "No One";
-        }
+        return null;
     }
 
     private void ResetGameModeLMS()
     {
         gameUIView.DisableText();
         Initialize();
-        Player1.GetComponent<PlayerController>().ResetPlayer();
-        Player2.GetComponent<PlayerController>().ResetPlayer();
-        Player3.GetComponent<PlayerController>().ResetPlayer();
-        Player4.GetComponent<PlayerController>().ResetPlayer();
+        foreach (PlayerController pc in players)
+        {
+            pc.ResetPlayer();
+        }
         pickUpSpawnSystem.SpawnNewPickUps();
     }
 
@@ -124,67 +110,10 @@ public class GameController : MonoBehaviour {
         int count = PlayerSpawns.transform.childCount;
         var rnd = new System.Random();
         var randomNumbers = Enumerable.Range(0, count).OrderBy(x => rnd.Next()).Take(4).ToList();
-        Player1.transform.position = PlayerSpawns.transform.GetChild(randomNumbers[0]).position;
-        Player2.transform.position = PlayerSpawns.transform.GetChild(randomNumbers[1]).position;
-        Player3.transform.position = PlayerSpawns.transform.GetChild(randomNumbers[2]).position;
-        Player4.transform.position = PlayerSpawns.transform.GetChild(randomNumbers[3]).position;
-    }
-
-    public void SetPointsToPlayer(string marksman, string target)
-    {
-        int points = GetPointsFromTarget(target);
-        switch (marksman)
+        for(int i = 0; i < players.Length; i++)
         {
-            case "Bullet_P1":
-                Player1.GetComponent<PlayerController>().AddPoints(points);
-                break;
-            case "Bullet_P2":
-                Player2.GetComponent<PlayerController>().AddPoints(points);
-                break;
-            case "Bullet_P3":
-                Player3.GetComponent<PlayerController>().AddPoints(points);
-                break;
-            case "Bullet_P4":
-                Player4.GetComponent<PlayerController>().AddPoints(points);
-                break;
-            case "Player 1":
-                Player1.GetComponent<PlayerController>().AddPoints(points);
-                break;
-            case "Player 2":
-                Player2.GetComponent<PlayerController>().AddPoints(points);
-                break;
-            case "Player 3":
-                Player3.GetComponent<PlayerController>().AddPoints(points);
-                break;
-            case "Player 4":
-                Player4.GetComponent<PlayerController>().AddPoints(points);
-                break;
+            players[i].transform.position = PlayerSpawns.transform.GetChild(randomNumbers[i]).position;
         }
-    }
-
-    private int GetPointsFromTarget(string target)
-    {
-        int value = 0;
-        switch (target)
-        {
-            case "player":
-                value = GameStats.Instance.PointsForPlayer;
-                break;
-            case "npc":
-                value = GameStats.Instance.PointsForNPCS;
-                break;
-            case "waldo":
-                value = GameStats.Instance.PointsForWaldo;
-                break;
-            case "winning":
-                value = GameStats.Instance.PointsForWinning;
-                break;
-            default:
-                break;
-        }
-
-        return value;
-
     }
 
     #region Instance

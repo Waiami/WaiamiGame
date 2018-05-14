@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
@@ -27,14 +29,31 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]private float attackDelay = 0.3f;
     [SerializeField] private GameObject weaponRotationObject;
     private GameObject ActiveWeaponObject;
+    private Transform activeWeaponPoint;
+    private List<GameObject> weaponObjects;
 
     [Header("Pistol")]
     [SerializeField]private Transform pistolPoint;
     [SerializeField] private GameObject pistolObject;
 
+    [Header("Cannon")]
+    [SerializeField]
+    private Transform cannonPoint;
+    [SerializeField] private GameObject cannonObject;
+
+    [Header("Knife")]
+    [SerializeField]
+    private Transform knifePoint;
+    [SerializeField] private GameObject knifeObject;
+
 
     private bool hasPickUp = false;
     private GameObject pickUpObject;
+
+    private bool cannonballInComming = false;
+    private float activeFireDelay;
+
+    private AudioSource sfxSource;
     #endregion
 
     // Use this for initialization
@@ -47,9 +66,17 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate()
     {
         UpdateAttackCooldown();
+        if (cannonballInComming)
+        {
+            if (activeFireDelay < 0)
+            {
+                cannonballInComming = false;
+                ShootWeapon();
+                sfxSource.PlayOneShot(GameStats.Instance.CanonSound);
+            }
+        }
     }
 
-    #region initialize
     void Initialize()
     {
         boolSuckerPunsh = false;
@@ -75,8 +102,19 @@ public class PlayerController : MonoBehaviour {
         {
             playerUI = gameObject.GetComponent<PlayerUI>();
         }
+        if(sfxSource == null)
+        {
+            sfxSource = GameStats.Instance.SFXSource;
+        }
+        if (weaponObjects == null)
+        {
+            weaponObjects = new List<GameObject>();
+            weaponObjects.Add(pistolObject);
+            weaponObjects.Add(cannonObject);
+            weaponObjects.Add(knifeObject);
+        }
     }
-    #endregion
+
 
     public void MovePlayer(float x, float y)
     {
@@ -97,7 +135,7 @@ public class PlayerController : MonoBehaviour {
 
     public void RotatePlayer(float x, float y)
     {
-        float thresholded = 0.2f;
+        float thresholded = 0.05f;
         if (x != 0 && y != 0)
         {
             if (playerAnimator.isActiveAndEnabled)
@@ -108,10 +146,11 @@ public class PlayerController : MonoBehaviour {
             {
                 playerSprite.SetBodySpriteToRotation(x, y);
             }
+            float heading = Mathf.Atan2(x, y);
+            weaponRotationObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
             if (Mathf.Abs(x) > thresholded || Mathf.Abs(y) > thresholded)
             {
-                float heading = Mathf.Atan2(x, y);
-                weaponRotationObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
+                
             }
         }
     }
@@ -121,6 +160,10 @@ public class PlayerController : MonoBehaviour {
         if (attackCooldown >= 0)
         {
             attackCooldown -= Time.deltaTime;
+        }
+        if(activeFireDelay >= 0)
+        {
+            activeFireDelay -= Time.deltaTime;
         }
     }
 
@@ -141,13 +184,25 @@ public class PlayerController : MonoBehaviour {
 
     public void FireWeapon()
     {
-        if(attackCooldown <= 0)
-        {
-            WeaponCollection.WeaponNames weapon = playerDataModel.GetEquippedWeapon();
-            if (weapon == WeaponCollection.WeaponNames.knife || weapon == WeaponCollection.WeaponNames.pistol || weapon == WeaponCollection.WeaponNames.shotgun)
+        if (attackCooldown <= 0 && playerDataModel.GetWeaponListCount() > 0 && !cannonballInComming )
+        {        
+            switch (playerDataModel.GetEquippedWeapon().WeaponName)
             {
-                PistolShot();
-                attackCooldown =  playerDataModel.GetCooldownTime();
+                case WeaponCollection.WeaponNames.knife:
+                    ShootWeapon();
+                    attackCooldown = playerDataModel.GetCooldownTime();
+                    break;
+                case WeaponCollection.WeaponNames.pistol:
+                    ShootWeapon();
+                    attackCooldown = playerDataModel.GetCooldownTime();
+                    sfxSource.PlayOneShot(GameStats.Instance.PistolSound);
+                    break;
+                case WeaponCollection.WeaponNames.cannon:
+                    cannonballInComming = true;
+                    activeFireDelay = playerDataModel.GetEquippedWeapon().FireDelay;
+                    sfxSource.PlayOneShot(GameStats.Instance.SlowmatchSound);
+                    break;
+
             }
         }
     }
@@ -159,29 +214,50 @@ public class PlayerController : MonoBehaviour {
             ActiveWeaponObject.SetActive(false);
         }
 
-        WeaponCollection.WeaponNames weapon = playerDataModel.GetEquippedWeapon();
-        if(weapon != WeaponCollection.WeaponNames.empty)
+        Weapon weapon = playerDataModel.GetEquippedWeapon();
+        if(weapon != null)
         {
-            if (weapon == WeaponCollection.WeaponNames.knife || weapon == WeaponCollection.WeaponNames.pistol || weapon == WeaponCollection.WeaponNames.shotgun)
+            foreach(GameObject gobj in weaponObjects)
+            {
+                gobj.SetActive(false);
+            }
+            if (weapon.WeaponName == WeaponCollection.WeaponNames.pistol)
             {
                 pistolObject.SetActive(true);
                 ActiveWeaponObject = pistolObject;
+                activeWeaponPoint = pistolPoint;
+            }
+            if(weapon.WeaponName == WeaponCollection.WeaponNames.cannon)
+            {
+                cannonObject.SetActive(true);
+                ActiveWeaponObject = cannonObject;
+                activeWeaponPoint = cannonPoint;
+            }
+            if (weapon.WeaponName == WeaponCollection.WeaponNames.knife)
+            {
+                knifeObject.SetActive(true);
+                ActiveWeaponObject = knifeObject;
+                activeWeaponPoint = knifePoint;
             }
         }
         
     }
 
-    public void SetPlayerToDead()
+    public void KillPlayer()
     {
-        if (playerAnimator.isActiveAndEnabled)
+        if (!playerDataModel.IsDead)
         {
-            playerAnimator.SetAnimationToDead();
-        }
-        else
-        {
-            playerSprite.SetBodySpriteToDead();
-        }
-        
+            playerDataModel.KillPlayer();
+            GameController.Instance.PlayerKilled();
+            if (playerAnimator.isActiveAndEnabled)
+            {
+                playerAnimator.SetAnimationToDead();
+            }
+            else
+            {
+                playerSprite.SetBodySpriteToDead();
+            }
+        }      
     }
 
     public void ResetPlayer()
@@ -225,11 +301,11 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void PistolShot()
+    public void ShootWeapon()
     {
-        BulletFactory.Instance.CreateBullet(pistolPoint,playerDataModel.GetEquippedWeapon(), playerDataModel.PlayerCode);
+        BulletFactory.Instance.CreateBullet(activeWeaponPoint,playerDataModel.GetEquippedWeapon().WeaponName, playerDataModel);
         playerDataModel.DeleteWeaponFifo();
-        SetWeaponSprite();
+        SetWeaponSprite(); 
     }
 
     #endregion

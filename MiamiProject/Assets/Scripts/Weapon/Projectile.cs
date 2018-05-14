@@ -8,23 +8,21 @@ public class Projectile : MonoBehaviour {
     private float lifetime = 0.5f;
     [SerializeField]
     private float moveSpeed = 0.5f;
-
-    private string playercode;
+    private PlayerDataModel referencePlayerDataModel;
 
     private bool noDamage;
     private Rigidbody2D rb2d;
 
-	// Use this for initialization
+    public PlayerDataModel ReferencePlayerDataModel { get { return referencePlayerDataModel; } }
+
 	void Start () {
         noDamage = false;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         var z = moveSpeed * Time.deltaTime;
         Vector2 movement = new Vector2(z, 0);
         rb2d.velocity = transform.up * moveSpeed;
-
     }
 	
-	// Update is called once per frame
 	void FixedUpdate () {
         CheckLiveTime();
         
@@ -34,7 +32,7 @@ public class Projectile : MonoBehaviour {
     {
         if(lifetime < 0)
         {
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
         else
         {
@@ -42,33 +40,35 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-    public void SetPlayerCode(string value)
+    public void SetPlayerDataModel(PlayerDataModel value)
     {
-        playercode = value;
-        this.transform.name = this.transform.name + value;
+        referencePlayerDataModel = value;
     }
    
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Wall")
+        
+        if (collision.tag == "Wall" || collision.tag == "Bullet")
         {
             noDamage = true;
-            Destroy(this.gameObject);
-        }
-        if (collision.tag == "Weapon" || collision.tag == "Bullet_P1" || collision.tag == "Bullet_P2" || collision.tag == "Bullet_P3" || collision.tag == "Bullet_P4")
-        {
-            noDamage = true;
+            DestroyObject();
         }
         if(collision.tag == "Player")
         {
-            if (this.tag != "Bullet_" + collision.gameObject.GetComponentInParent<PlayerDataModel>().PlayerCode)
+            if (referencePlayerDataModel != collision.gameObject.GetComponent<PlayerDataModel>())
             {
-                GameController.Instance.SetPointsToPlayer(this.tag, "player");
-                collision.gameObject.GetComponent<PlayerDataModel>().KillPlayer();
-                Destroy(this.gameObject);
-
+                if (!noDamage)
+                {
+                    referencePlayerDataModel.GetComponent<PlayerController>().AddPoints(collision.gameObject.GetComponent<PlayerDataModel>().PointsWorth);
+                    collision.gameObject.GetComponent<PlayerController>().KillPlayer();
+                }
+                DestroyObject();
             }
         }
+    }
+
+    public virtual void DestroyObject()
+    {
+        Destroy(this.gameObject);
     }
 }

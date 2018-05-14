@@ -6,11 +6,26 @@ public class WeaponCollection : MonoBehaviour {
 
     [SerializeField] private List<Weapon> Weapons;
     
-    public enum WeaponNames {empty, pistol, knife, shotgun};
+    public enum WeaponNames {empty, pistol, knife, cannon};
 
     public Weapon GetRandomWeapon()
     {
-        return Weapons[Random.Range(0, Weapons.Count)];
+        if(GameStats.Instance.OnlySpawnWeapons == WeaponNames.empty)
+        {
+            return Weapons[Random.Range(0, Weapons.Count)];
+        }
+        else
+        {
+            foreach(Weapon w in Weapons)
+            {
+                if(w.WeaponName == GameStats.Instance.OnlySpawnWeapons)
+                {
+                    return w;
+                }
+            }
+            return Weapons[Random.Range(0, Weapons.Count)];
+        }
+        
     }
 
     #region Instance
