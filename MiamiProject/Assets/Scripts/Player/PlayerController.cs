@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private PlayerSprite playerSprite;
     [SerializeField] private PlayerAnimator playerAnimator;
     [SerializeField] private PlayerUI playerUI;
+    [SerializeField] private Transform CameraPoint;
 
     public PlayerDataModel PlayerModelScript { get { return playerDataModel; } }
 
@@ -26,7 +27,6 @@ public class PlayerController : MonoBehaviour {
     private GameObject suckerPunsh;
 
     [Header("GeneralWeapons")]
-    [SerializeField]private float attackDelay = 0.3f;
     [SerializeField] private GameObject weaponRotationObject;
     private GameObject ActiveWeaponObject;
     private Transform activeWeaponPoint;
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
     private bool hasPickUp = false;
     private GameObject pickUpObject;
 
-    private bool cannonballInComming = false;
+    private bool shootIsInComming = false;
     private float activeFireDelay;
 
     private AudioSource sfxSource;
@@ -66,13 +66,13 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate()
     {
         UpdateAttackCooldown();
-        if (cannonballInComming)
+        if (shootIsInComming)
         {
             if (activeFireDelay < 0)
             {
-                cannonballInComming = false;
+                shootIsInComming = false;
+                sfxSource.Stop();
                 ShootWeapon();
-                sfxSource.PlayOneShot(GameStats.Instance.CanonSound);
             }
         }
     }
@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour {
     {
         boolSuckerPunsh = false;
         suckerPunsh = GameStats.Instance.SuckerPunsh;
-        attackDelay = 0;
         if(playerSprite == null)
         {
             playerSprite = gameObject.GetComponent<PlayerSprite>();
@@ -115,7 +114,6 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-
     public void MovePlayer(float x, float y)
     {
         if(Mathf.Abs(x) < playerDataModel.ControllerThreshhold ) {x = 0;}
@@ -135,7 +133,6 @@ public class PlayerController : MonoBehaviour {
 
     public void RotatePlayer(float x, float y)
     {
-        float thresholded = 0.05f;
         if (x != 0 && y != 0)
         {
             if (playerAnimator.isActiveAndEnabled)
@@ -148,11 +145,13 @@ public class PlayerController : MonoBehaviour {
             }
             float heading = Mathf.Atan2(x, y);
             weaponRotationObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
-            if (Mathf.Abs(x) > thresholded || Mathf.Abs(y) > thresholded)
-            {
-                
-            }
         }
+        MoveCamera(x, y);
+    }
+
+    private void MoveCamera(float x, float y)
+    {
+        CameraPoint.localPosition = new Vector3(x * -2f, y * 2f);
     }
 
     private void UpdateAttackCooldown()
@@ -182,28 +181,21 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void FireWeapon()
+    public void CheckFireWeapon()
     {
-        if (attackCooldown <= 0 && playerDataModel.GetWeaponListCount() > 0 && !cannonballInComming )
-        {        
-            switch (playerDataModel.GetEquippedWeapon().WeaponName)
+        if (attackCooldown <= 0 && playerDataModel.GetWeaponListCount() > 0 && !shootIsInComming )
+        {
+            if(playerDataModel.GetEquippedWeapon().FireDelay == 0)
             {
-                case WeaponCollection.WeaponNames.knife:
-                    ShootWeapon();
-                    attackCooldown = playerDataModel.GetCooldownTime();
-                    break;
-                case WeaponCollection.WeaponNames.pistol:
-                    ShootWeapon();
-                    attackCooldown = playerDataModel.GetCooldownTime();
-                    sfxSource.PlayOneShot(GameStats.Instance.PistolSound);
-                    break;
-                case WeaponCollection.WeaponNames.cannon:
-                    cannonballInComming = true;
-                    activeFireDelay = playerDataModel.GetEquippedWeapon().FireDelay;
-                    sfxSource.PlayOneShot(GameStats.Instance.SlowmatchSound);
-                    break;
-
+                ShootWeapon();
+                attackCooldown = playerDataModel.GetCooldownTime();
             }
+            else
+            {
+                shootIsInComming = true;
+                sfxSource.PlayOneShot(playerDataModel.GetEquippedWeapon().DelaySound);
+                activeFireDelay = playerDataModel.GetEquippedWeapon().FireDelay;
+            }  
         }
     }
 
@@ -221,26 +213,26 @@ public class PlayerController : MonoBehaviour {
             {
                 gobj.SetActive(false);
             }
-            if (weapon.WeaponName == WeaponCollection.WeaponNames.pistol)
+            switch (weapon.WeaponName)
             {
-                pistolObject.SetActive(true);
-                ActiveWeaponObject = pistolObject;
-                activeWeaponPoint = pistolPoint;
-            }
-            if(weapon.WeaponName == WeaponCollection.WeaponNames.cannon)
-            {
-                cannonObject.SetActive(true);
-                ActiveWeaponObject = cannonObject;
-                activeWeaponPoint = cannonPoint;
-            }
-            if (weapon.WeaponName == WeaponCollection.WeaponNames.knife)
-            {
-                knifeObject.SetActive(true);
-                ActiveWeaponObject = knifeObject;
-                activeWeaponPoint = knifePoint;
+                case WeaponCollection.WeaponNames.pistol:
+                    SetWeaponSpriteActive(pistolObject, pistolPoint);
+                    break;
+                case WeaponCollection.WeaponNames.cannon:
+                    SetWeaponSpriteActive(cannonObject, cannonPoint);
+                    break;
+                case WeaponCollection.WeaponNames.knife:
+                    SetWeaponSpriteActive(knifeObject, knifePoint);
+                    break;
             }
         }
-        
+    }
+
+    private void SetWeaponSpriteActive(GameObject weaponobject, Transform weaponPoint)
+    {
+        weaponobject.SetActive(true);
+        ActiveWeaponObject = weaponobject;
+        activeWeaponPoint = weaponPoint;
     }
 
     public void KillPlayer()
@@ -274,8 +266,7 @@ public class PlayerController : MonoBehaviour {
         playerUI.SetPointText(playerDataModel.PlayerScore);
     }
 
-    #region weapons
-
+    //Not in Use anymore
     private void SuckerPunsh()
     {
         if(punshCooldown < 0)
@@ -303,12 +294,11 @@ public class PlayerController : MonoBehaviour {
 
     public void ShootWeapon()
     {
+        sfxSource.PlayOneShot(playerDataModel.GetEquippedWeapon().ShootSound);
         BulletFactory.Instance.CreateBullet(activeWeaponPoint,playerDataModel.GetEquippedWeapon().WeaponName, playerDataModel);
         playerDataModel.DeleteWeaponFifo();
         SetWeaponSprite(); 
     }
-
-    #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

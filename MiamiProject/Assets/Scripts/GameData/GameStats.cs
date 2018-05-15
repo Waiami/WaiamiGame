@@ -38,9 +38,7 @@ public class GameStats : MonoBehaviour {
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _sfxSource;
     [SerializeField] private AudioClip _song01;
-    [SerializeField] private AudioClip _pistolSound;
-    [SerializeField] private AudioClip _canonSound;
-    [SerializeField] private AudioClip _slowmatchSound;
+    [SerializeField] private AudioClip _missingSound;
 
     [Header("SpezialDebug")]
     [SerializeField]private WeaponCollection.WeaponNames _onlySpawnWeapon;
@@ -73,9 +71,7 @@ public class GameStats : MonoBehaviour {
     public AudioSource MusicSource { get { return _musicSource; } }
     public AudioSource SFXSource { get { return _sfxSource; } }
     public AudioClip Song01 { get { return _song01; } }
-    public AudioClip PistolSound { get { return _pistolSound; } }
-    public AudioClip CanonSound { get { return _canonSound; } }
-    public AudioClip SlowmatchSound { get { return _slowmatchSound; } }
+    public AudioClip SoundMissing { get { return _missingSound; } }
 
     public WeaponCollection.WeaponNames OnlySpawnWeapons { get { return _onlySpawnWeapon; } }
 

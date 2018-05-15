@@ -18,8 +18,6 @@ public class Projectile : MonoBehaviour {
 	void Start () {
         noDamage = false;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
-        var z = moveSpeed * Time.deltaTime;
-        Vector2 movement = new Vector2(z, 0);
         rb2d.velocity = transform.up * moveSpeed;
     }
 	

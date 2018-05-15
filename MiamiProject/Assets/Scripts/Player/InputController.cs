@@ -83,7 +83,7 @@ public class InputController : MonoBehaviour {
         var x = Input.GetAxis(fireButton);
         if (x > 0.7f)
         {
-            playerController.FireWeapon();
+            playerController.CheckFireWeapon();
         }
     }
 }
