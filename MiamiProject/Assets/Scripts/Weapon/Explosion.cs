@@ -44,6 +44,15 @@ public class Explosion : MonoBehaviour {
                 collision.gameObject.GetComponent<PlayerController>().KillPlayer();
             }
         }
+        if (collision.GetComponent<NPC>() != null)
+        {
+            if(collision.GetComponent<NPC>().Dead == false)
+            {
+                referencePlayerDataModel.GetComponent<PlayerController>().AddPoints(GameStats.Instance.PointsForNPCS);
+                collision.GetComponent<NPC>().KillNPC();
+            }
+            
+        }
     }
 
     private bool IsWallBetween(Vector2 origin, Vector2 target)

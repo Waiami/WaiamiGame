@@ -63,6 +63,15 @@ public class Projectile : MonoBehaviour {
                 DestroyObject();
             }
         }
+        if(collision.GetComponent<NPC>() != null)
+        {
+            if (!noDamage && collision.GetComponent<NPC>().Dead == false)
+            {
+                referencePlayerDataModel.GetComponent<PlayerController>().AddPoints(GameStats.Instance.PointsForNPCS);
+                collision.GetComponent<NPC>().KillNPC();
+            }
+            DestroyObject();
+        }
     }
 
     public virtual void DestroyObject()

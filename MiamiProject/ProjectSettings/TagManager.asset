@@ -12,6 +12,7 @@ TagManager:
   - PickUp
   - GameData
   - Bullet
+  - NPC
   layers:
   - Default
   - TransparentFX

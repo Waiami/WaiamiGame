@@ -116,9 +116,12 @@ public class PlayerController : MonoBehaviour {
 
     public void MovePlayer(float x, float y)
     {
-        if(Mathf.Abs(x) < playerDataModel.ControllerThreshhold ) {x = 0;}
-        if (Mathf.Abs(y) < playerDataModel.ControllerThreshhold) {y = 0;}
+        var x1 = Mathf.Sign(x);
+
+        x = Mathf.Clamp01(Mathf.Abs(x) * 2) * Mathf.Sign(x);
+        y = Mathf.Clamp01(Mathf.Abs(y) * 2) * Mathf.Sign(y);
         Vector3 movement = new Vector3(x, y, 0);
+        
         if (Mathf.Abs(x) + Mathf.Abs(y) > playerDataModel.Speedgab )
         {
             rb2d.velocity = movement * playerDataModel.RunSpeed * Time.deltaTime * 50;
@@ -128,6 +131,7 @@ public class PlayerController : MonoBehaviour {
             rb2d.velocity = movement * playerDataModel.WalkSpeed * Time.deltaTime * 50;
 
         }
+        playerAnimator.SetBodyAnimationDirection(x, y);
         playerAnimator.SetBlendFloat(Mathf.Max(Mathf.Abs(x), Mathf.Abs(y)));
     }
 
@@ -137,10 +141,12 @@ public class PlayerController : MonoBehaviour {
         {
             if (playerAnimator.isActiveAndEnabled)
             {
-                playerAnimator.SetAnimationDirection(x, y);
+                //playerAnimator.SetAnimationDirection(x, y);
+                //playerAnimator.SetBodyAnimationDirection(x, y);
             }
             else
             {
+                //playerSprite.SetHeadSpriteToRotation(x, y);
                 playerSprite.SetBodySpriteToRotation(x, y);
             }
             float heading = Mathf.Atan2(x, y);
@@ -151,7 +157,7 @@ public class PlayerController : MonoBehaviour {
 
     private void MoveCamera(float x, float y)
     {
-        CameraPoint.localPosition = new Vector3(x * -2f, y * 2f);
+        CameraPoint.localPosition = new Vector3(x * -1.5f, y * 1.5f);
     }
 
     private void UpdateAttackCooldown()

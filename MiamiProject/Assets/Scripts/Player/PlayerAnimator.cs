@@ -6,13 +6,31 @@ public class PlayerAnimator : MonoBehaviour {
     [Header("Animator")]
     [SerializeField] private Animator charAnimator;
 
+    private string[] triggername = new string[] { "MoveDownLeft", "MoveDown","MoveDownRight","MoveRight","MoveUpRight","MoveUp","MoveUpLeft", "MoveLeft"};
+    private int count;
+    private float multiplicator;
+    private int currentState = 0;
     // Use this for initialization
     void Start () {
 		if(charAnimator == null)
         {
             charAnimator = gameObject.GetComponent<Animator>();
         }
-	}
+
+        count = triggername.Length;
+        multiplicator = 1;
+        if (count != 0)
+        {
+            if (count > 6)
+            {
+                multiplicator = 1 + (1 - 6f / count);
+            }
+            else if (count < 6)
+            {
+                multiplicator = (6f / count);
+            }
+        }
+    }
 
     public void SetAnimationDirection(float x, float y)
     {
@@ -35,8 +53,23 @@ public class PlayerAnimator : MonoBehaviour {
         }
     }
 
+    public void SetBodyAnimationDirection(float x, float y)
+    {
+        int i = (int)((Mathf.PI + Mathf.Atan2(y + Mathf.PI / count, x + Mathf.PI / count)) * multiplicator);
+        //int i = Mathf.FloorToInt((Mathf.Atan2(y, x) * Mathf.Rad2Deg + 180) / 45f);
+        if (i != currentState)
+        {
+            charAnimator.SetTrigger("ChangeState");
+            charAnimator.SetTrigger(triggername[i]);
+            Debug.Log(triggername[i] + " " + i);
+            currentState = i;
+        }
+        
+    }
+
     public void SetAnimationToDead()
     {
+        charAnimator.SetTrigger("ChangeState");
         charAnimator.SetTrigger("Dead");
     }
 
