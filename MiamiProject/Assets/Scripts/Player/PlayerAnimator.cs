@@ -60,9 +60,13 @@ public class PlayerAnimator : MonoBehaviour {
         if (i != currentState)
         {
             charAnimator.SetTrigger("ChangeState");
-            charAnimator.SetTrigger(triggername[i]);
-            Debug.Log(triggername[i] + " " + i);
-            currentState = i;
+            if (i < count && i >=  0)
+            {
+                charAnimator.SetTrigger(triggername[i]);
+                Debug.Log(triggername[i] + " " + i);
+                currentState = i;
+            }           
+            
         }
         
     }
