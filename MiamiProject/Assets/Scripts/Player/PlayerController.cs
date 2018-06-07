@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private PlayerAnimator playerAnimator;
     [SerializeField] private PlayerUI playerUI;
     [SerializeField] private Transform CameraPoint;
+    [SerializeField] private CameraFollow playerCamera;
 
     public PlayerDataModel PlayerModelScript { get { return playerDataModel; } }
 
@@ -116,7 +117,6 @@ public class PlayerController : MonoBehaviour {
 
     public void MovePlayer(float x, float y)
     {
-        var x1 = Mathf.Sign(x);
 
         x = Mathf.Clamp01(Mathf.Abs(x) * 2) * Mathf.Sign(x);
         y = Mathf.Clamp01(Mathf.Abs(y) * 2) * Mathf.Sign(y);
@@ -158,6 +158,11 @@ public class PlayerController : MonoBehaviour {
     private void MoveCamera(float x, float y)
     {
         CameraPoint.localPosition = new Vector3(x * -1.5f, y * 1.5f);
+    }
+
+    public void ShakeCamera()
+    {
+        playerCamera.StartCameraShake();
     }
 
     private void UpdateAttackCooldown()
@@ -255,6 +260,7 @@ public class PlayerController : MonoBehaviour {
             {
                 playerSprite.SetBodySpriteToDead();
             }
+            playerCamera.StartLittleCameraShake();
         }      
     }
 
