@@ -10,6 +10,10 @@ public class GameController : MonoBehaviour {
     [SerializeField] private GameObject PlayerSpawns;
     [SerializeField] private GameUIView gameUIView;
     [SerializeField] private PickUpSpawnSystem pickUpSpawnSystem;
+    [SerializeField][Range (1,4)] private int PlayerCount;
+    [SerializeField] private GameObject[] PlayerPrefabs;
+    [SerializeField]
+    private GameObject[] CameraPrefabs;
 
     private int deadplayers = 0;
     private float resetDelay = 1f;
@@ -20,6 +24,7 @@ public class GameController : MonoBehaviour {
 
     
     void Start () {
+        CreatePlayers();
         Initialize();
         PlayChoosenSong();
     }
@@ -28,6 +33,17 @@ public class GameController : MonoBehaviour {
     {
         musikSource.clip = GameStats.Instance.Song01;
         musikSource.Play();
+    }
+
+    private void CreatePlayers()
+    {
+        for(int i = 0; PlayerCount > i; i++)
+        {
+            players[i] = Instantiate(PlayerPrefabs[i]).GetComponent<PlayerController>();
+            GameObject cam = Instantiate(CameraPrefabs[i]);
+            cam.GetComponent<CameraFollow>().SetPlayerPoint(players[i].GetCameraPoint());
+            players[i].SetCameraFollow(cam.GetComponent<CameraFollow>());
+        }
     }
 
     private void Initialize()
@@ -66,7 +82,6 @@ public class GameController : MonoBehaviour {
         }
         deadplayers++;
         CheckFinishGame();
-
     }
 
     private void CheckFinishGame()

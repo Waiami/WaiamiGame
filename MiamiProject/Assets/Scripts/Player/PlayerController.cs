@@ -160,6 +160,16 @@ public class PlayerController : MonoBehaviour {
         CameraPoint.localPosition = new Vector3(x * -1.5f, y * 1.5f);
     }
 
+    public Transform GetCameraPoint()
+    {
+        return CameraPoint;
+    }
+
+    public void SetCameraFollow(CameraFollow value)
+    {
+        playerCamera = value;
+    }
+
     public void ShakeCamera()
     {
         playerCamera.StartCameraShake();

@@ -9,6 +9,6 @@ public class PlayerUI : MonoBehaviour {
 
     public void SetPointText(int points)
     {
-        pointText.text = points.ToString();
+       // pointText.text = points.ToString();
     }
 }

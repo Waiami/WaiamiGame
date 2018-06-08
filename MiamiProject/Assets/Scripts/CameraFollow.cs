@@ -37,6 +37,11 @@ public class CameraFollow : MonoBehaviour {
         transform.position = smoothPosition;
     }
 
+    public void SetPlayerPoint(Transform rotationPoint)
+    {
+        target = rotationPoint;
+    }
+
     public void ResetCamera()
     {
         transform.position = target.position;

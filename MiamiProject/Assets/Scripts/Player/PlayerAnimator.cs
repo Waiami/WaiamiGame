@@ -55,7 +55,7 @@ public class PlayerAnimator : MonoBehaviour {
 
     public void SetBodyAnimationDirection(float x, float y)
     {
-        int i = (int)((Mathf.PI + Mathf.Atan2(y + Mathf.PI / count, x + Mathf.PI / count)) * multiplicator);
+        int i = (int)((Mathf.PI + Mathf.Atan2(y + Mathf.PI / count, x + Mathf.PI / count)) * 1.25f);
         //int i = Mathf.FloorToInt((Mathf.Atan2(y, x) * Mathf.Rad2Deg + 180) / 45f);
         if (i != currentState)
         {
