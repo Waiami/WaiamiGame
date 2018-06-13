@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
     [SerializeField] private GameObject[] CameraPrefabs;
     [SerializeField] private GameObject[] TwoPlayerCameraPrefabs;
     [SerializeField] private GameObject windowBar;
+    [SerializeField] private GameObject CountDownPanel;
 
     private int deadplayers = 0;
     private int[] controllerID = {0, 1, 2, 3 };
@@ -28,13 +29,15 @@ public class GameController : MonoBehaviour {
     void Start () {
         //CreatePlayers();
         //Initialize();
+        
         //PlayChoosenSong();
     }
 	
     private void PlayChoosenSong()
     {
+        ulong sample = (ulong)Random.Range(0, 44100);
         musikSource.clip = GameStats.Instance.Song01;
-        musikSource.Play();
+        musikSource.Play(sample);
     }
 
     private void CreatePlayers()
@@ -121,6 +124,13 @@ public class GameController : MonoBehaviour {
         {
             windowBar.SetActive(true);
         }
+        musikSource.pitch = 1;
+        musikSource.panStereo = 0;
+        musikSource.volume = 1;
+        SetPlayerMoveable(false);
+        CountDownPanel.SetActive(true);
+        StartCoroutine(WaitToSetPlayerMovement(4, true));
+
     }
 
     public void PlayerKilled()
@@ -132,10 +142,27 @@ public class GameController : MonoBehaviour {
         deadplayers++;
         CheckFinishGame();
     }
+    
+    private void SetPlayerMoveable(bool value)
+    {
+        foreach(PlayerController p in players)
+        {
+            if(p != null)
+            {
+                p.CantMove = value;
+            }
+        }
+    }
+
+    private IEnumerator WaitToSetPlayerMovement(int time, bool value)
+    {
+        yield return new WaitForSeconds(time);
+        SetPlayerMoveable(value);
+    }
 
     private void CheckFinishGame()
     {
-        if(deadplayers == 3)
+        if(deadplayers == PlayerCount - 1)
         {
             PlayerController winningPlayer = GetWinningPlayer();
             gameUIView.EnableText();
@@ -150,9 +177,12 @@ public class GameController : MonoBehaviour {
     {
         foreach(PlayerController pc in players)
         {
-            if (!pc.GetComponent<PlayerDataModel>().IsDead)
+            if(pc != null)
             {
-                return pc;
+                if (!pc.GetComponent<PlayerDataModel>().IsDead)
+                {
+                    return pc;
+                }
             }
         }
         return null;
@@ -164,7 +194,10 @@ public class GameController : MonoBehaviour {
         Initialize();
         foreach (PlayerController pc in players)
         {
-            pc.ResetPlayer();
+            if(pc != null)
+            {
+                pc.ResetPlayer();
+            }
         }
         pickUpSpawnSystem.SpawnNewPickUps();
     }

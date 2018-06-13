@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour {
 
     private bool shootIsInComming = false;
     private float activeFireDelay;
+    [SerializeField]private bool cantMove;
+    public bool CantMove { set { cantMove = value; } }
 
     private AudioSource sfxSource;
     #endregion
@@ -117,22 +119,28 @@ public class PlayerController : MonoBehaviour {
 
     public void MovePlayer(float x, float y)
     {
-
-        x = Mathf.Clamp01(Mathf.Abs(x) * 2) * Mathf.Sign(x);
-        y = Mathf.Clamp01(Mathf.Abs(y) * 2) * Mathf.Sign(y);
-        Vector3 movement = new Vector3(x, y, 0);
-        
-        if (Mathf.Abs(x) + Mathf.Abs(y) > playerDataModel.Speedgab )
+        if (cantMove)
         {
-            rb2d.velocity = movement * playerDataModel.RunSpeed * Time.deltaTime * 50;
+            x = Mathf.Clamp01(Mathf.Abs(x) * 2) * Mathf.Sign(x);
+            y = Mathf.Clamp01(Mathf.Abs(y) * 2) * Mathf.Sign(y);
+            Vector3 movement = new Vector3(x, y, 0);
+
+            if (Mathf.Abs(x) + Mathf.Abs(y) > playerDataModel.Speedgab)
+            {
+                rb2d.velocity = movement * playerDataModel.RunSpeed * Time.deltaTime * 50;
+            }
+            else
+            {
+                rb2d.velocity = movement * playerDataModel.WalkSpeed * Time.deltaTime * 50;
+
+            }
+            playerAnimator.SetBodyAnimationDirection(x, y);
+            playerAnimator.SetBlendFloat(Mathf.Max(Mathf.Abs(x), Mathf.Abs(y)));
         }
         else
         {
-            rb2d.velocity = movement * playerDataModel.WalkSpeed * Time.deltaTime * 50;
-
+            playerAnimator.SetBlendFloat(0);
         }
-        playerAnimator.SetBodyAnimationDirection(x, y);
-        playerAnimator.SetBlendFloat(Mathf.Max(Mathf.Abs(x), Mathf.Abs(y)));
     }
 
     public void RotatePlayer(float x, float y)
