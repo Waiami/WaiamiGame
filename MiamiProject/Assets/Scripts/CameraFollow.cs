@@ -37,6 +37,12 @@ public class CameraFollow : MonoBehaviour {
         transform.position = smoothPosition;
     }
 
+    public void TeleportCamera()
+    {
+        Vector3 desiredPosition = target.position + cameraOffset;
+        transform.position = desiredPosition;
+    }
+
     public void SetPlayerPoint(Transform rotationPoint)
     {
         target = rotationPoint;

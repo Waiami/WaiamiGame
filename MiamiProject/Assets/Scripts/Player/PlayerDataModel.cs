@@ -148,7 +148,10 @@ public class PlayerDataModel : MonoBehaviour {
     public void ResetPlayer()
     {
         dead = false;
-        playerWeaponList.Clear();
+        if(playerWeaponList != null)
+        {
+            playerWeaponList.Clear();
+        }
         equippedWeapon = null;
     }
 }

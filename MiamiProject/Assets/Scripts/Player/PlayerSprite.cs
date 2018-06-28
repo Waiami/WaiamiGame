@@ -12,8 +12,10 @@ public class PlayerSprite : MonoBehaviour {
     [SerializeField] private Sprite CharRight;
     [SerializeField] private Sprite CharDead;
     [SerializeField] private Sprite[] CharSprites;
-
+    [SerializeField] private SpriteRenderer headSpriteRenderer;
+    [SerializeField] private Sprite[] HeadSprites;
     private int count;
+    private int currentState;
     private float multiplicator;
 
     private void Start()
@@ -55,6 +57,110 @@ public class PlayerSprite : MonoBehaviour {
                 playerSpriteRenderer.sprite = CharRight;
             }
         }
+    }
+
+    public void SetHeadDirectionToBody(float x, float y)
+    {
+        int i = (int)((Mathf.PI + Mathf.Atan2(y + Mathf.PI / 8, x + Mathf.PI / 8)) * 1.25f);
+        //int i = Mathf.FloorToInt((Mathf.Atan2(y, x) * Mathf.Rad2Deg + 180) / 45f);
+        if (i != currentState)
+        {
+            Debug.Log(i);
+            if (i < count && i >= 0)
+            {
+                currentState = i;
+                switch (i)
+                {
+                    case 0:
+                        headSpriteRenderer.sprite = HeadSprites[3];
+                        headSpriteRenderer.flipX = true;
+                        break;
+                    case 1:
+                        headSpriteRenderer.sprite = HeadSprites[1];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 2:
+                        headSpriteRenderer.sprite = HeadSprites[3];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 3:
+                        headSpriteRenderer.sprite = HeadSprites[2];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 4:
+                        headSpriteRenderer.sprite = HeadSprites[4];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 5:
+                        headSpriteRenderer.sprite = HeadSprites[0];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 6:
+                        headSpriteRenderer.sprite = HeadSprites[4];
+                        headSpriteRenderer.flipX = true;
+                        break;
+                    case 7:
+                        headSpriteRenderer.sprite = HeadSprites[2];
+                        headSpriteRenderer.flipX = true;
+                        break;
+
+                }
+            }
+
+        }
+
+    }
+
+    public void SetHeadDirection(float x, float y)
+    {
+        int i = (int)((Mathf.PI + Mathf.Atan2(y + Mathf.PI / 8, x + Mathf.PI / 8)) * 1.25f);
+        //int i = Mathf.FloorToInt((Mathf.Atan2(y, x) * Mathf.Rad2Deg + 180) / 45f);
+        if (i != currentState)
+        {
+            //Debug.Log(i);
+            if (i < count && i >= 0)
+            {
+                currentState = i;
+                switch (i)
+                {
+                    case 0:
+                        headSpriteRenderer.sprite = HeadSprites[3];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 1:
+                        headSpriteRenderer.sprite = HeadSprites[1];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 2:
+                        headSpriteRenderer.sprite = HeadSprites[3];
+                        headSpriteRenderer.flipX = true;
+                        break;
+                    case 3:
+                        headSpriteRenderer.sprite = HeadSprites[2];
+                        headSpriteRenderer.flipX = true;
+                        break;
+                    case 4:
+                        headSpriteRenderer.sprite = HeadSprites[4];
+                        headSpriteRenderer.flipX = true;
+                        break;
+                    case 5:
+                        headSpriteRenderer.sprite = HeadSprites[0];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 6:
+                        headSpriteRenderer.sprite = HeadSprites[4];
+                        headSpriteRenderer.flipX = false;
+                        break;
+                    case 7:
+                        headSpriteRenderer.sprite = HeadSprites[2];
+                        headSpriteRenderer.flipX = false;
+                        break;
+
+                }
+            }
+
+        }
+
     }
 
     public void SetBodySpriteToRotation(float x, float y)

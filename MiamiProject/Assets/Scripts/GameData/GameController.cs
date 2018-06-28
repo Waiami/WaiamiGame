@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
     private float resetTimer;
     private bool gameFinished = false;
     private AudioSource musikSource;
+
     #endregion
 
     
@@ -61,6 +62,7 @@ public class GameController : MonoBehaviour {
                 }
                 cam.GetComponent<CameraFollow>().SetPlayerPoint(players[index].GetCameraPoint());
                 players[index].SetCameraFollow(cam.GetComponent<CameraFollow>());
+                
             }
             else
             {
@@ -215,6 +217,13 @@ public class GameController : MonoBehaviour {
             }         
         }
     }
+
+
+    public PlayerController GetPlayerController(int i)
+    {
+        return players[i];
+    }
+
 
     #region Instance
     public static GameController Instance;

@@ -20,6 +20,7 @@ public class NPC : MonoBehaviour {
     {
         GetComponent<SpriteRenderer>().sprite = Deadsprite;
         GetComponent<BoxCollider2D>().isTrigger = true;
+        GetComponent<NPCMovement>().NPCKilled();
         dead = true;
     }
 }

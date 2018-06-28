@@ -63,12 +63,30 @@ public class PlayerAnimator : MonoBehaviour {
             if (i < count && i >=  0)
             {
                 charAnimator.SetTrigger(triggername[i]);
-                Debug.Log(triggername[i] + " " + i);
+                //Debug.Log(triggername[i] + " " + i);
                 currentState = i;
             }           
             
         }
         
+    }
+
+    public void InstantiateDeadEffects(Transform position)
+    {
+        GameObject[] gobjs = GameStats.Instance.DeadEffects;
+        foreach(GameObject go in gobjs)
+        {
+            Instantiate(go, position);
+        }
+    }
+
+    public void InstantiateSpawnEffects(Transform position)
+    {
+        GameObject[] gobjs = GameStats.Instance.SpawnEffects;
+        foreach (GameObject go in gobjs)
+        {
+            Instantiate(go, position);
+        }
     }
 
     public void SetAnimationToDead()
@@ -84,6 +102,7 @@ public class PlayerAnimator : MonoBehaviour {
 
     public void ResetPlayerAnimation()
     {
+        charAnimator.SetTrigger("ChangeState");
         charAnimator.SetTrigger("Reset");
     }
 }

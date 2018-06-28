@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private PlayerDataModel playerDataModel;
     [SerializeField] private PlayerSprite playerSprite;
+    [SerializeField] private Transform headPoint;
     [SerializeField] private PlayerAnimator playerAnimator;
     [SerializeField] private PlayerUI playerUI;
     [SerializeField] private Transform CameraPoint;
@@ -64,7 +65,8 @@ public class PlayerController : MonoBehaviour {
         Initialize();
         playerDataModel.AddPoints(GameStats.Instance.PlayerStartScore);
         playerUI.SetPointText(playerDataModel.PlayerScore);
-	}
+        playerAnimator.InstantiateSpawnEffects(transform);
+    }
 
     private void FixedUpdate()
     {
@@ -135,6 +137,7 @@ public class PlayerController : MonoBehaviour {
 
             }
             playerAnimator.SetBodyAnimationDirection(x, y);
+            playerSprite.SetHeadDirectionToBody(x, y);
             playerAnimator.SetBlendFloat(Mathf.Max(Mathf.Abs(x), Mathf.Abs(y)));
         }
         else
@@ -157,7 +160,9 @@ public class PlayerController : MonoBehaviour {
                 //playerSprite.SetHeadSpriteToRotation(x, y);
                 playerSprite.SetBodySpriteToRotation(x, y);
             }
+            
             float heading = Mathf.Atan2(x, y);
+            //headPoint.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
             weaponRotationObject.transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
         }
         MoveCamera(x, y);
@@ -233,6 +238,10 @@ public class PlayerController : MonoBehaviour {
         if(ActiveWeaponObject!= null)
         {
             ActiveWeaponObject.SetActive(false);
+            if (!headPoint.gameObject.activeInHierarchy)
+            {
+                headPoint.gameObject.SetActive(true);
+            }
         }
 
         Weapon weapon = playerDataModel.GetEquippedWeapon();
@@ -246,12 +255,15 @@ public class PlayerController : MonoBehaviour {
             {
                 case WeaponCollection.WeaponNames.pistol:
                     SetWeaponSpriteActive(pistolObject, pistolPoint);
+                    headPoint.gameObject.SetActive(false);
                     break;
                 case WeaponCollection.WeaponNames.cannon:
                     SetWeaponSpriteActive(cannonObject, cannonPoint);
+                    headPoint.gameObject.SetActive(false);
                     break;
                 case WeaponCollection.WeaponNames.knife:
                     SetWeaponSpriteActive(knifeObject, knifePoint);
+                    headPoint.gameObject.SetActive(false);
                     break;
             }
         }
@@ -268,11 +280,17 @@ public class PlayerController : MonoBehaviour {
     {
         if (!playerDataModel.IsDead)
         {
+            headPoint.gameObject.SetActive(false);
             playerDataModel.KillPlayer();
+            if(ActiveWeaponObject != null)
+            {
+                ActiveWeaponObject.SetActive(false);
+            }
             GameController.Instance.PlayerKilled();
             if (playerAnimator.isActiveAndEnabled)
             {
                 playerAnimator.SetAnimationToDead();
+                playerAnimator.InstantiateDeadEffects(transform);
             }
             else
             {
@@ -284,16 +302,28 @@ public class PlayerController : MonoBehaviour {
 
     public void ResetPlayer()
     {
+        headPoint.gameObject.SetActive(true);
         playerSprite.ResetPlayerSprite(); 
         playerAnimator.ResetPlayerAnimation();
+        playerAnimator.InstantiateSpawnEffects(transform);
         playerDataModel.ResetPlayer();
         SetWeaponSprite();
+        if(playerCamera != null)
+        {
+            playerCamera.TeleportCamera();
+        }
+        
     }
 
     public void AddPoints(int points)
     {
         playerDataModel.AddPoints(points);
         playerUI.SetPointText(playerDataModel.PlayerScore);
+    }
+
+    public void SetHeadState(bool value)
+    {
+        headPoint.gameObject.SetActive(value);
     }
 
     //Not in Use anymore

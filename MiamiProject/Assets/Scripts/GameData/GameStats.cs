@@ -31,6 +31,14 @@ public class GameStats : MonoBehaviour {
     [SerializeField] private int _pointsForWaldo;
     [SerializeField] private int _pointsForWinning;
 
+    [Header("NPCS")]
+    [SerializeField] private float _minMovementSpeed;
+    [SerializeField] private float _maxMovementSpeed;
+    [SerializeField] private float _minDesinationRadius;
+    [SerializeField] private float _maxDestinationRadius;
+    [SerializeField] private float _minChangeDestinationDelay;
+    [SerializeField] private float _maxChangeDestinationDelay;
+
     [Header("SpezialWeaponObjects")]
     [SerializeField] private GameObject _explosion;
 
@@ -40,9 +48,17 @@ public class GameStats : MonoBehaviour {
     [SerializeField] private AudioClip _song01;
     [SerializeField] private AudioClip _missingSound;
 
+    [Header("Menu Sounds")]
+    [SerializeField] private AudioClip _soundButtonChange;
+    [SerializeField] private AudioClip _soundButtonPressed;
+    [SerializeField] private AudioClip _soundWoosh;
+
     [Header("SpezialDebug")]
     [SerializeField]private WeaponCollection.WeaponNames _onlySpawnWeapon;
 
+    [Header("Special Effects")]
+    [SerializeField] private GameObject[] _deadEffects;
+    [SerializeField] private GameObject[] _spawnEffects;
 
     #endregion
 
@@ -66,6 +82,13 @@ public class GameStats : MonoBehaviour {
     public int PointsForWinning { get { return _pointsForWinning; } }
     public int PlayerStartScore { get { return _playerStartScore; } }
 
+    public float MinMovementSpeed { get { return _minMovementSpeed; } }
+    public float MaxMovementSpeed { get { return _maxMovementSpeed; } }
+    public float MinDesinationRadius { get { return _minDesinationRadius; } }
+    public float MaxDestinationRadius { get { return _maxDestinationRadius; } }
+    public float MinChangeDestinationDelay { get { return _minChangeDestinationDelay; } }
+    public float MaxChangeDestinationDelay { get { return _maxChangeDestinationDelay; } }
+
     public GameObject Explosion { get { return _explosion; } }
 
     public AudioSource MusicSource { get { return _musicSource; } }
@@ -73,7 +96,14 @@ public class GameStats : MonoBehaviour {
     public AudioClip Song01 { get { return _song01; } }
     public AudioClip SoundMissing { get { return _missingSound; } }
 
+    public AudioClip SoundButtonChanged { get { return _soundButtonChange; } }
+    public AudioClip SoundButtonPressesd { get { return _soundButtonPressed; } }
+    public AudioClip SoundWoosh { get { return _soundWoosh; } }
+
     public WeaponCollection.WeaponNames OnlySpawnWeapons { get { return _onlySpawnWeapon; } }
+    
+    public GameObject[] DeadEffects { get { return _deadEffects; } }
+    public GameObject[] SpawnEffects { get { return _spawnEffects; } }
 
     #endregion
 
