@@ -10,11 +10,14 @@ public class NPCGenerator : MonoBehaviour {
     [SerializeField] private GameObject npcPrefab;
     [SerializeField] private Transform wayPointParent;
     public Transform[] waypoints;
+    public List<Transform> preferedWaypoints;
+    public List<Transform> spawnableWaypoints;
 	// Use this for initialization
 	void Start () {
         waypoints =  wayPointParent.GetComponentsInChildren<Transform>();
-        SpawnNPCs(npcPrefab, waypoints, minNPCs, maxNPCs);
-
+        GetSawnableWaypoints();
+        SpawnNPCs(npcPrefab, preferedWaypoints, minNPCs, maxNPCs, 66);
+        SpawnNPCs(npcPrefab, spawnableWaypoints, minNPCs, maxNPCs, 33);
     }
 	
 	// Update is called once per frame
@@ -22,10 +25,28 @@ public class NPCGenerator : MonoBehaviour {
 		
 	}
 
-    private void SpawnNPCs(GameObject spawnObject, Transform[] waypoints, int minNPCs, int maxNPCs)
+    private void GetSawnableWaypoints()
     {
-        int max = Random.Range(minNPCs, maxNPCs);
-        int count = waypoints.Length;
+        foreach(Transform tr in waypoints)
+        {
+            if(tr.GetComponent<WayPoint>()!= null)
+            {
+                if (tr.GetComponent<WayPoint>().preferdedSpawn)
+                {
+                    preferedWaypoints.Add(tr);
+                }
+                else if (!tr.GetComponent<WayPoint>().spawnImpossible)
+                {
+                    spawnableWaypoints.Add(tr);
+                }
+            }
+        }
+    }
+
+    private void SpawnNPCs(GameObject spawnObject, List <Transform> waypoints, int minNPCs, int maxNPCs, int percentage)
+    {
+        int max = Random.Range(minNPCs, maxNPCs) * percentage / 100;
+        int count = waypoints.Count;
         var rnd = new System.Random();
         var randomNumbers = Enumerable.Range(0, count).OrderBy(x => rnd.Next()).Take(max).ToList();
 
@@ -35,15 +56,19 @@ public class NPCGenerator : MonoBehaviour {
             if (position != null)
             {
                 GameObject obj = Instantiate(spawnObject, position);
-                float movementspeed = Random.Range(GameStats.Instance.MinMovementSpeed, GameStats.Instance.MaxMovementSpeed);
-                float destinationRadius = Random.Range(GameStats.Instance.MinDesinationRadius, GameStats.Instance.MaxDestinationRadius);
-                float changeDestinationDelay = Random.Range(GameStats.Instance.MinChangeDestinationDelay, GameStats.Instance.MaxChangeDestinationDelay);
-                obj.GetComponent<NPCMovement>().SetMovementData(movementspeed, destinationRadius, changeDestinationDelay, position.GetComponent<WayPoint>());
-                obj.transform.SetParent(npcParent);
-                
+                SetNPCData(obj, position);
             }
 
         }
+    }
+
+    private void SetNPCData(GameObject obj, Transform position)
+    {
+        float movementspeed = Random.Range(GameStats.Instance.MinMovementSpeed, GameStats.Instance.MaxMovementSpeed);
+        float destinationRadius = Random.Range(GameStats.Instance.MinDesinationRadius, GameStats.Instance.MaxDestinationRadius);
+        float changeDestinationDelay = Random.Range(GameStats.Instance.MinChangeDestinationDelay, GameStats.Instance.MaxChangeDestinationDelay);
+        obj.GetComponent<NPCMovement>().SetMovementData(movementspeed, destinationRadius, changeDestinationDelay, position.GetComponent<WayPoint>());
+        obj.transform.SetParent(npcParent);
     }
 
     #region Instance

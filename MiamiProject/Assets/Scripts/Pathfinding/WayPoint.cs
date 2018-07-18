@@ -6,10 +6,11 @@ using System.Linq;
 public class WayPoint : MonoBehaviour {
     public List<Collider2D> nextWaypoints;
     public LayerMask layerMask;
-
+    public bool preferdedSpawn;
+    public bool spawnImpossible;
     // Use this for initialization
     void Start () {
-        Collider2D[] hitCollider = Physics2D.OverlapCircleAll(transform.position,6f);
+        Collider2D[] hitCollider = Physics2D.OverlapCircleAll(transform.position,4f);
         foreach(Collider2D c2d in hitCollider)
         {
             WayPoint wp = c2d.GetComponent<WayPoint>();
@@ -40,7 +41,7 @@ public class WayPoint : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(origin, (target - origin), (origin - target).magnitude, layerMask);
         if (hit.collider != null)
         {
-            if (hit.collider.tag == "Wall")
+            if (hit.collider.tag == "Wall" || hit.collider.tag == "PathBlocker")
             {
                 return true;
             }

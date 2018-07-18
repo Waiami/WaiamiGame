@@ -16,6 +16,8 @@ TagManager:
   - enemy
   - GridBox
   - WayPoint
+  - PreferedSpawn
+  - PathBlocker
   layers:
   - Default
   - TransparentFX
