@@ -53,6 +53,12 @@ public class PlayerAnimator : MonoBehaviour {
         }
     }
 
+    public void SetBodyDirectionByBlendTree(float x, float y)
+    {
+        charAnimator.SetFloat("X", x);
+        charAnimator.SetFloat("Y", y);
+    }
+
     public void SetBodyAnimationDirection(float x, float y)
     {
         int i = (int)((Mathf.PI + Mathf.Atan2(y + Mathf.PI / count, x + Mathf.PI / count)) * 1.25f);
@@ -91,7 +97,6 @@ public class PlayerAnimator : MonoBehaviour {
 
     public void SetAnimationToDead()
     {
-        charAnimator.SetTrigger("ChangeState");
         charAnimator.SetTrigger("Dead");
     }
 
@@ -102,7 +107,6 @@ public class PlayerAnimator : MonoBehaviour {
 
     public void ResetPlayerAnimation()
     {
-        charAnimator.SetTrigger("ChangeState");
         charAnimator.SetTrigger("Reset");
     }
 }

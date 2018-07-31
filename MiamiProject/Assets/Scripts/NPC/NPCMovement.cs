@@ -7,14 +7,22 @@ public class NPCMovement : MonoBehaviour {
     [SerializeField] private float destinationRadius;
     [SerializeField] private float changeDestinationDelay;
     [SerializeField] private float minimumStandingTime;
+    [SerializeField] private GameObject explosionEffect;
+    [SerializeField] private GameObject konfettiEffect;
     private bool destinationReached = false;
     private float changeDestinationCountDown;
     private float standingTimer;
     private WayPoint _wayPoint;
     private WayPoint _oldWayPoint;
     private bool dead;
+    private Animator npcanimator;
+    private SpriteRenderer npcSpriteRenderer;
+    public SpriteRenderer npcHeadSpriteRenderer;
+
 	// Use this for initialization
 	void Start () {
+        npcanimator = GetComponent<Animator>();
+        npcSpriteRenderer = GetComponent<SpriteRenderer>();
         changeDestinationCountDown = changeDestinationDelay;
         standingTimer = -1;
         dead = false;
@@ -60,6 +68,7 @@ public class NPCMovement : MonoBehaviour {
                 }
                 else
                 {
+                    npcanimator.SetTrigger("Idle");
                     standingTimer = minimumStandingTime;
                 }
             }
@@ -77,12 +86,24 @@ public class NPCMovement : MonoBehaviour {
         _wayPoint = _wayPoint.SetDestinationWaypoint(_oldWayPoint);
         destinationReached = false;
         changeDestinationCountDown = changeDestinationDelay;
+        
     }
 
     private void MoveToDestination()
     {
+        npcanimator.SetTrigger("Walk");
         Vector3 desiredPosition = _wayPoint.transform.position;
         Vector3 smoothPosition = Vector3.MoveTowards(transform.position, desiredPosition, movementSpeed * Time.deltaTime);
+        if(desiredPosition.x <= transform.position.x)
+        {
+            npcSpriteRenderer.flipX = true;
+            npcHeadSpriteRenderer.flipX = false;
+        }
+        else
+        {
+            npcSpriteRenderer.flipX = false;
+            npcHeadSpriteRenderer.flipX = true;
+        }
         transform.position = smoothPosition;
     }
 
@@ -108,11 +129,19 @@ public class NPCMovement : MonoBehaviour {
         if (x <= destinationRadius && y <= destinationRadius)
         {
             destinationReached = true;
+            npcanimator.SetTrigger("Idle");
         }
     }
 
     public void NPCKilled()
     {
+        npcanimator.SetTrigger("Dead");
+        GameObject effect1 = Instantiate(explosionEffect, npcanimator.transform);
+        effect1.transform.SetParent(null);
+        GameObject effect2 = Instantiate(konfettiEffect, npcHeadSpriteRenderer.transform);
+        effect2.transform.SetParent(null);
+        Destroy(npcHeadSpriteRenderer.gameObject);
+        //Todo Add Kill Animations
         dead = true;
     }
 }

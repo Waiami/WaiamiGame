@@ -88,7 +88,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1614721011936210
 GameObject:
   m_ObjectHideFlags: 1
@@ -549,7 +549,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.195, y: 0.272}
+    oldSize: {x: 0.391, y: 0.75799996}
     newSize: {x: 0.049, y: 0.1185}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -601,7 +601,7 @@ Animator:
   m_GameObject: {fileID: 1957330689559952}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5cb585cd9de22e54689d1403be39b463, type: 2}
+  m_Controller: {fileID: 9100000, guid: 46b17f6dc5765cc449bcacd252002225, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -639,9 +639,8 @@ MonoBehaviour:
   playerUI: {fileID: 114231545725013004}
   CameraPoint: {fileID: 4608974088232578}
   playerCamera: {fileID: 0}
-  punshDelay: 0.3
-  leftHand: {fileID: 1803008375949620}
-  rightHand: {fileID: 1196924763345648}
+  SmokeEffect: {fileID: 1953128039699680, guid: 1395e05133015c640b2bea1aad824528,
+    type: 2}
   weaponRotationObject: {fileID: 1868091219837594}
   pistolPoint: {fileID: 4997042121281434}
   pistolObject: {fileID: 1701082609058860}
@@ -649,6 +648,14 @@ MonoBehaviour:
   cannonObject: {fileID: 1656775484662520}
   knifePoint: {fileID: 4432714167093818}
   knifeObject: {fileID: 1853068955190954}
+  laserPoint: {fileID: 0}
+  laserObject: {fileID: 0}
+  snakePoint: {fileID: 0}
+  snakeObject: {fileID: 0}
+  rocketPoint: {fileID: 0}
+  rocketObject: {fileID: 0}
+  dragonPoint: {fileID: 0}
+  dragonObject: {fileID: 0}
   cantMove: 1
 --- !u!114 &114178585470448304
 MonoBehaviour:
@@ -913,7 +920,7 @@ SpriteRenderer:
   m_Size: {x: 0.05, y: 0.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212378418488309806
 SpriteRenderer:
@@ -1037,7 +1044,7 @@ SpriteRenderer:
   m_SortingLayerID: -900995045
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300006, guid: 2843d0868f62efb4ea8350ac0e75a6bf, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 5f7acc0780280f74a8e8bb67b16e0aee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

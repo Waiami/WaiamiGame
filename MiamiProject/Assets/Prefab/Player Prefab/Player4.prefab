@@ -58,7 +58,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1235242811271018
 GameObject:
   m_ObjectHideFlags: 1
@@ -667,9 +667,7 @@ MonoBehaviour:
   playerUI: {fileID: 114308124912705224}
   CameraPoint: {fileID: 4630523727997088}
   playerCamera: {fileID: 0}
-  punshDelay: 0.3
-  leftHand: {fileID: 1805582719667746}
-  rightHand: {fileID: 1082692989421950}
+  SmokeEffect: {fileID: 0}
   weaponRotationObject: {fileID: 1710143069445536}
   pistolPoint: {fileID: 4784907369223386}
   pistolObject: {fileID: 1444613192983474}
@@ -677,6 +675,14 @@ MonoBehaviour:
   cannonObject: {fileID: 1877808749517756}
   knifePoint: {fileID: 4931281580511200}
   knifeObject: {fileID: 1674745082911122}
+  laserPoint: {fileID: 0}
+  laserObject: {fileID: 0}
+  snakePoint: {fileID: 0}
+  snakeObject: {fileID: 0}
+  rocketPoint: {fileID: 0}
+  rocketObject: {fileID: 0}
+  dragonPoint: {fileID: 0}
+  dragonObject: {fileID: 0}
   cantMove: 1
 --- !u!114 &114460356530558834
 MonoBehaviour:

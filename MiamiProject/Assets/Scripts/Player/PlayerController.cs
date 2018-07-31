@@ -14,19 +14,11 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private PlayerUI playerUI;
     [SerializeField] private Transform CameraPoint;
     [SerializeField] private CameraFollow playerCamera;
+    [SerializeField] private GameObject SmokeEffect;
 
     public PlayerDataModel PlayerModelScript { get { return playerDataModel; } }
 
     private float attackCooldown = -1;
-
-    [Header("SuckerPunsh")]
-    [SerializeField]
-    private float punshDelay = 1f;
-    private float punshCooldown = -1f;
-    [SerializeField] private GameObject leftHand;
-    [SerializeField] private GameObject rightHand;
-    private bool boolSuckerPunsh;
-    private GameObject suckerPunsh;
 
     [Header("GeneralWeapons")]
     [SerializeField] private GameObject weaponRotationObject;
@@ -48,6 +40,26 @@ public class PlayerController : MonoBehaviour {
     private Transform knifePoint;
     [SerializeField] private GameObject knifeObject;
 
+    [Header("Laser")]
+    [SerializeField]
+    private Transform laserPoint;
+    [SerializeField] private GameObject laserObject;
+
+    [Header("Snake")]
+    [SerializeField]
+    private Transform snakePoint;
+    [SerializeField] private GameObject snakeObject;
+
+    [Header("Rocket")]
+    [SerializeField]
+    private Transform rocketPoint;
+    [SerializeField] private GameObject rocketObject;
+
+    [Header("Dragon")]
+    [SerializeField]
+    private Transform dragonPoint;
+    [SerializeField] private GameObject dragonObject;
+
 
     private bool hasPickUp = false;
     private GameObject pickUpObject;
@@ -63,8 +75,11 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Initialize();
+        SetHeadState(false);
+        StartCoroutine(WaitActivateHead());
         playerDataModel.AddPoints(GameStats.Instance.PlayerStartScore);
-        playerUI.SetPointText(playerDataModel.PlayerScore);
+        //playerUI.SetPointText(playerDataModel.PlayerScore);
+        playerCamera.GetComponent<PlayerCanvasBehaviour>().PopUpScore("", playerDataModel.PlayerScore.ToString());
         playerAnimator.InstantiateSpawnEffects(transform);
     }
 
@@ -84,8 +99,6 @@ public class PlayerController : MonoBehaviour {
 
     void Initialize()
     {
-        boolSuckerPunsh = false;
-        suckerPunsh = GameStats.Instance.SuckerPunsh;
         if(playerSprite == null)
         {
             playerSprite = gameObject.GetComponent<PlayerSprite>();
@@ -134,15 +147,13 @@ public class PlayerController : MonoBehaviour {
             else
             {
                 rb2d.velocity = movement * playerDataModel.WalkSpeed * Time.deltaTime * 50;
-
             }
-            playerAnimator.SetBodyAnimationDirection(x, y);
+            playerAnimator.SetBodyDirectionByBlendTree(x, y);
             playerSprite.SetHeadDirectionToBody(x, y);
-            playerAnimator.SetBlendFloat(Mathf.Max(Mathf.Abs(x), Mathf.Abs(y)));
         }
         else
         {
-            playerAnimator.SetBlendFloat(0);
+            playerSprite.SetHeadDirectionToBody(x, y);
         }
     }
 
@@ -176,6 +187,11 @@ public class PlayerController : MonoBehaviour {
     public Transform GetCameraPoint()
     {
         return CameraPoint;
+    }
+
+    public void SetPlayer(string playerCode, string playerName)
+    {
+        playerDataModel.SetPlayer(playerCode, playerName);
     }
 
     public void SetCameraFollow(CameraFollow value)
@@ -235,7 +251,8 @@ public class PlayerController : MonoBehaviour {
 
     private void SetWeaponSprite()
     {
-        if(ActiveWeaponObject!= null)
+        Instantiate(SmokeEffect, headPoint);
+        if (ActiveWeaponObject!= null)
         {
             ActiveWeaponObject.SetActive(false);
             if (!headPoint.gameObject.activeInHierarchy)
@@ -243,7 +260,7 @@ public class PlayerController : MonoBehaviour {
                 headPoint.gameObject.SetActive(true);
             }
         }
-
+        
         Weapon weapon = playerDataModel.GetEquippedWeapon();
         if(weapon != null)
         {
@@ -263,6 +280,22 @@ public class PlayerController : MonoBehaviour {
                     break;
                 case WeaponCollection.WeaponNames.knife:
                     SetWeaponSpriteActive(knifeObject, knifePoint);
+                    headPoint.gameObject.SetActive(false);
+                    break;
+                case WeaponCollection.WeaponNames.snake:
+                    SetWeaponSpriteActive(snakeObject, snakePoint);
+                    headPoint.gameObject.SetActive(false);
+                    break;
+                case WeaponCollection.WeaponNames.rocket:
+                    SetWeaponSpriteActive(rocketObject, rocketPoint);
+                    headPoint.gameObject.SetActive(false);
+                    break;
+                case WeaponCollection.WeaponNames.laser:
+                    SetWeaponSpriteActive(laserObject, laserPoint);
+                    headPoint.gameObject.SetActive(false);
+                    break;
+                case WeaponCollection.WeaponNames.dragon:
+                    SetWeaponSpriteActive(dragonObject, dragonPoint);
                     headPoint.gameObject.SetActive(false);
                     break;
             }
@@ -302,13 +335,14 @@ public class PlayerController : MonoBehaviour {
 
     public void ResetPlayer()
     {
-        headPoint.gameObject.SetActive(true);
         playerSprite.ResetPlayerSprite(); 
         playerAnimator.ResetPlayerAnimation();
         playerAnimator.InstantiateSpawnEffects(transform);
         playerDataModel.ResetPlayer();
         SetWeaponSprite();
-        if(playerCamera != null)
+        SetHeadState(false);
+        StartCoroutine(WaitActivateHead());
+        if (playerCamera != null)
         {
             playerCamera.TeleportCamera();
         }
@@ -318,7 +352,8 @@ public class PlayerController : MonoBehaviour {
     public void AddPoints(int points)
     {
         playerDataModel.AddPoints(points);
-        playerUI.SetPointText(playerDataModel.PlayerScore);
+        //playerUI.SetPointText(playerDataModel.PlayerScore);
+        playerCamera.GetComponent<PlayerCanvasBehaviour>().PopUpScore(points.ToString(),playerDataModel.PlayerScore.ToString());
     }
 
     public void SetHeadState(bool value)
@@ -326,30 +361,10 @@ public class PlayerController : MonoBehaviour {
         headPoint.gameObject.SetActive(value);
     }
 
-    //Not in Use anymore
-    private void SuckerPunsh()
+    private IEnumerator WaitActivateHead()
     {
-        if(punshCooldown < 0)
-        {
-            
-            if (boolSuckerPunsh)
-            {
-                boolSuckerPunsh = false;
-                GameObject projectile = Instantiate(suckerPunsh, leftHand.transform);
-                projectile.transform.SetParent(null);
-            }
-            else
-            {
-                boolSuckerPunsh = true;
-                GameObject projectile = Instantiate(suckerPunsh, rightHand.transform);
-                projectile.transform.SetParent(null);
-            }
-            punshCooldown = punshDelay;
-        }
-        else
-        {
-            punshCooldown -= Time.deltaTime;
-        }
+        yield return new WaitForSeconds(0.7f);
+        SetHeadState(true);
     }
 
     public void ShootWeapon()

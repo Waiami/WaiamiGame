@@ -1,0 +1,1243 @@
+fileFormatVersion: 2
+guid: 6b13297eed717db479ce28045a64e1a6
+timeCreated: 1531932281
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: NPC_Heads_0
+    21300002: NPC_Heads_1
+    21300004: NPC_Heads_2
+    21300006: NPC_Heads_3
+    21300008: NPC_Heads_4
+    21300010: NPC_Heads_5
+    21300012: NPC_Heads_6
+    21300014: NPC_Heads_7
+    21300016: NPC_Heads_8
+    21300018: NPC_Heads_9
+    21300020: NPC_Heads_10
+    21300022: NPC_Heads_11
+    21300024: NPC_Heads_12
+    21300026: NPC_Heads_13
+    21300028: NPC_Heads_14
+    21300030: NPC_Heads_15
+    21300032: NPC_Heads_16
+    21300034: NPC_Heads_17
+    21300036: NPC_Heads_18
+    21300038: NPC_Heads_19
+    21300040: NPC_Heads_20
+    21300042: NPC_Heads_21
+    21300044: NPC_Heads_22
+    21300046: NPC_Heads_23
+    21300048: NPC_Heads_24
+    21300050: NPC_Heads_25
+    21300052: NPC_Heads_26
+    21300054: NPC_Heads_27
+    21300056: NPC_Heads_28
+    21300058: NPC_Heads_29
+    21300060: NPC_Heads_30
+    21300062: NPC_Heads_31
+    21300064: NPC_Heads_32
+    21300066: NPC_Heads_33
+    21300068: NPC_Heads_34
+    21300070: NPC_Heads_35
+    21300072: NPC_Heads_36
+    21300074: NPC_Heads_37
+    21300076: NPC_Heads_38
+    21300078: NPC_Heads_39
+    21300080: NPC_Heads_40
+    21300082: NPC_Heads_41
+    21300084: NPC_Heads_42
+    21300086: NPC_Heads_43
+    21300088: NPC_Heads_44
+    21300090: NPC_Heads_45
+    21300092: NPC_Heads_46
+    21300094: NPC_Heads_47
+    21300096: NPC_Heads_48
+    21300098: NPC_Heads_49
+    21300100: NPC_Heads_50
+    21300102: NPC_Heads_51
+    21300104: NPC_Heads_52
+    21300106: NPC_Heads_53
+    21300108: NPC_Heads_54
+    21300110: NPC_Heads_55
+    21300112: NPC_Heads_56
+    21300114: NPC_Heads_57
+    21300116: NPC_Heads_58
+    21300118: NPC_Heads_59
+    21300120: NPC_Heads_60
+    21300122: NPC_Heads_61
+    21300124: NPC_Heads_62
+    21300126: NPC_Heads_63
+    21300128: NPC_Heads_64
+    21300130: NPC_Heads_65
+    21300132: NPC_Heads_66
+    21300134: NPC_Heads_67
+    21300136: NPC_Heads_68
+    21300138: NPC_Heads_69
+    21300140: NPC_Heads_70
+    21300142: NPC_Heads_71
+    21300144: NPC_Heads_72
+    21300146: NPC_Heads_73
+    21300148: NPC_Heads_74
+    21300150: NPC_Heads_75
+    21300152: NPC_Heads_76
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NPC_Heads_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 3019
+        width: 272
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_1
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 3024
+        width: 211
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_2
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 3034
+        width: 230
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_3
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 3017
+        width: 198
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_4
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 3021
+        width: 212
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_5
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 3027
+        width: 245
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_6
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 3022
+        width: 232
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_7
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 3030
+        width: 275
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_8
+      rect:
+        serializedVersion: 2
+        x: 2363
+        y: 3031
+        width: 248
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_9
+      rect:
+        serializedVersion: 2
+        x: 2660
+        y: 2940
+        width: 249
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_10
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 2590
+        width: 246
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_11
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 2581
+        width: 213
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_12
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 2582
+        width: 198
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_13
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 2582
+        width: 237
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_14
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 2564
+        width: 182
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_15
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 2582
+        width: 340
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_16
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 2588
+        width: 407
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_17
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 2592
+        width: 251
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_18
+      rect:
+        serializedVersion: 2
+        x: 2467
+        y: 2587
+        width: 205
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_19
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 2585
+        width: 155
+        height: 311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_20
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 2569
+        width: 233
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_21
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 2222
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_22
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 2215
+        width: 265
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_23
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 2233
+        width: 234
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_24
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 2222
+        width: 206
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_25
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 2235
+        width: 229
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_26
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 2232
+        width: 246
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_27
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 2240
+        width: 290
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_28
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 2227
+        width: 205
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_29
+      rect:
+        serializedVersion: 2
+        x: 2681
+        y: 2222
+        width: 214
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_30
+      rect:
+        serializedVersion: 2
+        x: 2930
+        y: 2222
+        width: 142
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_31
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1878
+        width: 221
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_32
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1886
+        width: 247
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_33
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1883
+        width: 209
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_34
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1877
+        width: 246
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_35
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1885
+        width: 204
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_36
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 1878
+        width: 306
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_37
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 1882
+        width: 199
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_38
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 1885
+        width: 239
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_39
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 1885
+        width: 214
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_40
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 1862
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_41
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 1865
+        width: 183
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_43
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 1548
+        width: 263
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_44
+      rect:
+        serializedVersion: 2
+        x: 2775
+        y: 1562
+        width: 234
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_45
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1551
+        width: 232
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_46
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1564
+        width: 218
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_47
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1562
+        width: 211
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_48
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1551
+        width: 191
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_49
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 1561
+        width: 260
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_50
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 1548
+        width: 234
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_51
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 1564
+        width: 233
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_52
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 1564
+        width: 202
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_53
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 1561
+        width: 182
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_54
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 1211
+        width: 173
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_55
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1215
+        width: 205
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_56
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1184
+        width: 240
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_57
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1212
+        width: 286
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_58
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 1219
+        width: 239
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_59
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 1205
+        width: 213
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_60
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1222
+        width: 194
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_61
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 1222
+        width: 193
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_62
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 1224
+        width: 238
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_63
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 1227
+        width: 227
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_64
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 809
+        width: 195
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_65
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 805
+        width: 214
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_66
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 816
+        width: 254
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_67
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 858
+        width: 357
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_68
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 836
+        width: 430
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_69
+      rect:
+        serializedVersion: 2
+        x: 1969
+        y: 831
+        width: 298
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_70
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 844
+        width: 362
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_71
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 842
+        width: 268
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_72
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 472
+        width: 234
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_73
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 492
+        width: 269
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_74
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 426
+        width: 221
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_75
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 444
+        width: 301
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_76
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 464
+        width: 252
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPC_Heads_42
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 2221
+        width: 207
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

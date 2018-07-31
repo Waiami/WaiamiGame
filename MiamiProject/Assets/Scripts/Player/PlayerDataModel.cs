@@ -65,6 +65,12 @@ public class PlayerDataModel : MonoBehaviour {
         dead = true;
     }
 
+    public void SetPlayer(string playercode, string playername)
+    {
+        playerCode = playercode;
+        playerName = playername;
+    }
+
     public void AddNewWeapon(Weapon weapon)
     {
         playerWeaponList.Enqueue(weapon);

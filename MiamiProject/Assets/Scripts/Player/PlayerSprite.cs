@@ -65,7 +65,6 @@ public class PlayerSprite : MonoBehaviour {
         //int i = Mathf.FloorToInt((Mathf.Atan2(y, x) * Mathf.Rad2Deg + 180) / 45f);
         if (i != currentState)
         {
-            Debug.Log(i);
             if (i < count && i >= 0)
             {
                 currentState = i;
@@ -105,6 +104,10 @@ public class PlayerSprite : MonoBehaviour {
                         break;
 
                 }
+            }
+            if(x == 0 && y == 0)
+            {
+                headSpriteRenderer.sprite = HeadSprites[1];
             }
 
         }

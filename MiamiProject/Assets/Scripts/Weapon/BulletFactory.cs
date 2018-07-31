@@ -9,6 +9,10 @@ public class BulletFactory : MonoBehaviour {
     [SerializeField] public GameObject FiveMMBullet;
     [SerializeField] public GameObject CannonBall;
     [SerializeField] public GameObject KnifeSlash;
+    [SerializeField] public GameObject LaserBeam;
+    [SerializeField] public GameObject Acid;
+    [SerializeField] public GameObject Rocket;
+    [SerializeField] public GameObject Flames;
     #endregion
 
     #region public Methods
@@ -25,6 +29,18 @@ public class BulletFactory : MonoBehaviour {
                 break;
             case WeaponCollection.WeaponNames.pistol:
                 SpawnFiveMMBullet(spawnTransform, playerDataModel);
+                break;
+            case WeaponCollection.WeaponNames.laser:
+                SpawnLaser(spawnTransform, playerDataModel);
+                break;
+            case WeaponCollection.WeaponNames.snake:
+                SpawnAcid(spawnTransform, playerDataModel);
+                break;
+            case WeaponCollection.WeaponNames.rocket:
+                SpawnRocket(spawnTransform, playerDataModel);
+                break;
+            case WeaponCollection.WeaponNames.dragon:
+                SpawnFlames(spawnTransform, playerDataModel);
                 break;
             default:
                 break;
@@ -50,10 +66,36 @@ public class BulletFactory : MonoBehaviour {
         obj.transform.SetParent(null);
     }
 
+    private void SpawnRocket(Transform spawnTransform, PlayerDataModel playerDataModel)
+    {
+        GameObject obj = Instantiate(Rocket, spawnTransform);
+        obj.GetComponent<ExplosiveProjectile>().SetPlayerDataModel(playerDataModel);
+        obj.transform.SetParent(null);
+    }
+
     public void SpawnKnifeSlash(Transform spawnTransform, PlayerDataModel playerDataModel)
     {
         GameObject obj = Instantiate(KnifeSlash, spawnTransform);
         obj.GetComponent<KnifeSlash>().SetPlayerDataModel(playerDataModel);
+    }
+
+    public void SpawnLaser(Transform spawnTransform, PlayerDataModel playerDataModel)
+    {
+        GameObject obj = Instantiate(LaserBeam, spawnTransform);
+        obj.GetComponent<Laser>().SetPlayerDataModel(playerDataModel);
+    }
+
+    public void SpawnFlames(Transform spawnTransform, PlayerDataModel playerDataModel)
+    {
+        GameObject obj = Instantiate(Flames, spawnTransform);
+        obj.GetComponent<Flamethrower>().SetReferencePlayerDataModel(playerDataModel);
+    }
+
+    public void SpawnAcid(Transform spawnTransform, PlayerDataModel playerDataModel)
+    {
+        GameObject obj = Instantiate(Acid, spawnTransform);
+        obj.GetComponent<AcidProjectile>().SetPlayerDataModel(playerDataModel);
+        obj.transform.SetParent(null);
     }
 
 

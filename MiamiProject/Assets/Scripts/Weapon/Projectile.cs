@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour {
     {
         if(lifetime < 0)
         {
-            Destroy(this.gameObject);
+            DestroyObject();
         }
         else
         {

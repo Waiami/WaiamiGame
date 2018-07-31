@@ -15,7 +15,8 @@ public class SelfDestruction : MonoBehaviour {
 	void Update () {
 		if(timer < 0)
         {
-            Destroy(gameObject);
+            transform.SetParent(null);
+            Destroy(this.transform.gameObject);
         }
         else
         {

@@ -6,9 +6,10 @@ public class NPC : MonoBehaviour {
     [SerializeField] private Sprite Deadsprite;
     private bool dead;
     public bool Dead { get { return dead; } }
+
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -21,6 +22,7 @@ public class NPC : MonoBehaviour {
         GetComponent<SpriteRenderer>().sprite = Deadsprite;
         GetComponent<BoxCollider2D>().isTrigger = true;
         GetComponent<NPCMovement>().NPCKilled();
+        Destroy(GetComponent<BoxCollider2D>());
         dead = true;
     }
 }

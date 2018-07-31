@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour {
     [SerializeField] private GameObject CountDownPanel;
 
     private int deadplayers = 0;
+    private int gameRound = 1;
     private int[] controllerID = {0, 1, 2, 3 };
     private float resetDelay = 1f;
     private float resetTimer;
@@ -49,7 +50,8 @@ public class GameController : MonoBehaviour {
             if (controllerID[i] != -1)
             {
                 int index = controllerID[i];
-                players[index] = Instantiate(PlayerPrefabs[index]).GetComponent<PlayerController>();
+                players[index] = Instantiate(PlayerPrefabs[0]).GetComponent<PlayerController>();
+                players[index].SetPlayer("P" + (index + 1), "Player " + (index + 1));
                 GameObject cam;
                 if (PlayerCount == 2)
                 {
@@ -102,7 +104,17 @@ public class GameController : MonoBehaviour {
         {
             if(resetTimer < 0)
             {
-                ResetGameModeLMS();
+                gameRound++;
+                if(gameRound == GameStats.Instance.Rounds_lms)
+                {
+                    //Show Endstats
+                }
+                else
+                {
+                    ResetGameModeLMS();
+                }
+                
+               
             }
             else
             {

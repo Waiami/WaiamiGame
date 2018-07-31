@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212034542568740534}
   - component: {fileID: 61802902385062324}
   - component: {fileID: 50030415014899384}
+  - component: {fileID: 114089453990725290}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: PickUp
@@ -74,19 +75,34 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014122032, y: -0.028244138}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9, y: 0.697}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35175592, y: 0.32175565}
+  m_Size: {x: 0.9, y: 0.697}
   m_EdgeRadius: 0
+--- !u!114 &114089453990725290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586620486130336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6039812dac46d6d4f952e834b41a60bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSprites:
+  - {fileID: 21300000, guid: dd611705ff3511d4d8aedc442b4689ed, type: 3}
+  - {fileID: 21300000, guid: 986b785086ece4241b37b3ca43dc7fb8, type: 3}
+  - {fileID: 21300000, guid: 2acbf5c69ec89ba49bbd1f3260e891ca, type: 3}
 --- !u!212 &212034542568740534
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -118,10 +134,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -900995045
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1fe753b42d6607b4d8fd42f2eeabe0f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd611705ff3511d4d8aedc442b4689ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

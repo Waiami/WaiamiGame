@@ -38,9 +38,11 @@ public class GameStats : MonoBehaviour {
     [SerializeField] private float _maxDestinationRadius;
     [SerializeField] private float _minChangeDestinationDelay;
     [SerializeField] private float _maxChangeDestinationDelay;
+    [SerializeField] private Sprite[] _npcHeads;
 
     [Header("SpezialWeaponObjects")]
     [SerializeField] private GameObject _explosion;
+    [SerializeField] private GameObject _acidGround;
 
     [Header("Music")]
     [SerializeField] private AudioSource _musicSource;
@@ -88,8 +90,10 @@ public class GameStats : MonoBehaviour {
     public float MaxDestinationRadius { get { return _maxDestinationRadius; } }
     public float MinChangeDestinationDelay { get { return _minChangeDestinationDelay; } }
     public float MaxChangeDestinationDelay { get { return _maxChangeDestinationDelay; } }
+    public Sprite[] NPCheads { get { return _npcHeads; } }
 
     public GameObject Explosion { get { return _explosion; } }
+    public GameObject AcidGround { get { return _acidGround; } }
 
     public AudioSource MusicSource { get { return _musicSource; } }
     public AudioSource SFXSource { get { return _sfxSource; } }

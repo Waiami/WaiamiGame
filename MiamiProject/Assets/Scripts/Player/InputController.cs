@@ -60,10 +60,6 @@ public class InputController : MonoBehaviour {
         if (Mathf.Abs(x) < playerController.PlayerModelScript.ControllerThreshhold) { x = 0; }
         if (Mathf.Abs(y) < playerController.PlayerModelScript.ControllerThreshhold) { y = 0; }
         playerController.MovePlayer(x, y);
-        if (x != 0 && y != 0)
-        {
-           
-        }
     }
 
     private void RotatePlayer()

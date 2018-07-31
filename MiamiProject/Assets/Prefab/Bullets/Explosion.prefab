@@ -150,7 +150,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.42
+  m_Radius: 0.33
 --- !u!58 &58454455044469236
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -3630,7 +3630,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1438520996
+  randomSeed: 2013842205
   InitialModule:
     serializedVersion: 3
     enabled: 1
